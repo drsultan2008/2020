@@ -7,10 +7,12 @@ import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
+	Controller controller = new Controller(new Board(), new Data());
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Scene scene = new Scene(new Board());
+			Scene scene = new Scene(new Board(controller));
+			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
