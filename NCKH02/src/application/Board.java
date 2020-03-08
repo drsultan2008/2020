@@ -1,10 +1,13 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
 
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
@@ -33,7 +36,8 @@ public class Board extends GridPane implements Observer{
 		background = new Image(url+"board.jpg",squareSize,squareSize,true,true);
 	}
 
-	Board(Controller controller){
+	Board(Controller controller) throws Exception{
+		Parent root = FXMLLoader.load(getClass().getResource("Board.fxml"));
 		this.controller=controller;
 		InitBoard();
 		url = getClass().getResource("/application/images/");
@@ -42,6 +46,8 @@ public class Board extends GridPane implements Observer{
 		Hum = new Image(url+"Hum.png",squareSize,squareSize,true,true);
 		background = new Image(url+"board.jpg",squareSize,squareSize,true,true);
 		updateBoard(controller.getData().getBoardData());
+		add(root,0,0);
+		
 	}
 	
 	@Override
@@ -50,7 +56,7 @@ public class Board extends GridPane implements Observer{
 	}
 	
 	public void InitBoard() {
-        setBackground(new Background( new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT)));
+//        setBackground(new Background( new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT)));
 		for (int i=0; i<5; i++) {
 			for (int j=0; j<7; j++) {
 				boardView[i][j] = new Button();
