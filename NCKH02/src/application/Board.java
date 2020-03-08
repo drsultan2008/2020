@@ -9,6 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Line;
 
@@ -16,7 +21,7 @@ public class Board extends GridPane implements Observer{
 	private Button boardView[][] = new Button[5][7];
 	private int space = 60;
 	private URL url;
-	private Image Tot, Hum, BTom;
+	private Image Tot, Hum, BTom,background;
 	private int squareSize = 20;
 	private Controller controller;
 	Board() {
@@ -25,6 +30,7 @@ public class Board extends GridPane implements Observer{
 		Tot = new Image(url+"Tot.png",squareSize,squareSize,true,true);
 		BTom = new Image(url+"BTom.png",squareSize,squareSize,true,true);
 		Hum = new Image(url+"Hum.png",squareSize,squareSize,true,true);
+		background = new Image(url+"board.jpg",squareSize,squareSize,true,true);
 	}
 
 	Board(Controller controller){
@@ -34,6 +40,7 @@ public class Board extends GridPane implements Observer{
 		Tot = new Image(url+"Tot.png",squareSize,squareSize,true,true);
 		BTom = new Image(url+"BTom.png",squareSize,squareSize,true,true);
 		Hum = new Image(url+"Hum.png",squareSize,squareSize,true,true);
+		background = new Image(url+"board.jpg",squareSize,squareSize,true,true);
 		updateBoard(controller.getData().getBoardData());
 	}
 	
@@ -42,7 +49,8 @@ public class Board extends GridPane implements Observer{
 		updateBoard(controller.getData().getBoardData());
 	}
 	
-	public void InitBoard(){
+	public void InitBoard() {
+        setBackground(new Background( new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT)));
 		for (int i=0; i<5; i++) {
 			for (int j=0; j<7; j++) {
 				boardView[i][j] = new Button();
