@@ -37,16 +37,18 @@ public class Board extends GridPane implements Observer{
 	}
 
 	Board(Controller controller) throws Exception{
-		Parent root = FXMLLoader.load(getClass().getResource("Board.fxml"));
+//		Parent root = FXMLLoader.load(getClass().getResource("Board.fxml"));
+//		add(root,0,0);
 		this.controller=controller;
 		InitBoard();
 		url = getClass().getResource("/application/images/");
 		Tot = new Image(url+"Tot.png",squareSize,squareSize,true,true);
 		BTom = new Image(url+"BTom.png",squareSize,squareSize,true,true);
 		Hum = new Image(url+"Hum.png",squareSize,squareSize,true,true);
-		background = new Image(url+"board.jpg",squareSize,squareSize,true,true);
+		background = new Image(url+"board.jpg");
+		BackgroundImage backgroundImage = new BackgroundImage(background,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
+        setBackground(new Background(backgroundImage));
 		updateBoard(controller.getData().getBoardData());
-		add(root,0,0);
 		
 	}
 	

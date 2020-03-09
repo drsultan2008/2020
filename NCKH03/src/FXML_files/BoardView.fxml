@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane fx:id="anPane" stylesheets="@../CSS_files/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.BoardView">
+   <children>
+      <Pane layoutX="347.0" layoutY="363.0" prefHeight="300.0" prefWidth="100.0" />
+      <JFXRadioButton layoutX="14.0" layoutY="246.0" />
+   </children>
+</AnchorPane>
