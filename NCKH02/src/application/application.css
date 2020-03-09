@@ -1,1 +1,14 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.button{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.button:hover {
+    -fx-border-color: transparent, black;
+}
+
+.button:pressed {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
