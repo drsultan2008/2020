@@ -4,9 +4,18 @@ import java.util.Observable;
 
 public class Data extends Observable{
 	protected String[][] boardData = new String[7][5];
-	
+	protected boolean turner = true; // True = Luot cua Hum
 	Data() {
 		setDefault();
+		turner = true;
+	}
+	
+	public void setTunner(boolean turner) {
+		turner = !turner;
+	}
+	
+	public boolean getTuner() {
+		return turner;
 	}
 	
 	public String [][] getBoardData() {

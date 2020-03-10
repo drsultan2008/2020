@@ -22,10 +22,10 @@ import javafx.scene.shape.Line;
 
 public class Board extends GridPane implements Observer{
 	private Button boardView[][] = new Button[5][7];
-	private int space = 60;
+	private int space = 40;
 	private URL url;
 	private Image Tot, Hum, BTom,background;
-	private int squareSize = 20;
+	private int squareSize = 40;
 	private Controller controller;
 	Board() {
 		InitBoard();
@@ -42,12 +42,13 @@ public class Board extends GridPane implements Observer{
 		this.controller=controller;
 		InitBoard();
 		url = getClass().getResource("/application/images/");
-		Tot = new Image(url+"Tot.png",squareSize,squareSize,true,true);
-		BTom = new Image(url+"BTom.png",squareSize,squareSize,true,true);
+		Tot = new Image(url+"Tot01.png",squareSize,squareSize,true,true);
+		BTom = new Image(url+"BTom01.png",squareSize,squareSize,true,true);
 		Hum = new Image(url+"Hum.png",squareSize,squareSize,true,true);
 		background = new Image(url+"board.jpg");
 		BackgroundImage backgroundImage = new BackgroundImage(background,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
         setBackground(new Background(backgroundImage));
+        
 		updateBoard(controller.getData().getBoardData());
 		
 	}
@@ -58,16 +59,16 @@ public class Board extends GridPane implements Observer{
 	}
 	
 	public void InitBoard() {
-//        setBackground(new Background( new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT)));
 		for (int i=0; i<5; i++) {
 			for (int j=0; j<7; j++) {
 				boardView[i][j] = new Button();
+				boardView[i][j].setMinSize(40, 40);
 				if (i==0 && j==0 || i==0 && j==1|| i==1 && j==0 || i==3 && j==0 || i==4 && j==0 || i==4 && j==1 )
 					continue;
 				add(boardView[i][j],i,j);
 				getStylesheets().add(getClass().getResource("boardStyle.css").toExternalForm());
-				setVgap(space);
-				setHgap(space);
+				setVgap(45);
+				setHgap(35);
 			}
 		}
 	}
@@ -86,5 +87,22 @@ public class Board extends GridPane implements Observer{
 				}
 			}
 		}
+		showTurn(controller.getData().getTuner());
+	}
+	
+	public void showTurn(boolean turn) {
+		Button msg = new Button();
+		
+		Image luotTom, luotHum;
+		luotTom = new Image(url+"luotTom.png",100,300,true,true);
+		luotHum = new Image(url+"luotHum.png",100,00,true,true);
+		
+		if (turn) {
+			msg.setGraphic(new ImageView(luotHum));
+		}else {
+			msg.setGraphic(new ImageView(luotTom));
+		}
+		
+//		add(msg,0,0);
 	}
 }
