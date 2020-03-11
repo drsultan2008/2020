@@ -39,14 +39,14 @@ public class LegalMove extends Data {
 				}
 			}
 			
-			if (i+1<=6 && j+1 <=4 && boardData[i+1][j+1].equals("##")) {
+			if (i+1<=6 && j+1 <=4  && (i-j==4||i-j==2||i-j==0||i-j==-2) && boardData[i+1][j+1].equals("##")) {
 				moves[index++] = new Cell(i+1,j+1);
 				if (i+2<=6 && j+2 <=4 && boardData[i+2][j+2].equals("Tot")) {
 					moves[index++] = new Cell(i+2,j+2);
 				}
 			}
 			
-			if (i-1>=0 && j-1 >=0 && boardData[i-1][j-1].equals("##")) {
+			if (i-1>=0 && j-1 >=0 &&  (i-j==4||i-j==2||i-j==0||i-j==-2) && boardData[i-1][j-1].equals("##")) {
 				moves[index++] = new Cell(i-1,j-1);
 				if (i-2>=0 && j-2 >=0 && boardData[i-2][j-2].equals("Tot")) {
 					moves[index++] = new Cell(i-2,j-2);
