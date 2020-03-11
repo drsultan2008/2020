@@ -76,6 +76,7 @@ public class Board extends GridPane implements Observer{
 	public void updateBoard(String[][] boardData) {
 		for (int i=0; i<7; i++) {
 			for (int j=0; j<5; j++) {
+				System.out.print(i+","+j+" ");
 				if (boardData[i][j].equals("Tot")) {
 					boardView[j][i].setGraphic(new ImageView(Tot));
 				}
@@ -86,6 +87,7 @@ public class Board extends GridPane implements Observer{
 					boardView[j][i].setGraphic(new ImageView(BTom));
 				}
 			}
+			System.out.println();
 		}
 		showTurn(controller.getData().getTuner());
 	}

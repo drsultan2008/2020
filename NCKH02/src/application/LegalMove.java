@@ -11,28 +11,28 @@ public class LegalMove extends Data {
 		int index = 0;
 		
 		if (boardData[i][j].equals("Hum")) {
-			if (i-1>=0 && boardData[i-1][j].equals("##")) {
+			if (( i-1>=0  && (i>=3 || j==2)) && boardData[i-1][j].equals("##")) {
 				moves[index++] = new Cell(i-1,j);
 				if (i-2>=0 && boardData[i-2][j].equals("Tot")) {
 					moves[index++] = new Cell(i-1,j);
 				}
 			}
 			
-			if (i+1<=6 && boardData[i+1][j].equals("##")) {
+			if ((i+1<=6 && (i>=2 || j==2)) && boardData[i+1][j].equals("##")) {
 				moves[index++] = new Cell(i+1,j);
 				if (i+2<=6 && boardData[i+2][j].equals("Tot")) {
 					moves[index++] = new Cell(i+2,j);
 				}
 			}
 
-			if (j-1>=0 && boardData[i][j-1].equals("##")) {
+			if ((j-1>=0 && (j==2 || i>=2)) && boardData[i][j-1].equals("##")) {
 				moves[index++] = new Cell(i,j-1);
 				if (j-2>=0 && boardData[i][j-2].equals("Tot")) {
 					moves[index++] = new Cell(i,j-2);
 				}
 			}
 			
-			if (j+1<=4 && boardData[i][j+1].equals("##")) {
+			if ((j+1<=4 && (j==2 || i>=2) ) && boardData[i][j+1].equals("##")) {
 				moves[index++] = new Cell(i,j+1);
 				if (j+2<=4 && boardData[i][j+2].equals("Tot")) {
 					moves[index++] = new Cell(i,j+2);
