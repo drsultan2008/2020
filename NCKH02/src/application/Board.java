@@ -27,6 +27,9 @@ public class Board extends GridPane implements Observer{
 	private Image Tot, Hum, BTom,background;
 	private int squareSize = 40;
 	private Controller controller;
+	private boolean flag = false;
+	private Cell move1;
+	private LegalMove legalMove = new LegalMove();
 	Board() {
 		InitBoard();
 		url = getClass().getResource("/application/images/");
@@ -71,6 +74,7 @@ public class Board extends GridPane implements Observer{
 				setHgap(35);
 			}
 		}
+		event();
 	}
 	
 	public void updateBoard(String[][] boardData) {
@@ -106,5 +110,35 @@ public class Board extends GridPane implements Observer{
 		}
 		
 //		add(msg,0,0);
+	}
+	
+	public void event() {
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				Cell cell = new Cell(i,j);
+				boardView[i][j].setOnAction(e->{
+//					moveEvent(cell);
+					
+				});
+			}
+		}
+	}
+	
+	public void moveEvent(Cell cell) {
+		if (flag == false) {
+			flag = true;
+			move1=cell;
+			Cell[] movePossible = legalMove.allMove(move1.getRow(), move1.getCol());
+			for (int i=0; i<29; i++) {
+				if (movePossible[i]!=null) {
+						boardView[movePossible[i].getRow()][movePossible[i].getCol()].setStyle("-fx-background-color: #69ff69;");
+				}
+			}
+		}
+		else {
+			flag=false;
+			controller.set(controller.getData().get(move1.getRow(), move1.getCol()), cell.getRow(), cell.getCol());
+			controller.set("##", move1.getRow(), move1.getCol());
+		}
 	}
 }

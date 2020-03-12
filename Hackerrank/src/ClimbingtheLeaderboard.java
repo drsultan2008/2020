@@ -41,21 +41,20 @@ public class ClimbingtheLeaderboard {
 		int count2=count;
 		for (int it:treeSet) {
 			hashMap.put(it,count--);
-//			System.out.print(it+":"+count+" ");
+			System.out.print(it+":"+count+" ");
 		}
-		
+//		System.out.print(count2);
 		
 		for (int it:alice) {
-			if (treeSet.higher(it)==null) {
+			if (hashMap.containsKey(treeSet.higher(it))) {
+				System.out.println(hashMap.get(treeSet.higher(it)));
+			}
+			else if (treeSet.higher(it)==null) {
 				System.out.println(1);
 			}
 			else if (treeSet.lower(it)==null) {
 				System.out.println(count2);
-			}
-			else {
-				System.out.println(hashMap.get(treeSet.higher(it)));
-//				System.out.println(treeSet.higher(it)+":"+it);
-			}
+			} 
 		}
 	}
 	

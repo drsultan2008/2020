@@ -13,4 +13,8 @@ public class Controller {
 	public Data getData() {
 		return data;
 	}
+	public void set(String rep, int x, int y) {
+		data.set(rep, x, y);
+	}
+	
 }
