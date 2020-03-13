@@ -25,12 +25,13 @@ public class Board extends GridPane implements Observer{
 	private Button boardView[][] = new Button[5][7];
 	private int space = 40;
 	private URL url;
-	private Image Tot, Hum, BTom,background;
+	private Image Tot, Hum, BTom,background,TrongSuot;
 	private int squareSize = 40;
 	private Controller controller;
 	private boolean flag = false;
 	private Cell move1;
 	private LegalMove legalMove = new LegalMove();
+	private Cell[] movePossible;
 	Board() {
 		InitBoard();
 		url = getClass().getResource("/application/images/");
@@ -48,8 +49,9 @@ public class Board extends GridPane implements Observer{
 		url = getClass().getResource("/application/images/");
 		Tot = new Image(url+"Tot01.png",squareSize,squareSize,true,true);
 		BTom = new Image(url+"BTom01.png",squareSize,squareSize,true,true);
-		Hum = new Image(url+"Hum.png",squareSize,squareSize,true,true);
+		Hum = new Image(url+"Hum02.png",squareSize,squareSize,true,true);
 		background = new Image(url+"board.jpg");
+		TrongSuot = new Image(url+"TrongSuot.png");
 		BackgroundImage backgroundImage = new BackgroundImage(background,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
         setBackground(new Background(backgroundImage));
         
@@ -81,7 +83,6 @@ public class Board extends GridPane implements Observer{
 	public void updateBoard(String[][] boardData) {
 		for (int i=0; i<7; i++) {
 			for (int j=0; j<5; j++) {
-				System.out.print(i+","+j+" ");
 				if (boardData[i][j].equals("Tot")) {
 					boardView[j][i].setGraphic(new ImageView(Tot));
 				}
@@ -91,8 +92,10 @@ public class Board extends GridPane implements Observer{
 				if (boardData[i][j].equals("BTom")) {
 					boardView[j][i].setGraphic(new ImageView(BTom));
 				}
+				else if (boardData[i][j].equals("##")){
+					boardView[j][i].setGraphic(new ImageView(TrongSuot));
+				}
 			}
-			System.out.println();
 		}
 		showTurn(controller.getData().getTuner());
 	}
@@ -123,20 +126,45 @@ public class Board extends GridPane implements Observer{
 	}
 	
 	public void moveEvent(Cell cell) {
-		if (flag == false) {
+		
+		if (flag == false && !controller.getData().get(cell.getCol(), cell.getRow()).equals("##")) {
 			flag = true;
+			movePossible = legalMove.allMove(cell.getCol(), cell.getRow());
 			move1=cell;
-			Cell[] movePossible = legalMove.allMove(move1.getRow(), move1.getCol());
+			
 			for (int i=0; i<29; i++) {
 				if (movePossible[i]!=null) {
-						boardView[movePossible[i].getRow()][movePossible[i].getCol()].setStyle("-fx-background-color: #69ff69;");
+						
+						boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
 				}
 			}
+//			System.out.println(cell.getCol()+" "+cell.getRow());
 		}
-		else {
-			flag=false;
-			controller.set(controller.getData().get(move1.getRow(), move1.getCol()), cell.getRow(), cell.getCol());
-			controller.set("##", move1.getRow(), move1.getCol());
+//		else if (flag == true && cell==move1) {
+//			flag = false;
+//		}
+		else if (flag == true){
+//			System.out.println(cell.getCol()+" "+cell.getRow());
+			boolean isMove = false;
+			for (int i=0; i<29; i++) {
+				if (movePossible[i]!=null) {
+					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("");
+					
+//					Cell temp = new Cell(cell.getCol(),cell.getRow());
+					
+					if (movePossible[i].getCol()==cell.getRow() && movePossible[i].getRow()==cell.getCol()) {
+						isMove = true;
+					}
+				}
+				
+			}
+			flag = false;
+			if (isMove==true) {
+				controller.set(controller.getData().get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
+				controller.set("##", move1.getCol(), move1.getRow());
+			}
+			updateBoard(controller.getData().getBoardData());
+			
 		}
 	}
 }

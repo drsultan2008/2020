@@ -1,27 +1,28 @@
 package application;
-	
+
 import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
-	Controller controller = new Controller(new Board(), new Data());
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-			Scene scene = new Scene(new Board(controller));
-			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
+
+    Scene menuScene;
+    Data data;
+    @Override
+    public void start(Stage window) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        window.setTitle("Chess");
+        data = new Data(window);
+        window.setWidth(data.maxWidth);
+        window.setHeight(data.maxHeight);
+        menuScene = new Scene(new Menu(data));
+        window.setScene(menuScene);
+        window.show();
+    }
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

@@ -1,8 +1,0 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#anPane{
-	-fx-background-image: url("file:/D:/MySoure/2020/NCKH03/src/Images/board.jpg");
-	-fx-background-color: blue;
-}
-#button1{
-	-fx-background-image: url("file:/D:/MySoure/2020/NCKH03/src/Images/Tot.png");
-}
