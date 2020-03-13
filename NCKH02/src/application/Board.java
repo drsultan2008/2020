@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
@@ -53,6 +54,7 @@ public class Board extends GridPane implements Observer{
         setBackground(new Background(backgroundImage));
         
 		updateBoard(controller.getData().getBoardData());
+		event();
 		
 	}
 	
@@ -74,7 +76,6 @@ public class Board extends GridPane implements Observer{
 				setHgap(35);
 			}
 		}
-		event();
 	}
 	
 	public void updateBoard(String[][] boardData) {
@@ -113,13 +114,10 @@ public class Board extends GridPane implements Observer{
 	}
 	
 	public void event() {
-		for (int i=0; i<7; i++) {
-			for (int j=0; j<5; j++) {
+		for (int i=0; i<5; i++) {
+			for (int j=0; j<7; j++) {
 				Cell cell = new Cell(i,j);
-				boardView[i][j].setOnAction(e->{
-//					moveEvent(cell);
-					
-				});
+				boardView[i][j].setOnAction(new MoveEvent(i,j,this));
 			}
 		}
 	}
