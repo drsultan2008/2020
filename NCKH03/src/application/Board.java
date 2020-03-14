@@ -92,7 +92,7 @@ public class Board extends GridPane implements Observer{
 				if (boardData[i][j].equals("BTom")) {
 					boardView[j][i].setGraphic(new ImageView(BTom));
 				}
-				else if (boardData[i][j].equals("##")){
+				else if (boardData[i][j].equals("###")){
 					boardView[j][i].setGraphic(new ImageView(TrongSuot));
 				}
 			}
@@ -143,9 +143,9 @@ public class Board extends GridPane implements Observer{
 //		else if (flag == true && cell==move1) {
 //			flag = false;
 //		}
-		else if (flag == true){
+		else {
 //			System.out.println(cell.getCol()+" "+cell.getRow());
-			boolean isMove = false;
+			boolean isMove = true;
 			for (int i=0; i<29; i++) {
 				if (movePossible[i]!=null) {
 					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("");
@@ -161,10 +161,9 @@ public class Board extends GridPane implements Observer{
 			flag = false;
 			if (isMove==true) {
 				controller.set(controller.getData().get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
-				controller.set("##", move1.getCol(), move1.getRow());
+				controller.set("###", move1.getCol(), move1.getRow());
 			}
 			updateBoard(controller.getData().getBoardData());
-			
 		}
 	}
 }
