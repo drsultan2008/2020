@@ -32,7 +32,10 @@ public class Data extends Observable{
 		setChanged();
 		notifyObservers();
 	}
-	
+	public boolean isWiner() {
+		
+		return false;
+	}
 	public void setDefault() {
 		// Init
 		for (int i=0; i<7; i++) {
