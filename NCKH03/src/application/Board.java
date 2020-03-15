@@ -25,12 +25,12 @@ public class Board extends GridPane implements Observer{
 	private Button boardView[][] = new Button[5][7];
 	private int space = 40;
 	private URL url;
-	private Image Tot, Hum, BTom,background,TrongSuot;
+	private Image Tot, Hum, BTom,background,TrongSuot,choose;
 	private int squareSize = 40;
 	private Controller controller;
 	private boolean flag = false;
 	private Cell move1;
-	private LegalMove legalMove = new LegalMove();
+	private LegalMove legalMove = new LegalMove(this);
 	private Cell[] movePossible;
 	Board() {
 		InitBoard();
@@ -51,7 +51,8 @@ public class Board extends GridPane implements Observer{
 		BTom = new Image(url+"BTom01.png",squareSize,squareSize,true,true);
 		Hum = new Image(url+"Hum02.png",squareSize,squareSize,true,true);
 		background = new Image(url+"board.jpg");
-		TrongSuot = new Image(url+"TrongSuot.png");
+		TrongSuot = new Image(url+"trongSuot.png",squareSize,squareSize,true,true);
+		choose = new Image(url+"choose1.png",squareSize,squareSize,true,true);
 		BackgroundImage backgroundImage = new BackgroundImage(background,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
         setBackground(new Background(backgroundImage));
         
@@ -94,6 +95,7 @@ public class Board extends GridPane implements Observer{
 				}
 				else if (boardData[i][j].equals("###")){
 					boardView[j][i].setGraphic(new ImageView(TrongSuot));
+					System.out.print(i+","+j+" ");
 				}
 			}
 		}
@@ -129,13 +131,14 @@ public class Board extends GridPane implements Observer{
 		
 		if (flag == false && !controller.getData().get(cell.getCol(), cell.getRow()).equals("##")) {
 			flag = true;
-			movePossible = legalMove.allMove(cell.getCol(), cell.getRow());
+			movePossible = legalMove.allMove(cell.getCol(), cell.getRow(),controller.getData().getBoardData());
 			move1=cell;
 			
 			for (int i=0; i<29; i++) {
 				if (movePossible[i]!=null) {
-						
-						boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
+					
+//					boardView[movePossible[i].getCol()][movePossible[i].getRow()
+					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
 				}
 			}
 //			System.out.println(cell.getCol()+" "+cell.getRow());

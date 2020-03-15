@@ -41,7 +41,7 @@ public class Data extends Observable{
 			}
 		}
 		// Not board in game
-		for (int i=0; i<3; i++) {
+		for (int i=0; i<2; i++) {
 			for(int j=0; j<5; j++) {
 				boardData[i][j] = "XXX";
 			}
@@ -52,6 +52,7 @@ public class Data extends Observable{
 		boardData[1][1] = "Hum";
 		boardData[1][3] = "Hum";
 		boardData[2][2] = "###";
+		boardData[1][2] = "###";
 		
 		// Tot
 		boardData[3][0] = "Tot";
