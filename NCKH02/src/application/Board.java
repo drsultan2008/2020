@@ -3,7 +3,7 @@ package application;
 import java.util.Observable;
 
 public class Board{
-	protected String[][] boardData = new String[7][5];
+	String[][] boardData = new String[7][5];
 	Data data;
 	Board(Data data) {
 		this.data = data;

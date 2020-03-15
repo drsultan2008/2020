@@ -19,6 +19,8 @@ public class Data {
     final int TOM=2;
     int player;
 	boolean humMove;
+	Button boardView[][] = new Button[5][7];
+	Board board;
 	Data(Stage stage){
 		window = stage;
 		
@@ -40,11 +42,13 @@ public class Data {
 	void setPlayerHum() {
 		player=HUM;
 		humMove=true;
+		board = new Board(this);
 	}
 	
 	void setPlayerTom() {
 		player=TOM;
 		humMove=false;
+		board = new Board(this);
 	}
 	
 }
