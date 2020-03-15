@@ -13,7 +13,7 @@ public class Main extends Application {
     Data data;
     @Override
     public void start(Stage window) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         window.setTitle("Chess");
         data = new Data(window);
         window.setWidth(data.maxWidth);
