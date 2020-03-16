@@ -21,7 +21,6 @@ public class Play extends GridPane{
         
         drawBoard();
         updateBoard();
-        
         for (int i=0; i<5; i++) {
 			for (int j=0; j<7; j++) {
 				Cell cell = new Cell(i,j);
@@ -38,10 +37,10 @@ public class Play extends GridPane{
 				data.boardView[i][j].setMinSize(40, 40);
 				if (i==0 && j==0 || i==0 && j==1|| i==1 && j==0 || i==3 && j==0 || i==4 && j==0 || i==4 && j==1 )
 					continue;
-				add(data.boardView[i][j],i,j);
+				add(data.boardView[i][j],i+1,j+1);
 				getStylesheets().add(getClass().getResource("playStyle.css").toExternalForm());
-				setVgap(45);
-				setHgap(35);
+				setVgap(40);
+				setHgap(25);
 			}
 		}
 	}

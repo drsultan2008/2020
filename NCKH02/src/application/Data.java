@@ -14,7 +14,7 @@ public class Data {
 	URL url;
 	private int squareSize = 40;
 	Image chonHum,chonTom,menuBackground,Tot,BTom,Hum,background,choose,TrongSuot;
-	double maxWidth = 438, maxHeight = 670;
+	double maxWidth = 450, maxHeight = 700;
 	final int HUM=1;
     final int TOM=2;
     int player;
@@ -37,7 +37,7 @@ public class Data {
 		Tot = new Image(url+"Tot01.png",squareSize,squareSize,true,true);
 		BTom = new Image(url+"BTom01.png",squareSize,squareSize,true,true);
 		Hum = new Image(url+"Hum02.png",squareSize,squareSize,true,true);
-		background = new Image(url+"board.jpg");
+		background = new Image(url+"board02.jpg");
 		TrongSuot = new Image(url+"trongSuot.png",squareSize,squareSize,true,true);
 		choose = new Image(url+"choose1.png",squareSize,squareSize,true,true);
 
