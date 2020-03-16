@@ -18,6 +18,7 @@ public class Data {
 	final int HUM=1;
     final int TOM=2;
     int player;
+    int GAME_TREE_HEIGHT = 5;
 	boolean cpuMove,gameOver;
 	Button boardView[][] = new Button[5][7];
 	Board board;
@@ -26,6 +27,8 @@ public class Data {
 	LegalMove legalMove;
 	Cell[] movePossible;
 	Play play;
+	char cpu,people;
+	AI ai;
 	Data(Stage stage){
 		window = stage;
 		
@@ -43,11 +46,14 @@ public class Data {
 
 		legalMove = new LegalMove(this);
 		play = new Play(this);
+		ai = new AI(this);
 	}
 	
 	void setPlayerHum() {
 		player=HUM;
 		cpuMove=false;
+		cpu = 'T';
+		people = 'H';
 		board = new Board(this);
 		window.setScene(new Scene(play));
 	    play.set();
@@ -56,6 +62,8 @@ public class Data {
 	void setPlayerTom() {
 		player=TOM;
 		cpuMove=true;
+		cpu = 'H';
+		people = 'T';
 		board = new Board(this);
 		window.setScene(new Scene(play));
 	    play.set();
@@ -91,12 +99,30 @@ public class Data {
 				board.set("###", move1.getCol(), move1.getRow());
 			}
 			updateBoard();
+			cpuMove = true;
 //			updateBoard(controller.getData().getBoardData());
 		}
 	}
 	
 	void pcMakeMove() {
-		
+		String nextBoard[][] = ai.findBestMove(board.boardData,0);
+        cpuMove=false;
+//        System.out.println(moveCount);
+        //moveCount=0;
+        for(int i=0;i<7;i++)
+        {
+            for(int j=0;j<5;j++)
+            {
+                board.set(nextBoard[i][j], i, j);
+            }
+        }
+//        if(counter<2)
+//        {
+//            gameOver=true;
+//            showGameOverWindow();
+//
+//        }
+        updateBoard();
 	}
 	
 	public void updateBoard() {
@@ -108,7 +134,7 @@ public class Data {
 				if (board.boardData[i][j].equals("Hum")) {
 					boardView[j][i].setGraphic(new ImageView(Hum));
 				}
-				if (board.boardData[i][j].equals("BTom")) {
+				if (board.boardData[i][j].equals("TTom")) {
 					boardView[j][i].setGraphic(new ImageView(BTom));
 				}
 				else if (board.boardData[i][j].equals("###")){
@@ -119,5 +145,7 @@ public class Data {
 		}
 //		showTurn(controller.getData().getTuner());
 	}
+	
+	
 	
 }

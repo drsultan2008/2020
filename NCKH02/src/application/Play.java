@@ -28,6 +28,12 @@ public class Play extends GridPane{
 			}
 		}
         
+        if(data.cpuMove)
+        {
+            data.pcMakeMove();
+            updateBoard();
+        }
+        
 	}
 
 	void drawBoard() {
@@ -54,7 +60,7 @@ public class Play extends GridPane{
 				if (data.board.boardData[i][j].equals("Hum")) {
 					data.boardView[j][i].setGraphic(new ImageView(data.Hum));
 				}
-				if (data.board.boardData[i][j].equals("BTom")) {
+				if (data.board.boardData[i][j].equals("TTom")) {
 					data.boardView[j][i].setGraphic(new ImageView(data.BTom));
 				}
 				else if (data.board.boardData[i][j].equals("###")){

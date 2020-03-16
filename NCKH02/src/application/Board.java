@@ -73,7 +73,7 @@ public class Board{
 		boardData[6][4] = "Tot";
 		
 		// BTom
-		boardData[6][2] = "BTom";
+		boardData[6][2] = "TTom";
 		
 		// Extends
 	}

@@ -12,11 +12,13 @@ public class MoveEvent implements EventHandler<ActionEvent>{
 	}
 	@Override
 	public void handle(ActionEvent e) {
-	 if(!(play.data.cpuMove) && !(play.data.gameOver))
+	 if(!(play.data.cpuMove))
         {
             play.data.move(cell);
-            if((play.data.cpuMove)&&!(play.data.gameOver))
+//		 		play.data.pcMakeMove();
+            if((play.data.cpuMove))
             {
+            	System.out.print("ok");
                 play.data.pcMakeMove();
             }
         }
