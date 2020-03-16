@@ -19,15 +19,16 @@ public class Play extends GridPane{
 		BackgroundImage backgroundImage = new BackgroundImage(data.background,BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
         setBackground(new Background(backgroundImage));
         
+        drawBoard();
+        updateBoard();
+        
         for (int i=0; i<5; i++) {
 			for (int j=0; j<7; j++) {
 				Cell cell = new Cell(i,j);
-				boardView[i][j].setOnAction(new MoveEvent(i,j,this));
+				data.boardView[i][j].setOnAction(new MoveEvent(i,j,this));
 			}
 		}
         
-        drawBoard();
-        updateBoard();
 	}
 
 	void drawBoard() {

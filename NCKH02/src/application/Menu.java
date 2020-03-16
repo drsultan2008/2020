@@ -8,6 +8,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class Menu extends GridPane{
@@ -24,12 +25,18 @@ public class Menu extends GridPane{
     	add(chonHum,10,10);
     	add(chonTom,10,11);
     	
-    	chonHum.setOnAction(e->{
-    		data.setPlayerHum();
-    	});
+    	chonHum.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                data.setPlayerHum();
+            }
+        });
     	
-    	chonTom.setOnAction(e->{
-    		data.setPlayerTom();
+    	chonTom.setOnAction(new EventHandler<ActionEvent>() {
+    		@Override
+    		public void handle(ActionEvent actionEvent) {
+    			data.setPlayerTom();
+    		}
     	});
     	setVgap(20);
         setHgap(6);

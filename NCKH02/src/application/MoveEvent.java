@@ -5,13 +5,20 @@ import javafx.event.EventHandler;
 
 public class MoveEvent implements EventHandler<ActionEvent>{
 	Cell cell;
-	Board board;
-	MoveEvent(int i, int j, Board board){
+	Play play;
+	MoveEvent(int i, int j, Play play){
 		this.cell= new Cell(i,j);
-		this.board=board;
+		this.play = play;
 	}
 	@Override
 	public void handle(ActionEvent e) {
-		board.moveEvent(cell);
+	 if(!(play.data.cpuMove) && !(play.data.gameOver))
+        {
+            play.data.move(cell);
+            if((play.data.cpuMove)&&!(play.data.gameOver))
+            {
+                play.data.pcMakeMove();
+            }
+        }
 	}
 }

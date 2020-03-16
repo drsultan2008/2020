@@ -18,9 +18,14 @@ public class Data {
 	final int HUM=1;
     final int TOM=2;
     int player;
-	boolean humMove;
+	boolean cpuMove,gameOver;
 	Button boardView[][] = new Button[5][7];
 	Board board;
+	boolean flag = false;
+	Cell move1;
+	LegalMove legalMove;
+	Cell[] movePossible;
+	Play play;
 	Data(Stage stage){
 		window = stage;
 		
@@ -36,19 +41,83 @@ public class Data {
 		TrongSuot = new Image(url+"trongSuot.png",squareSize,squareSize,true,true);
 		choose = new Image(url+"choose1.png",squareSize,squareSize,true,true);
 
-		
+		legalMove = new LegalMove(this);
+		play = new Play(this);
 	}
 	
 	void setPlayerHum() {
 		player=HUM;
-		humMove=true;
+		cpuMove=false;
 		board = new Board(this);
+		window.setScene(new Scene(play));
+	    play.set();
 	}
 	
 	void setPlayerTom() {
 		player=TOM;
-		humMove=false;
+		cpuMove=true;
 		board = new Board(this);
+		window.setScene(new Scene(play));
+	    play.set();
+	}
+	
+	void move(Cell cell) {
+		if (flag == false && !board.get(cell.getCol(), cell.getRow()).equals("##")) {
+			flag = true;
+			movePossible = legalMove.allMove(cell.getCol(), cell.getRow(),board.getBoardData());
+			move1=cell;
+			
+			for (int i=0; i<29; i++) {
+				if (movePossible[i]!=null) {
+					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
+				}
+			}
+		}
+		else {
+			boolean isMove = true;
+			for (int i=0; i<29; i++) {
+				if (movePossible[i]!=null) {
+					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("");
+					
+					if (movePossible[i].getCol()==cell.getRow() && movePossible[i].getRow()==cell.getCol()) {
+						isMove = true;
+					}
+				}
+				
+			}
+			flag = false;
+			if (isMove==true) {
+				board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
+				board.set("###", move1.getCol(), move1.getRow());
+			}
+			updateBoard();
+//			updateBoard(controller.getData().getBoardData());
+		}
+	}
+	
+	void pcMakeMove() {
+		
+	}
+	
+	public void updateBoard() {
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				if (board.boardData[i][j].equals("Tot")) {
+					boardView[j][i].setGraphic(new ImageView(Tot));
+				}
+				if (board.boardData[i][j].equals("Hum")) {
+					boardView[j][i].setGraphic(new ImageView(Hum));
+				}
+				if (board.boardData[i][j].equals("BTom")) {
+					boardView[j][i].setGraphic(new ImageView(BTom));
+				}
+				else if (board.boardData[i][j].equals("###")){
+					boardView[j][i].setGraphic(new ImageView(TrongSuot));
+//					System.out.print(i+","+j+" ");
+				}
+			}
+		}
+//		showTurn(controller.getData().getTuner());
 	}
 	
 }
