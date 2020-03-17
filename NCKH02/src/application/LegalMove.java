@@ -11,12 +11,12 @@ public class LegalMove {
 		Cell[] moves = new Cell[29];
 		int index = 0;
 		
-		for (int ii=0; ii<7; ii++) {
-			for (int jj=0; jj<5; jj++) {
-				System.out.print(boardData[ii][jj]);
-			}
-			System.out.println();
-		}
+//		for (int ii=0; ii<7; ii++) {
+//			for (int jj=0; jj<5; jj++) {
+//				System.out.print(boardData[ii][jj]);
+//			}
+//			System.out.println();
+//		}
 		
 		if (boardData[i][j].equals("Hum")) {
 			System.out.println(i+","+j);
