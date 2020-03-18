@@ -98,7 +98,7 @@ public class Data {
 					}
 				}
 			}
-			else {
+			else if (flag == true){
 				boolean isMove = true;
 				for (int i=0; i<29; i++) {
 					if (movePossible[i]!=null) {
@@ -121,7 +121,7 @@ public class Data {
 			}
 		}
 		if (player == TOM) {
-			if (flag == false && !board.get(cell.getCol(), cell.getRow()).equals("###")) {
+			if (flag == false && (board.get(cell.getCol(), cell.getRow()).equals("Tot") || board.get(cell.getCol(), cell.getRow()).equals("TTom"))) {
 				flag = true;
 				movePossible = legalMove.allMove(cell.getCol(), cell.getRow(),board.getBoardData());
 				move1=cell;
@@ -132,7 +132,7 @@ public class Data {
 					}
 				}
 			}
-			else {
+			else if (flag == true){
 				boolean isMove = true;
 				for (int i=0; i<29; i++) {
 					if (movePossible[i]!=null) {
