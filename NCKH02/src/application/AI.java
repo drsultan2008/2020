@@ -112,10 +112,6 @@ public class AI {
                        int r=moves[k].getRow();
                        int c=moves[k].getCol();
                        
-                       if((i<1)||(i>8)||(j<1)||(j>8))
-                       {
-                           System.out.println(" warning "+ i +" , "+j);
-                       }
                        
 //                       if(board[r][c].charAt(0)=='k')
 //                       {

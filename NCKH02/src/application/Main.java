@@ -18,7 +18,7 @@ public class Main extends Application {
         data = new Data(window);
         window.setWidth(data.maxWidth);
         window.setHeight(data.maxHeight);
-        menuScene = new Scene(new Menu(data));
+        menuScene = new Scene(new Menu2(data));
         window.setScene(menuScene);
         window.show();
     }

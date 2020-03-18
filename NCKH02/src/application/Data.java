@@ -13,7 +13,7 @@ public class Data {
 	Stage window;
 	URL url;
 	private int squareSize = 40;
-	Image chonHum,chonTom,menuBackground,Tot,BTom,Hum,background,choose,TrongSuot;
+	Image chonHum,chonTom,menuBackground,Tot,BTom,Hum,background,choose,TrongSuot,nguoiChoi1,nguoiChoi2;
 	double maxWidth = 450, maxHeight = 700;
 	final int HUM=1;
     final int TOM=2;
@@ -29,6 +29,8 @@ public class Data {
 	Play play;
 	char cpu,people;
 	AI ai;
+	int num;
+	Menu menu;
 	Data(Stage stage){
 		window = stage;
 		
@@ -43,10 +45,24 @@ public class Data {
 		background = new Image(url+"board02.jpg");
 		TrongSuot = new Image(url+"trongSuot.png",squareSize,squareSize,true,true);
 		choose = new Image(url+"choose1.png",squareSize,squareSize,true,true);
+		
+		nguoiChoi1 = new Image(url+"1NguoiChoi.png",301,85,true,true);
+		nguoiChoi2 = new Image(url+"2NguoiChoi.png",301,85,true,true);
 
 		legalMove = new LegalMove(this);
 		play = new Play(this);
 		ai = new AI(this);
+		menu = new Menu(this);
+	}
+	
+	void setPlayer1() {
+		num=1;
+		window.setScene(new Scene(menu));
+	}
+	
+	void setPlayer2() {
+		num=2;
+		window.setScene(new Scene(menu));
 	}
 	
 	void setPlayerHum() {
@@ -70,37 +86,73 @@ public class Data {
 	}
 	
 	void move(Cell cell) {
-		if (flag == false && !board.get(cell.getCol(), cell.getRow()).equals("##")) {
-			flag = true;
-			movePossible = legalMove.allMove(cell.getCol(), cell.getRow(),board.getBoardData());
-			move1=cell;
-			
-			for (int i=0; i<29; i++) {
-				if (movePossible[i]!=null) {
-					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
-				}
-			}
-		}
-		else {
-			boolean isMove = true;
-			for (int i=0; i<29; i++) {
-				if (movePossible[i]!=null) {
-					boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("");
-					
-					if (movePossible[i].getCol()==cell.getRow() && movePossible[i].getRow()==cell.getCol()) {
-						isMove = true;
+		if (player == HUM) { // luotHum
+			if (flag == false && board.get(cell.getCol(), cell.getRow()).equals("Hum")) {
+				flag = true;
+				movePossible = legalMove.allMove(cell.getCol(), cell.getRow(),board.getBoardData());
+				move1=cell;
+				
+				for (int i=0; i<29; i++) {
+					if (movePossible[i]!=null) {
+						boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
 					}
 				}
+			}
+			else {
+				boolean isMove = true;
+				for (int i=0; i<29; i++) {
+					if (movePossible[i]!=null) {
+						boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("");
+						
+						if (movePossible[i].getCol()==cell.getRow() && movePossible[i].getRow()==cell.getCol()) {
+							isMove = true;
+						}
+					}
+					
+				}
+				flag = false;
+				if (isMove==true) {
+					board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
+					board.set("###", move1.getCol(), move1.getRow());
+				}
+				updateBoard();
+				cpuMove = true;
+//					updateBoard(controller.getData().getBoardData());
+			}
+		}
+		if (player == TOM) {
+			if (flag == false && !board.get(cell.getCol(), cell.getRow()).equals("###")) {
+				flag = true;
+				movePossible = legalMove.allMove(cell.getCol(), cell.getRow(),board.getBoardData());
+				move1=cell;
 				
+				for (int i=0; i<29; i++) {
+					if (movePossible[i]!=null) {
+						boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("-fx-background-color: #69ff69;");
+					}
+				}
 			}
-			flag = false;
-			if (isMove==true) {
-				board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
-				board.set("###", move1.getCol(), move1.getRow());
+			else {
+				boolean isMove = true;
+				for (int i=0; i<29; i++) {
+					if (movePossible[i]!=null) {
+						boardView[movePossible[i].getCol()][movePossible[i].getRow()].setStyle("");
+						
+						if (movePossible[i].getCol()==cell.getRow() && movePossible[i].getRow()==cell.getCol()) {
+							isMove = true;
+						}
+					}
+					
+				}
+				flag = false;
+				if (isMove==true) {
+					board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
+					board.set("###", move1.getCol(), move1.getRow());
+				}
+				updateBoard();
+				cpuMove = true;
+//					updateBoard(controller.getData().getBoardData());
 			}
-			updateBoard();
-			cpuMove = true;
-//			updateBoard(controller.getData().getBoardData());
 		}
 	}
 	

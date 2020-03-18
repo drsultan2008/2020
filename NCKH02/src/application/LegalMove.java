@@ -19,7 +19,7 @@ public class LegalMove {
 //		}
 		
 		if (boardData[i][j].equals("Hum")) {
-			System.out.println(i+","+j);
+//			System.out.println(i+","+j);
 			if (( i-1>=0  && (i>=3 || j==2)) && boardData[i-1][j].equals("###")) {
 				moves[index++] = new Cell(i-1,j);
 				if (i-2>=0 && (boardData[i-2][j].equals("Tot") || boardData[i-2][j].equals("TTom"))) {

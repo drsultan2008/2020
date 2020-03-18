@@ -95,7 +95,7 @@ public class Board extends GridPane implements Observer{
 				}
 				else if (boardData[i][j].equals("###")){
 					boardView[j][i].setGraphic(new ImageView(TrongSuot));
-					System.out.print(i+","+j+" ");
+//					System.out.print(i+","+j+" ");
 				}
 			}
 		}
