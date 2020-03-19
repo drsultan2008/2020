@@ -18,4 +18,12 @@ public class BaseballCoach implements Coach {
 		// TODO Auto-generated method stub
 		return fortuneService.getDailyFortune();
 	}
+	
+	public void doStartStuff() {
+		System.out.println("Start");
+	}
+	
+	public void doCleanStuff() {
+		System.out.println("End");
+	}
 }
