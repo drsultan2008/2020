@@ -6,7 +6,7 @@ public class SetterAppDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/luv2code/springdemo/applicationContext.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		CricketCoach theCoach = context.getBean("cricketCoach",CricketCoach.class);
 		
