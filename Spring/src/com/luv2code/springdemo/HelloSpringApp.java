@@ -10,6 +10,8 @@ public class HelloSpringApp {
 		
 		System.out.println(theCoach.getDaily());
 		
+		System.out.println(theCoach.getDailyFortune());
+		
 		context.close();
 	}
 }

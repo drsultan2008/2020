@@ -9,8 +9,16 @@
 
 	
     <!-- Define your beans here -->
-    <bean id = "myCoach" class = "com.luv2code.springdemo.TrackCoach">
+    
+    <bean
+    	id= "myFortune" class = "com.luv2code.springdemo.HappyFortuneService">
     </bean>
+    
+    <bean id = "myCoach" class = "com.luv2code.springdemo.BaseballCoach">
+    	<constructor-arg ref= "myFortune"></constructor-arg>
+    </bean>
+    
+    
 
 </beans>
 
