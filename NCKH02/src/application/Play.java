@@ -21,18 +21,21 @@ public class Play extends GridPane{
         
         drawBoard();
         updateBoard();
-        for (int i=0; i<5; i++) {
-			for (int j=0; j<7; j++) {
-				Cell cell = new Cell(i,j);
-				data.boardView[i][j].setOnAction(new MoveEvent(i,j,this));
-			}
-		}
-        
-        if(data.cpuMove)
-        {
-            data.pcMakeMove();
-            updateBoard();
+        if (data.num == 1) {
+        	for (int i=0; i<5; i++) {
+    			for (int j=0; j<7; j++) {
+    				Cell cell = new Cell(i,j);
+    				data.boardView[i][j].setOnAction(new MoveEvent(i,j,this));
+    			}
+    		}
+            
+            if(data.cpuMove)
+            {
+                data.pcMakeMove();
+                updateBoard();
+            }
         }
+        
         
 	}
 	
@@ -42,18 +45,21 @@ public class Play extends GridPane{
         
         drawBoard();
         updateBoard();
-        for (int i=0; i<5; i++) {
-			for (int j=0; j<7; j++) {
-				Cell cell = new Cell(i,j);
-				data.boardView[i][j].setOnAction(new MoveEvent(i,j,this));
-			}
-		}
-        
-        if(data.cpuMove)
-        {
-            data.pcMakeMove();
-            updateBoard();
+        if (data.num == 1) {
+        	for (int i=0; i<5; i++) {
+    			for (int j=0; j<7; j++) {
+    				Cell cell = new Cell(i,j);
+    				data.boardView[i][j].setOnAction(new MoveEvent(i,j,this));
+    			}
+    		}
+            
+            if(data.cpuMove)
+            {
+                data.pcMakeMove();
+                updateBoard();
+            }
         }
+        
         
 	}
 

@@ -156,6 +156,10 @@ public class Data {
 		}
 	}
 	
+	void peopleMakeMove() {
+		
+	}
+	
 	void pcMakeMove() {
 		String nextBoard[][] = ai.findBestMove(board.boardData,0);
         cpuMove=false;

@@ -18,7 +18,7 @@ public class MoveEvent implements EventHandler<ActionEvent>{
 //		 		play.data.pcMakeMove();
             if((play.data.cpuMove))
             {
-            	System.out.print("ok");
+//            	System.out.print("ok");
                 play.data.pcMakeMove();
             }
         }
