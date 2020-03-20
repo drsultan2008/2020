@@ -7,7 +7,7 @@ public class AnotationDemoApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
-		Coach theCoach = context.getBean("thatSillyCoach",Coach.class);
+		Coach theCoach = context.getBean("tennisCoach",Coach.class);
 		System.out.println(theCoach.getDailyWorkout());
 		context.close();
 	}
