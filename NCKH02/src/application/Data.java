@@ -114,6 +114,7 @@ public class Data {
 				if (isMove==true) {
 					board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
 					board.set("###", move1.getCol(), move1.getRow());
+					player = TOM;
 				}
 				updateBoard();
 				cpuMove = true;
@@ -148,6 +149,7 @@ public class Data {
 				if (isMove==true) {
 					board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
 					board.set("###", move1.getCol(), move1.getRow());
+					player = HUM;
 				}
 				updateBoard();
 				cpuMove = true;
@@ -157,7 +159,14 @@ public class Data {
 	}
 	
 	void peopleMakeMove() {
-		
+		 if (player==HUM) {
+			 player=TOM;
+			 System.out.println("Luot Tom");
+		 }
+		 else {
+			 player=HUM;
+			 System.out.println("Luot Hum");
+		 }
 	}
 	
 	void pcMakeMove() {
