@@ -76,7 +76,7 @@ public class Data {
 	}
 	
 	void setPlayerTom() {
-		player=TOM;
+		player=HUM;
 		cpuMove=true;
 		cpu = 'H';
 		people = 'T';
@@ -114,7 +114,10 @@ public class Data {
 				if (isMove==true) {
 					board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
 					board.set("###", move1.getCol(), move1.getRow());
-					player = TOM;
+					if (num==2) {
+						player = TOM;
+					}
+						
 				}
 				updateBoard();
 				cpuMove = true;
@@ -149,7 +152,9 @@ public class Data {
 				if (isMove==true) {
 					board.set(board.get(move1.getCol(), move1.getRow()), cell.getCol(), cell.getRow());
 					board.set("###", move1.getCol(), move1.getRow());
-					player = HUM;
+					if (num==2) {
+						player = HUM;
+					}
 				}
 				updateBoard();
 				cpuMove = true;
