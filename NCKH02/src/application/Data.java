@@ -19,7 +19,8 @@ public class Data {
     final int TOM=2;
     int player;
     int GAME_TREE_HEIGHT = 5;
-	boolean cpuMove,gameOver;
+	boolean cpuMove;
+	boolean humWin = false, tomWin = false;
 	Button boardView[][] = new Button[5][7];
 	Board board;
 	boolean flag = false;
