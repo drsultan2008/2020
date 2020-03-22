@@ -2,10 +2,13 @@ package com.luv2code.anotation;
 
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Component
 public class TennisCoach implements Coach {
 
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 //	@Autowired
@@ -13,11 +16,15 @@ public class TennisCoach implements Coach {
 //		fortuneService = theFortuneService;
 //	}
 	
-	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
-		this.fortuneService = fortuneService;
-	}
+//	@Autowired
+//	public void setFortuneService(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
 	
+//	@Autowired
+//	public void setCrazy(FortuneService fortuneService) {
+//		this.fortuneService = fortuneService;
+//	}
 	
 	@Override
 	public String getDailyWorkout() {
