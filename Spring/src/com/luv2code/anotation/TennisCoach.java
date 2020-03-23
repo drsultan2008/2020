@@ -49,6 +49,6 @@ public class TennisCoach implements Coach {
 	
 	@PreDestroy
 	public void doMyCleanupStuff() {
-		System.out.println("<< insdie doMyCleanupStuff");
+		System.out.println("<< inside doMyCleanupStuff");
 	}
 }
