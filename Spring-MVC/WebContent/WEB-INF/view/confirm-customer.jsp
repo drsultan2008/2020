@@ -6,5 +6,6 @@
 <body>
 	<h1>Fullname:</h1>
 	<h2>${customer.firstName} ${customer.lastName }</h2>
+	<h2>Free Passes: ${customer.freePasses }</h2>
 </body>
 </html>
