@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.luv2code.demo.entity.Student;
 
-public class UpdateStudentDemo {
+public class DeleteStudentDemo {
 
 	public static void main(String[] args) {
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class).buildSessionFactory();
@@ -15,23 +15,22 @@ public class UpdateStudentDemo {
 		try {
 			session.beginTransaction();
 			int idStudent = 1;
+			// Get Student with id =1
 			Student tmpStudent = session.get(Student.class, idStudent);
 			
-			// set First Name
-			tmpStudent.setFirstName("Le Quang");
-			System.out.println("Updating...");
+			// Delete student 
+			/*
+			session.delete(tmpStudent);
+			System.out.println("Deleted tmpStudent");
 			session.getTransaction().commit();
-			
-			System.out.println("Done!");
-			
-			// NEW
-			session = factory.getCurrentSession();
-			session.beginTransaction();
-			
-			session.createQuery("update Student set email='quangduynb00@gmail.c'").executeUpdate();
+			*/
+			// Delete student with alternate
+			System.out.println("Deleting...");
+			session.createQuery("delete Student where id=2").executeUpdate();
 			
 			session.getTransaction().commit();
 			System.out.println("Done!");
+			
 			
 		}
 		finally {
