@@ -21,21 +21,33 @@ public class QueryStudentDemo {
 			List<Student> theStudents = session.createQuery("from Student").getResultList();
 			// Display Students
 			System.out.println();
-			for (Student iter: theStudents) {
-				System.out.println(iter);
-			}
+			displayStudents(theStudents);
 			
 			// Query where firtName  = 'Le'
 			theStudents = session.createQuery("from Student s where s.lastName='Le'").getResultList();
-			// Display Students
-			for (Student iter:theStudents) {
-				System.out.println(iter);
-			}
-				
+			System.out.println();
+			displayStudents(theStudents);
+			
+			// Query firstName= 'Le' OR lastName='Duy'
+			theStudents = session.createQuery("from Student s where s.firstName='Le' AND s.lastName='Duy'").getResultList();
+			System.out.println();
+			displayStudents(theStudents);
+			
+			// Query email end "gmail.com"
+			theStudents = session.createQuery("from Student s where s.email LIKE '%gmail.com'").getResultList();
+			System.out.println();
+			displayStudents(theStudents);
+			
 			session.getTransaction().commit();
 		}
 		finally {
 			factory.close();
+		}
+	}
+
+	private static void displayStudents(List<Student> theStudents) {
+		for (Student iter: theStudents) {
+			System.out.println(iter);
 		}
 	}
 
