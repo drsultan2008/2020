@@ -11,6 +11,10 @@ import javax.persistence.Table;
 @Table(name="student")
 public class Student {
 	
+	public Student() {
+		
+	}
+	
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,5 +67,11 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+	}
+	
 	
 }
