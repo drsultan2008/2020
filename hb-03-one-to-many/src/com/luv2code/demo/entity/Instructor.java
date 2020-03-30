@@ -100,6 +100,7 @@ public class Instructor {
 		if (tmpCourse == null){
 			course = new ArrayList<>();
 		}
+		course.add(tmpCourse);
 		tmpCourse.setInstructor(this);
 	}
 	
