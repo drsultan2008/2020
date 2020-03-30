@@ -16,7 +16,7 @@ public class CreateInstructorDemo {
 		try {
 			session.beginTransaction();
 			
-			Instructor tmpInstructor = new Instructor("Le"," Quang Duy", "quangduynb00@gmail.com");
+			Instructor tmpInstructor = new Instructor("Le"," Quang Duyy", "quangduynb00@gmail.com");
 			
 			InstructorDetail tmpInstructorDetail = new InstructorDetail("youtube.com/lammualamgio","Duy Le");
 			tmpInstructor.setInstructorDetail(tmpInstructorDetail);
