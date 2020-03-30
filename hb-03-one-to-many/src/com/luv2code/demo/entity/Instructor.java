@@ -96,6 +96,15 @@ public class Instructor {
 				+ ", instructorDetail=" + instructorDetail + "]";
 	}
 	
+	
+	public List<Course> getCourse() {
+		return course;
+	}
+
+	public void setCourse(List<Course> course) {
+		this.course = course;
+	}
+
 	public void add(Course tmpCourse) {
 		if (tmpCourse == null){
 			course = new ArrayList<>();
