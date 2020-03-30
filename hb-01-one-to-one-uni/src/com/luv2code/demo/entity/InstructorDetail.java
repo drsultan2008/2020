@@ -15,8 +15,8 @@ public class InstructorDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="youtube_chanel")
-	private String youtubeChanel;
+	@Column(name="youtube_channel")
+	private String youtubeChannel;
 	
 	@Column(name="hobby")
 	private String hobby;
@@ -25,9 +25,9 @@ public class InstructorDetail {
 		
 	}
 
-	public InstructorDetail(int id, String youtubeChanel, String hobby) {
+	public InstructorDetail(String youtubeChanel, String hobby) {
 		super();
-		this.youtubeChanel = youtubeChanel;
+		this.youtubeChannel = youtubeChanel;
 		this.hobby = hobby;
 	}
 
@@ -40,11 +40,11 @@ public class InstructorDetail {
 	}
 
 	public String getYoutubeChanel() {
-		return youtubeChanel;
+		return youtubeChannel;
 	}
 
 	public void setYoutubeChanel(String youtubeChanel) {
-		this.youtubeChanel = youtubeChanel;
+		this.youtubeChannel = youtubeChanel;
 	}
 
 	public String getHobby() {
@@ -57,7 +57,7 @@ public class InstructorDetail {
 
 	@Override
 	public String toString() {
-		return "InstructorDetail [id=" + id + ", youtubeChanel=" + youtubeChanel + ", hobby=" + hobby + "]";
+		return "InstructorDetail [id=" + id + ", youtubeChanel=" + youtubeChannel + ", hobby=" + hobby + "]";
 	}
 	
 }
