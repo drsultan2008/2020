@@ -15,7 +15,7 @@ public class DeleteInstructorDetailDemo {
 		try {
 			session.beginTransaction();
 			
-			int id =2;
+			int id =3;
 			
 			System.out.println("Getting...");
 			InstructorDetail tmpInstructorDetail = session.get(InstructorDetail.class, id);
@@ -23,6 +23,11 @@ public class DeleteInstructorDetailDemo {
 			System.out.println("InstructorDetail: "+tmpInstructorDetail);
 			
 			System.out.println("Instructor get from instructorDetail method: " + tmpInstructorDetail.getInstructor());
+			
+			// removed associated object 
+			// break bi-directional 
+			// MY KEY
+			tmpInstructorDetail.getInstructor().setInstructorDetail(null);;
 			
 			System.out.println("Detelting...");
 			session.delete(tmpInstructorDetail);
