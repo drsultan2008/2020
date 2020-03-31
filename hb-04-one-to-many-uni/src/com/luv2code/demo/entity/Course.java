@@ -72,6 +72,14 @@ public class Course {
 		return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + "]";
 	}
 	
+	public List<Reviewer> getReviewers() {
+		return reviewers;
+	}
+
+	public void setReviewers(List<Reviewer> reviewers) {
+		this.reviewers = reviewers;
+	}
+
 	public void add(Reviewer tmpReviewer) {
 		if (reviewers == null) {
 			reviewers = new ArrayList<>();
