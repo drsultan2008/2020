@@ -9,7 +9,7 @@ import com.luv2code.demo.entity.InstructorDetail;
 import com.luv2code.demo.entity.Reviewer;
 import com.luv2code.demo.entity.Student;
 
-public class GetCourseForMarryDemo {
+public class DeleteCourseDemo {
 
 	public static void main(String[] args) {
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetail.class).addAnnotatedClass(Course.class).addAnnotatedClass(Reviewer.class).addAnnotatedClass(Student.class).buildSessionFactory();
@@ -19,11 +19,13 @@ public class GetCourseForMarryDemo {
 		try {
 			session.beginTransaction();
 			
-			int id = 2;
-			System.out.println("Getting...");
-			Student tmpStudent = session.get(Student.class, id);
-				
-			System.out.println("Course of Hien: " + tmpStudent.getCourses());
+			int id = 12;
+			// Get course
+			Course tmpCourse = session.get(Course.class, id);
+			
+			// Delele coursed
+			System.out.println("Deleting");
+			session.delete(tmpCourse);
 			
 			session.getTransaction().commit();
 			System.out.println("Done!");
