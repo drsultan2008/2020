@@ -25,11 +25,16 @@
 							<c:param name="customerId" value="${iterCustomer.id}" />
 						</c:url>
 						
+						<c:url var="deleteLink" value="/customer/delete">
+							<c:param name="customerId" value="${iterCustomer.id}" />
+						</c:url>
+						
 						<tr>
 							<td>${iterCustomer.firstName}</td>
 							<td>${iterCustomer.lastName}</td>
 							<td>${iterCustomer.email}</td>
 							<td><a href="${updateLink}">Update</a></td>
+							<td>|<a href="${deleteLink}">Delete</a></td>
 						</tr>
 						
 					</c:forEach>
