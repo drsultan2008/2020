@@ -17,8 +17,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 	// need to inject the sessionFactory
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	@Transactional
+
+	// Needn't @transactional
 	@Override
 	public List<Customer> getCustomers() {
 		Session currentSession = sessionFactory.getCurrentSession();
