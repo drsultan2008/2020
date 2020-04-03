@@ -33,6 +33,10 @@ public class CustomerController {
 	
 	@RequestMapping("/showFormForAdd")
 	public String showFormForAdd(Model model) {
+		Customer customer =  new Customer();
+		
+		model.addAttribute("customer",customer);
+		
 		return "customer-form";
 	}
 }

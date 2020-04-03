@@ -26,7 +26,7 @@ public class Customer {
 	@CourseCode
 	private String courseCode;
 	
-	Customer(){
+	public Customer(){
 		
 	}
 	
