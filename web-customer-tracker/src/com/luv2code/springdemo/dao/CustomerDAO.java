@@ -5,4 +5,6 @@ import com.luv2code.springdemo.entity.*;
 
 public interface CustomerDAO {
 	public List<Customer> getCustomers();
+
+	public void saveCustomer(Customer customer);
 }

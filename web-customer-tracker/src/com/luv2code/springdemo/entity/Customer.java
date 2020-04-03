@@ -24,7 +24,7 @@ public class Customer {
 	@Column(name="email")
 	private String email;
 	
-	Customer(){
+	public Customer(){
 		
 	}
 
