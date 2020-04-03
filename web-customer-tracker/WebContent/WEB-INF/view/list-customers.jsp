@@ -12,6 +12,7 @@
 		</div>
 		<div id="container">
 			<div id="content">
+				<input type="submit" value="Add Customer" onclick="window.location.href='showFormForAdd'; return false;" class="add-button"/>
 				<table>
 					<tr>
 						<th>First Name </th>
