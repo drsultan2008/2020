@@ -36,7 +36,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public void saveCustomer(Customer customer) {
 		Session session = sessionFactory.getCurrentSession();
 		
-		session.save(customer);
+		// Save or update ( Amazing hibernate :)) )
+		session.saveOrUpdate(customer);
 		
 		// Not close, because @reposity will do that
 	}
