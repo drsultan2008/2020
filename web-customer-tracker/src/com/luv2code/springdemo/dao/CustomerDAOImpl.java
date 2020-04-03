@@ -41,4 +41,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 		// Not close, because @reposity will do that
 	}
 
+	@Override
+	public Customer getCustomer(int theId) {
+		Session session = sessionFactory.getCurrentSession();
+		Customer theCustomer = session.get(Customer.class,theId);
+		return theCustomer;
+	}
+
 }

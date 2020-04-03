@@ -20,11 +20,18 @@
 						<th>Email</th>
 					</tr>
 					<c:forEach var="iterCustomer" items="${customers}">
+						<!-- Construct an update link with customerId -->
+						<c:url var="updateLink" value="/customer/showFormForUpdate">
+							<c:param name="customerId" value="${iterCustomer.id}" />
+						</c:url>
+						
 						<tr>
 							<td>${iterCustomer.firstName}</td>
 							<td>${iterCustomer.lastName}</td>
 							<td>${iterCustomer.email}</td>
+							<td><a href="${updateLink}">Update</a></td>
 						</tr>
+						
 					</c:forEach>
 				</table>
 			</div>
