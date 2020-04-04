@@ -33,8 +33,11 @@
 							<td>${iterCustomer.firstName}</td>
 							<td>${iterCustomer.lastName}</td>
 							<td>${iterCustomer.email}</td>
-							<td><a href="${updateLink}">Update</a></td>
-							<td>|<a href="${deleteLink}">Delete</a></td>
+							<td>
+								<a href="${updateLink}">Update</a>
+								|
+								<a href="${deleteLink}" onclick="if (!(confirm('Are you sure ?'))) return false">Delete</a>
+							</td>
 						</tr>
 						
 					</c:forEach>
