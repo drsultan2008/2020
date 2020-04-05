@@ -12,7 +12,7 @@ public class DemoLoggingAspect {
 	// Because method alway public, so not typing public...
 	// Add method with paramater Account
 	// Add any argu by ..
-	@Before("execution(* add*(com.luv2code.aopdemo.Account, ..))")
+	@Before("execution(* com.luv2code.aopdemo.dao.*.*(..))")
 	public void beforeAddAccountAdvice() {
 		System.out.println("Executing @Before advice on addAddcount()");
 	}
