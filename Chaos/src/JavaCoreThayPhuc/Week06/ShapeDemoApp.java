@@ -25,7 +25,7 @@ public class ShapeDemoApp {
 			System.out.println(iter+": "+iter.distance(pointO));
 		}
 		
-		Point pointA = new Point(1,2);
+		Point pointA = new Point(1,1);
 		int count =0;
 		for (Shape iter:listShape) {
 			if (iter.checkPoint(pointA)) {
