@@ -2,8 +2,8 @@ package JavaCoreThayPhuc.Week06;
 
 public class Vector implements Shape {
 
-	private double a;
-	private double b;
+	protected double a;
+	protected double b;
 	
 	public Vector(){
 		a=0;
@@ -39,7 +39,7 @@ public class Vector implements Shape {
 
 	@Override
 	public double distance(Point x) {
-		 return Math.abs(a*x.getX()+(-1)*x.getY()+b)/(a*a+1);
+		 return Math.abs(a*x.getX()+(-1)*x.getY()+b)/Math.sqrt((a*a+1));
 	}
 
 	@Override

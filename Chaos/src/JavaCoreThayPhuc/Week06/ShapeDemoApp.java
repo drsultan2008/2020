@@ -39,6 +39,36 @@ public class ShapeDemoApp {
 			res+=iter.distance(pointO);
 		}
 		System.out.println("Result all Shape to O: "+ res);
+		
+		theShape = new Cycle(0,0,3);
+		System.out.println("Distance to 0: " + theShape.distance(pointO));
+		
+		System.out.println("Point is belong Cycle: "+ theShape.checkPoint(new Point(2,2)));
+		
+		System.out.println("Create a list include Vector & Cycle:");
+		List<Shape> listShape2 = new ArrayList<>();
+		listShape2.add(new Vector(1,1));
+		listShape2.add(new Cycle(1,1,1));
+		listShape2.add(new Cycle(0,0,3));
+		
+		System.out.println("Display listShape2: ");
+		for (Shape iter:listShape2) {
+			System.out.println(iter);
+		}
+		
+		count = 0;
+		for (Shape iter:listShape2) {
+			if(iter.checkPoint(pointA)) {
+				count++;
+			}
+		}
+		System.out.println("Number that PointA belong vector,cycle: "+count);
+		
+		res= 0;
+		for (Shape iter:listShape2) {
+			res+=iter.distance(pointO);
+		}
+		System.out.println("Sum distance form O to Shape: "+res);
 	}
 
 }
