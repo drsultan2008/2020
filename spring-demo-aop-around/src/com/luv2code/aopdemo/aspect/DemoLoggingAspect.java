@@ -32,7 +32,7 @@ public class DemoLoggingAspect {
 		long end = System.currentTimeMillis();
 		
 		long duration = end - begin;
-		System.out.println("Duration convert by @Around AOP: "+ duration/1000);
+		System.out.println("Duration convert by @Around AOP:: "+ duration/1000);
 		
 		return null;
 	}
