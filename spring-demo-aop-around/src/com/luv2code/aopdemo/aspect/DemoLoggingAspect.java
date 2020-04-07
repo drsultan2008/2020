@@ -1,6 +1,7 @@
 package com.luv2code.aopdemo.aspect;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -21,18 +22,19 @@ import com.luv2code.aopdemo.Account;
 @Aspect
 @Order(1)
 public class DemoLoggingAspect {
+	private Logger myLogger = Logger.getLogger(getClass().getName());
 	
 	@Around("execution(* com.luv2code.aopdemo.service.*.getFortune(..))")
 	public Object aroundGetFortune(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		String method = proceedingJoinPoint.getSignature().toShortString();
-		System.out.println("@Around getFortune: "+ method);
+		myLogger.info("@Around getFortune: "+ method);
 		
 		long begin = System.currentTimeMillis();
 		proceedingJoinPoint.proceed();
 		long end = System.currentTimeMillis();
 		
 		long duration = end - begin;
-		System.out.println("Duration convert by @Around AOP:: "+ duration/1000);
+		myLogger.info("Duration convert by @Around AOP:: "+ duration/1000);
 		
 		return null;
 	}
@@ -40,15 +42,15 @@ public class DemoLoggingAspect {
 	@After("execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))")
 	public void afterFinallyFindAccountsAdvice(JoinPoint joinPoint) {
 		String method = joinPoint.getSignature().toShortString();
-		System.out.println("@After (Finally): "+ method);
+		myLogger.info("@After (Finally): "+ method);
 	}
 	
 	@AfterThrowing(pointcut="execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))", throwing="exc")
 	public void afterThrowingFindAccountsAdvice(JoinPoint joinPoint, Throwable exc) {
 		String method = joinPoint.getSignature().toShortString();
-		System.out.println("Excecuting by @AfterThrowing: " +method);
+		myLogger.info("Excecuting by @AfterThrowing: " +method);
 		
-		System.out.println("The exception by @AfterThowing bypass: "+exc);
+		myLogger.info("The exception by @AfterThowing bypass: "+exc);
 	}
 	
 	// Add new advice for AfterReturning on the findAccounts method
@@ -56,12 +58,12 @@ public class DemoLoggingAspect {
 	public void afterReturningFindAccountsAdvice(JoinPoint joinPoint, List<Account> res) {
 		String method = joinPoint.getSignature().toShortString();
 		
-		System.out.println("Method: "+method);
-		System.out.println("Get list: "+ res);
+		myLogger.info("Method: "+method);
+		myLogger.info("Get list: "+ res);
 		
 		// Post-Process modify data
 		convertAccountNameToUpperCase(res);
-		System.out.println("Converted by @AfterReturning");
+		myLogger.info("Converted by @AfterReturning");
 	}
 	
 	private void convertAccountNameToUpperCase(List<Account> res) {
@@ -72,12 +74,12 @@ public class DemoLoggingAspect {
 
 	@Before("com.luv2code.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterSetter()")
 	public void beforeAddAccountAdvice(JoinPoint joinPoint) {
-		System.out.println(getClass()+ " beforeAddcountAdvice");
+		myLogger.info(getClass()+ " beforeAddcountAdvice");
 		
 		//Display method
 		MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
 		
-		System.out.println("Method: " + methodSignature);
+		myLogger.info("Method: " + methodSignature);
 		//Display argument
 		Object[] args = joinPoint.getArgs();
 		
@@ -85,8 +87,8 @@ public class DemoLoggingAspect {
 			if (iterArg instanceof Account) {
 				Account theAccount = (Account) iterArg;
 				
-				System.out.println("The name: " + theAccount.getName());
-				System.out.println("The level: "+ theAccount.getLevel());
+				myLogger.info("The name: " + theAccount.getName());
+				myLogger.info("The level: "+ theAccount.getLevel());
 			}
 		}
 	}
