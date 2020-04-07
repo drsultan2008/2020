@@ -30,13 +30,23 @@ public class DemoLoggingAspect {
 		myLogger.info("@Around getFortune: "+ method);
 		
 		long begin = System.currentTimeMillis();
-		proceedingJoinPoint.proceed();
+		
+		Object result = null;
+		
+		try {
+			proceedingJoinPoint.proceed();
+		}
+		catch(Exception e) {
+			myLogger.warning(e.getMessage());
+			result = "ERROR, but don't worry, your private AOP is on the way!";
+		}
+		
 		long end = System.currentTimeMillis();
 		
 		long duration = end - begin;
 		myLogger.info("Duration convert by @Around AOP:: "+ duration/1000);
 		
-		return null;
+		return result;
 	}
 	
 	@After("execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))")

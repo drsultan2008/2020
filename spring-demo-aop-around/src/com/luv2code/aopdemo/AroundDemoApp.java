@@ -16,8 +16,11 @@ public class AroundDemoApp {
 		TrafficFortuneService theFortuneService = context.getBean("trafficFortuneService",TrafficFortuneService.class);
 		
 		myLogger.info("Calling getFortune(): ");
-		String data = theFortuneService.getFortune();
+		
+		boolean tripWire = true;
+		String data = theFortuneService.getFortune(tripWire);
 		myLogger.info("My fortune is:"+data);
+		
 		context.close();
 	}
 
