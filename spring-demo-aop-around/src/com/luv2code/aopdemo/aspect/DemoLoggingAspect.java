@@ -38,7 +38,9 @@ public class DemoLoggingAspect {
 		}
 		catch(Exception e) {
 			myLogger.warning(e.getMessage());
-			result = "ERROR, but don't worry, your private AOP is on the way!";
+//			result = "ERROR, but don't worry, your private AOP is on the way!";
+			// rethrow exception
+			throw e;
 		}
 		
 		long end = System.currentTimeMillis();
