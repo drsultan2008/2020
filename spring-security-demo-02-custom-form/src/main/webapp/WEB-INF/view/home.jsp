@@ -11,8 +11,13 @@
 	<p>User: <security:authentication property="principal.username" /></p>
 	<p>Role: <security:authentication property="principal.authorities" /> </p>
 	<!-- Addlink to leader -->
+	<security:authorize access="hasRole('ADMIN')">
 	<a href="${pageContext.request.contextPath}/leaders">Leader Meeting</a> (Only for Admin)
-	<a href="${pageContext.request.contextPath}/system">Leader Meeting</a> (Only for Manager)
+	</security:authorize>
+	
+	<security:authorize access="hasRole('MANAGER')">
+	<a href="${pageContext.request.contextPath}/system">Manager Meeting</a> (Only for Manager)
+	</security:authorize>
 	<!-- Add logout button -->
 	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
 		<button type="submit" name="logout"></button>
