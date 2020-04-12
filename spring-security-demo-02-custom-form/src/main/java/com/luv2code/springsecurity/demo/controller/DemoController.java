@@ -14,4 +14,9 @@ public class DemoController {
 	public String showLeaders() {
 		return "leaders";
 	}
+	
+	@GetMapping("/system")
+	public String showSystem() {
+		return "system";
+	}
 }

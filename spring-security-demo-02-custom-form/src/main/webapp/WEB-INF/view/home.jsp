@@ -12,6 +12,7 @@
 	<p>Role: <security:authentication property="principal.authorities" /> </p>
 	<!-- Addlink to leader -->
 	<a href="${pageContext.request.contextPath}/leaders">Leader Meeting</a> (Only for Admin)
+	<a href="${pageContext.request.contextPath}/system">Leader Meeting</a> (Only for Manager)
 	<!-- Add logout button -->
 	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
 		<button type="submit" name="logout"></button>
