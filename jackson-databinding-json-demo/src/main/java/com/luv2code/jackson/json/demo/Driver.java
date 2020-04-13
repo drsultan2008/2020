@@ -17,6 +17,10 @@ public class Driver {
 			System.out.println("Fisrt name: "+student.getFirstName());
 			System.out.println("Last name: "+student.getLastName());
 			System.out.println("Address: "+ student.getAddress());
+			
+			for (String i:student.getLanguages()) {
+				System.out.println(i+" ");
+			}
 		}
 		catch(Exception exc) {
 			exc.printStackTrace();
