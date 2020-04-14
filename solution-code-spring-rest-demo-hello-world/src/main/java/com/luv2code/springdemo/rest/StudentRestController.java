@@ -16,6 +16,7 @@ import com.luv2code.springdemo.entity.Student;
 @RequestMapping("/api")
 public class StudentRestController {
 	private List<Student> students;
+	
 	@PostConstruct
 	public void loadData() {
 		students = new ArrayList<>();
