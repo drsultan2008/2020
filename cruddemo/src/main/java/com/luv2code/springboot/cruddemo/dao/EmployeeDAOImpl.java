@@ -30,7 +30,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		// Get the current session
 		Session session = entityManager.unwrap(Session.class);
 		// Create a query
-		Query<Employee> query = session.createQuery("from employee",Employee.class);
+		Query<Employee> query = session.createQuery("from Employee",Employee.class);
 		// Execute query and get result\
 		List<Employee> employees = query.getResultList();
 		
