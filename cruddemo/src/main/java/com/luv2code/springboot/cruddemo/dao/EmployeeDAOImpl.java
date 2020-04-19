@@ -56,10 +56,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public void deleteById(int id) {
 		Session session = entityManager.unwrap(Session.class);
 		
-		Query query = session.createQuery("delete from Employee where id:=employeeId");
-		query.setParameter("employeeId",id);
-		
-		query.executeUpdate();
+//		Query query = session.createQuery("delete from Employee where id:=employeeId");
+//		query.setParameter("employeeId",id);
+//		
+//		query.executeUpdate();
+		session.delete(session.get(Employee.class, id));
 	}
 
 }
