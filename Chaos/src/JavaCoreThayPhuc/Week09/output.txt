@@ -1,0 +1,2 @@
+Max nums: 9
+Counts > 0 : 9

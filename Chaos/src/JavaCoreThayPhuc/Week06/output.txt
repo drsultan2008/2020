@@ -1,0 +1,5 @@
+Vector [a=2.5, b=6.7]
+Vector [a=4.2, b=-12.6]
+Cycle [r=25.5, getA()=-10.0, getB()=25.5]
+Vector [a=3.1, b=8.0]
+Cycle [r=35.5, getA()=12.0, getB()=35.5]
