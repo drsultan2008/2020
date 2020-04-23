@@ -1,10 +1,11 @@
 package com.duy.view;
 
 import java.net.URL;
+import java.util.List;
 
+import com.duy.controller.GameController;
 import com.duy.entity.Element;
 import com.duy.entity.Elements;
-import com.duy.entity.Hum;
 import com.duy.entity.Point;
 
 import javafx.scene.control.Button;
@@ -22,13 +23,15 @@ public class Play extends GridPane{
 	private BackgroundImage backgroundImage;
 	private URL url ;
 	private Image background;
+	private GameController controller;
 	
-	public Play(){
+	public Play(GameController controller){
 		boardView = new Button[5][7];
 		url = getClass().getResource("/com/duy/images/");
 		background  = new Image(url+"board02.jpg");
 		backgroundImage = new BackgroundImage(background,BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
 	
+		this.controller = controller;
 	}
 	
 	
@@ -36,9 +39,31 @@ public class Play extends GridPane{
 		// Extend GridPane
         setBackground(new Background(backgroundImage));
         drawBoard();
+        
+    	for (int i=0; i<5; i++) {
+			for (int j=0; j<7; j++) {
+				boardView[i][j].setOnAction(new MoveEvent(i,j,controller));
+			}
+		}
  
 	}
 
+	public void wayHover(List<Element> moves) {
+		resetStyle();
+		for (Element e: moves) {
+				Point x = e.corr();
+				boardView[x.getY()][x.getX()].setStyle("-fx-background-color: #69ff69;");
+		}
+	}
+	
+	public void resetStyle() {
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				boardView[j][i].setStyle("");
+			}
+		}
+	}
+	
 	public void drawBoard() {
 		for (int i=0; i<5; i++) {
 			for (int j=0; j<7; j++) {

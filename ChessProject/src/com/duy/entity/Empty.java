@@ -1,6 +1,7 @@
 package com.duy.entity;
 
 import java.net.URL;
+import java.util.List;
 
 import com.duy.utils.Constants;
 
@@ -17,7 +18,7 @@ public class Empty implements Element {
 	}
 	
 	@Override
-	public Element[] movesPossible() {
+	public List<Element> movesPossible(Element[][] boardData) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -25,7 +26,7 @@ public class Empty implements Element {
 	@Override
 	public Point corr() {
 		// TODO Auto-generated method stub
-		return null;
+		return x;
 	}
 
 	@Override

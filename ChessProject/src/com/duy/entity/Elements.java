@@ -1,7 +1,7 @@
 package com.duy.entity;
 
 public class Elements {
-	private Element[][] map = new Element[5][7];
+	private Element[][] map = new Element[7][5];
 
 	public Elements() {
 		map = new Element[7][5];
@@ -29,7 +29,7 @@ public class Elements {
 		// Not board in game
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 5; j++) {
-				map[i][j] = new Stop();
+				map[i][j] = new Stop(new Point(i,j));
 			}
 		}
 
@@ -37,10 +37,11 @@ public class Elements {
 		map[0][2] = new Hum(new Point(0, 2));
 		map[1][1] = new Hum(new Point(1, 1));
 		map[1][3] = new Hum(new Point(1, 3));
-		map[2][2] = new Hum(new Point(2, 2));
-		map[1][2] = new Hum(new Point(1, 2));
 
 		// Tot
+		
+		map[1][2] = new Empty(new Point(1,2));
+		
 		map[3][0] = new Tom(new Point(3, 0));
 		map[4][0] = new Tom(new Point(4, 0));
 		map[5][0] = new Tom(new Point(5, 0));
@@ -63,6 +64,13 @@ public class Elements {
 
 		// BTom
 		map[6][2] = new BTom(new Point(6, 2));
+	}
+	
+	public void move(Point x, Point y) {
+		Element tmp = map[x.getX()][x.getY()];
+		map[x.getX()][x.getY()] = new Empty(new Point(x.getX(),x.getY()));
+		map[y.getX()][y.getY()] = tmp;
+		
 	}
 
 	public void updateMap(Point x, Element e) {

@@ -12,7 +12,6 @@ public class GameImpl implements Game {
 	@Override
 	public void start() {
 		controller.showMenu();
-		System.out.println("IsHum: " + controller.isHum()+"," + "IsTwoPlayer: "+controller.isTwoPlayer());
 	}
 
 	@Override
