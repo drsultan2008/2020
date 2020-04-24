@@ -32,5 +32,9 @@ public class Stop implements Element {
 	public Image getImage() {
 		return image;
 	}
+	
+	public void setCorr(Point x) {
+		this.x = x;
+	}
 
 }

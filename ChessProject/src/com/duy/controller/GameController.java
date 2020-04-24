@@ -47,6 +47,7 @@ public class GameController {
 	public void isButtonActive(int i, int j) {
 		if (activeFirst == true) {
 			Point x = new Point(j,i);
+			System.out.println(x);
 			Element buttonActive = elements.getElement(x);
 			
 			if (moves.contains(buttonActive)) {
@@ -57,6 +58,7 @@ public class GameController {
 			
 		}
 		else {
+			System.out.println(new Point(j,i));
 			play.resetStyle();
 			activeFirst = true;
 			showWay(new Point(j,i));

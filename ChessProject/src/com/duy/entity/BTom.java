@@ -116,6 +116,10 @@ public class BTom implements Element {
 	public Image getImage() {
 		return image;
 	}
-
+	
+	@Override
+	public void setCorr(Point x) {
+		this.x = x;
+	}
 
 }

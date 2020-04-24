@@ -46,6 +46,7 @@ public class Hum implements Element {
 			}
 			System.out.println();
 		}
+		System.out.println(i+".."+j);
 		
 		if (( i-1>=0  && (i>=3 || j==2)) && boardData[i-1][j] instanceof Empty) {
 			moves.add(boardData[i-1][j]);
@@ -62,6 +63,7 @@ public class Hum implements Element {
 		}
 
 		if ((j-1>=0 && (j==2 || i>=2 || j==3)) && boardData[i][j-1] instanceof Empty) {
+			System.out.println("okok");
 			moves.add(boardData[i][j-1]);
 			if (j-2>=0 && (boardData[i][j-2] instanceof Tom || boardData[i][j-2]instanceof BTom)) {
 				moves.add(boardData[i][j-2]);
@@ -117,4 +119,7 @@ public class Hum implements Element {
 		return image;
 	}
 
+	public void setCorr(Point x) {
+		this.x = x;
+	}
 }

@@ -68,4 +68,7 @@ public class Tom implements Element {
 		return image;
 	}
 
+	public void setCorr(Point x) {
+		this.x = x;
+	}
 }

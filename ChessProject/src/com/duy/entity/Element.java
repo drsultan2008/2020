@@ -8,4 +8,5 @@ public interface Element {
 	public List<Element> movesPossible(Element[][] boardData);
 	public Point corr();
 	Image getImage();
+	public void setCorr(Point x);
 }

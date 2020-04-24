@@ -68,6 +68,7 @@ public class Elements {
 	
 	public void move(Point x, Point y) {
 		Element tmp = map[x.getX()][x.getY()];
+		tmp.setCorr(y);
 		map[x.getX()][x.getY()] = new Empty(new Point(x.getX(),x.getY()));
 		map[y.getX()][y.getY()] = tmp;
 		

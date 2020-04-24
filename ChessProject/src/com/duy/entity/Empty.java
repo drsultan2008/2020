@@ -33,5 +33,9 @@ public class Empty implements Element {
 	public Image getImage() {
 		return image;
 	}
+	
+	public void setCorr(Point x) {
+		this.x = x;
+	}
 
 }
