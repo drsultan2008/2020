@@ -81,4 +81,36 @@ public class Elements {
 	public Element getElement(Point x) {
 		return map[x.getX()][x.getY()];
 	}
+	
+	public int isGameOver() {
+		int hum = 0;
+		int tom = 0;
+		int btom = 0;
+		
+		for (Element[] arr:map) {
+			for (Element e:arr) {
+				if (e instanceof Hum) {
+					hum++;
+				}
+				
+				if (e instanceof Tom) {
+					tom++;
+				}
+				
+				if (e instanceof BTom) {
+					btom++;
+				}
+			}
+		}
+		
+		if (hum==0) {
+			return 1;
+		}
+		
+		if (tom == 0 && btom==0) {
+			return -1;
+		}
+		
+		return 0;
+	}
 }

@@ -2,11 +2,14 @@ package com.duy.controller;
 
 import java.util.List;
 
+import com.duy.entity.BTom;
 import com.duy.entity.Element;
 import com.duy.entity.Elements;
 import com.duy.entity.Empty;
+import com.duy.entity.Hum;
 import com.duy.entity.Point;
 import com.duy.entity.Stop;
+import com.duy.entity.Tom;
 import com.duy.view.Menu;
 import com.duy.view.Menu2;
 import com.duy.view.Play;
@@ -45,6 +48,7 @@ public class GameController {
 	}
 	
 	public void isButtonActive(int i, int j) {
+//		showGame(i,j);
 		if (activeFirst == true) {
 			Point x = new Point(j,i);
 			System.out.println(x);
@@ -53,16 +57,38 @@ public class GameController {
 			if (moves.contains(buttonActive)) {
 				elements.move(moveOne,x);
 				play.updateBoard(elements);
+				checkGame();
 			}
 			activeFirst = false;
 			
 		}
 		else {
-			System.out.println(new Point(j,i));
 			play.resetStyle();
 			activeFirst = true;
 			showWay(new Point(j,i));
 		}
+	}
+	
+	public void showGame(int i, int j) {
+		if (isTwoPlayer) {
+			showGameBi();
+		}
+		else {
+//			showGameUni(i,j);
+		}
+	}
+	
+	public void checkGame() {
+		if (elements.isGameOver() == 1) {
+			System.out.println("Hum thang");
+		}
+		else if (elements.isGameOver() == -1){
+			System.out.println("Tom thang");
+		}
+	}
+	
+	public void showGameBi() {
+		System.out.println("For AI");
 	}
 	
 	public void showWay(Point x) {
@@ -70,9 +96,33 @@ public class GameController {
 			activeFirst = false;
 			return;
 		}
-		moveOne = x;
-		moves = elements.getElement(x).movesPossible(elements.getMap());
-		play.wayHover(moves);
+		
+		if (isHum) {
+			if (elements.getElement(x) instanceof Hum) {
+				moveOne = x;
+				moves = elements.getElement(x).movesPossible(elements.getMap());
+				play.wayHover(moves);
+				isHum = !isHum;
+			}
+			else {
+				System.out.println("Luot Hum");
+				activeFirst = false;
+			}
+		}
+		else {
+			if (elements.getElement(x) instanceof Tom || elements.getElement(x) instanceof BTom) {
+				moveOne = x;
+				moves = elements.getElement(x).movesPossible(elements.getMap());
+				play.wayHover(moves);
+				isHum=!isHum;
+			}
+			else {
+				System.out.println("Luot Tom");
+				activeFirst = false;
+			}
+		}
+		
+		
 	}
 	
 	public Play getPlay() {
