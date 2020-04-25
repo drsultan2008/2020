@@ -45,6 +45,13 @@ public class GameController {
 		
 		play.set();
 		play.updateBoard(elements);
+		
+		if (isHum) {
+			play.setTurnHum();
+		}
+		else {
+			play.setTurnTom();
+		}
 	}
 	
 	public void isButtonActive(int i, int j) {
@@ -58,6 +65,12 @@ public class GameController {
 				elements.move(moveOne,x);
 				play.updateBoard(elements);
 				checkGame();
+				if (isHum) {
+					play.setTurnHum();
+				}
+				else {
+					play.setTurnTom();
+				}
 			}
 			activeFirst = false;
 			
