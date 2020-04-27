@@ -35,10 +35,10 @@ public class Jframe extends JFrame {
 		
 		JPanel mainPanel2 = new JPanel();
 		mainPanel.add(mainPanel2,BorderLayout.CENTER);
-//		mainPanel2.add(bt1,BorderLayout.WEST);
-//		mainPanel2.add(bt2,BorderLayout.EAST);
-//		mainPanel2.add(bt3,BorderLayout.NORTH);
-//		mainPanel2.add(bt4,BorderLayout.SOUTH);
+		mainPanel2.add(bt1,BorderLayout.WEST);
+		mainPanel2.add(bt2,BorderLayout.EAST);
+		mainPanel2.add(bt3,BorderLayout.NORTH);
+		mainPanel2.add(bt4,BorderLayout.SOUTH);
 	}
 	
 
