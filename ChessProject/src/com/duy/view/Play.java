@@ -9,6 +9,8 @@ import com.duy.entity.Elements;
 import com.duy.entity.Point;
 import com.duy.utils.Constants;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -48,6 +50,27 @@ public class Play extends GridPane{
 		add(home,3,8);
 		add(prev,4,8);
 		add(next,5,8);
+		
+		home.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+            	controller.showHome();
+            }
+        });
+		
+		prev.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				controller.showPrev();
+			}
+		});
+		
+		next.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				controller.showNext();
+			}
+		});
 	}
 	
 	public void setTurnHum() {

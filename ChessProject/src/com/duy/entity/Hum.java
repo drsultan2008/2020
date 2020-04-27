@@ -26,27 +26,27 @@ public class Hum implements Element {
 		int j = x.getY();
 		int index = 0;
 		
-		for (Element[] arr: boardData) {
-			for (Element iter:arr) {
-				if (iter instanceof Tom) {
-					System.out.print("Tom");
-				}
-				if (iter instanceof BTom) {
-					System.out.print("BTom");
-				}
-				if (iter instanceof Hum) {
-					System.out.print("Hum");
-				}
-				if (iter instanceof Empty) {
-					System.out.print("###");
-				}
-				if (iter instanceof Stop) {
-					System.out.print("XXX");
-				}
-			}
-			System.out.println();
-		}
-		System.out.println(i+".."+j);
+//		for (Element[] arr: boardData) {
+//			for (Element iter:arr) {
+//				if (iter instanceof Tom) {
+//					System.out.print("Tom");
+//				}
+//				if (iter instanceof BTom) {
+//					System.out.print("BTom");
+//				}
+//				if (iter instanceof Hum) {
+//					System.out.print("Hum");
+//				}
+//				if (iter instanceof Empty) {
+//					System.out.print("###");
+//				}
+//				if (iter instanceof Stop) {
+//					System.out.print("XXX");
+//				}
+//			}
+//			System.out.println();
+//		}
+//		System.out.println(i+".."+j);
 		
 		if (( i-1>=0  && (i>=3 || j==2)) && boardData[i-1][j] instanceof Empty) {
 			moves.add(boardData[i-1][j]);

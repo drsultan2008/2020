@@ -1,6 +1,7 @@
 package com.duy.controller;
 
 import java.util.List;
+import java.util.Stack;
 
 import com.duy.entity.BTom;
 import com.duy.entity.Element;
@@ -10,6 +11,7 @@ import com.duy.entity.Hum;
 import com.duy.entity.Point;
 import com.duy.entity.Stop;
 import com.duy.entity.Tom;
+import com.duy.model.ElementsManager;
 import com.duy.view.Menu;
 import com.duy.view.Menu2;
 import com.duy.view.Play;
@@ -18,7 +20,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GameController {
-	private Elements elements;
+//	private Elements elements;
+	
+	private ElementsManager elementsManager;
 	
 	private Play play;
 	private Menu menu;
@@ -31,12 +35,12 @@ public class GameController {
 	private List<Element> moves;
 	private Point moveOne;
 	private boolean activeFirst;
+	private Game gameModel;
 	
-	public GameController(Stage window){
-		elements = new Elements();
+	
+	public GameController(Stage window, Game gameModel){
 		this.window = window;
-		
-		activeFirst = false;
+		this.gameModel = gameModel;
 	}
 	
 	public void showBoard() {
@@ -44,7 +48,7 @@ public class GameController {
 		window.setScene(new Scene(play));
 		
 		play.set();
-		play.updateBoard(elements);
+		play.updateBoard(elementsManager.getElements());
 		
 		if (isHum) {
 			play.setTurnHum();
@@ -54,16 +58,23 @@ public class GameController {
 		}
 	}
 	
+	public void showHome() {
+		elementsManager.resetInstance();
+		gameModel.start();
+	}
+	
+	
 	public void isButtonActive(int i, int j) {
 //		showGame(i,j);
 		if (activeFirst == true) {
 			Point x = new Point(j,i);
 			System.out.println(x);
-			Element buttonActive = elements.getElement(x);
+			Element buttonActive = elementsManager.getElement(x);
 			
 			if (moves.contains(buttonActive)) {
-				elements.move(moveOne,x);
-				play.updateBoard(elements);
+				elementsManager.move(moveOne,x);
+				play.updateBoard(elementsManager.getElements());
+
 				checkGame();
 				if (isHum) {
 					play.setTurnHum();
@@ -92,10 +103,10 @@ public class GameController {
 	}
 	
 	public void checkGame() {
-		if (elements.isGameOver() == 1) {
+		if (elementsManager.isGameOver() == 1) {
 			System.out.println("Hum thang");
 		}
-		else if (elements.isGameOver() == -1){
+		else if (elementsManager.isGameOver() == -1){
 			System.out.println("Tom thang");
 		}
 	}
@@ -105,15 +116,15 @@ public class GameController {
 	}
 	
 	public void showWay(Point x) {
-		if (elements.getElement(x) instanceof Empty || elements.getElement(x) instanceof Stop) {
+		if (elementsManager.getElement(x) instanceof Empty || elementsManager.getElement(x) instanceof Stop) {
 			activeFirst = false;
 			return;
 		}
 		
 		if (isHum) {
-			if (elements.getElement(x) instanceof Hum) {
+			if (elementsManager.getElement(x) instanceof Hum) {
 				moveOne = x;
-				moves = elements.getElement(x).movesPossible(elements.getMap());
+				moves = elementsManager.getElement(x).movesPossible(elementsManager.getMap());
 				play.wayHover(moves);
 				isHum = !isHum;
 			}
@@ -123,9 +134,9 @@ public class GameController {
 			}
 		}
 		else {
-			if (elements.getElement(x) instanceof Tom || elements.getElement(x) instanceof BTom) {
+			if (elementsManager.getElement(x) instanceof Tom || elementsManager.getElement(x) instanceof BTom) {
 				moveOne = x;
-				moves = elements.getElement(x).movesPossible(elements.getMap());
+				moves = elementsManager.getElement(x).movesPossible(elementsManager.getMap());
 				play.wayHover(moves);
 				isHum=!isHum;
 			}
@@ -135,7 +146,6 @@ public class GameController {
 			}
 		}
 		
-		
 	}
 	
 	public Play getPlay() {
@@ -143,6 +153,10 @@ public class GameController {
 	}
 	
 	public void showMenu() {
+		elementsManager = ElementsManager.getInstance();
+		activeFirst = false;
+		
+
 		menu = new Menu(this);
 		window.setScene(new Scene(menu));
 	}
@@ -150,6 +164,16 @@ public class GameController {
 	public void showMenu2() {
 		menu2 = new Menu2(this);
 		window.setScene(new Scene(menu2));
+	}
+	
+	public void showPrev() {
+		elementsManager.undo();
+		play.updateBoard(elementsManager.getElements());
+	}
+	
+	public void showNext() {
+		elementsManager.redo();
+		play.updateBoard(elementsManager.getElements());
 	}
 	
 	public Menu2 getMenu2() {
@@ -165,12 +189,12 @@ public class GameController {
 	}
 
 	public Elements getElements() {
-		return elements;
+		return elementsManager.getElements();
 	}
 
-	public void setElements(Elements elements) {
-		this.elements = elements;
-	}
+//	public void setElements(Elements elements) {
+//		this.elements = elements;
+//	}
 
 	public Menu getMenu() {
 		return menu;

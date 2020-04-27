@@ -1,26 +1,30 @@
 package com.duy.entity;
 
+import java.util.Stack;
+
+import com.duy.utils.Constants;
+
 public class Elements {
-	private Element[][] map = new Element[7][5];
-
+	
+	private Stack<Element[][]> map = new Stack<>();
+	private Stack<Element[][]> redo = new Stack<>();
+	
 	public Elements() {
-		map = new Element[7][5];
-		initMap();
-	}
-
-	public Elements(Element[][] map) {
-		this.map = map;
+		map.push(initMap());
 	}
 
 	public Element[][] getMap() {
-		return map;
+		return map.peek();
 	}
 
-	public void setMap(Element[][] map) {
-		this.map = map;
+	public void setMap(Element[][] m) {
+		map.pop();
+		map.push(m);
 	}
 
-	public void initMap() {
+	public Element[][] initMap() {
+		Element[][] map = new Element[7][5];
+		
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
 				map[i][j] = new Empty(new Point(i, j));
@@ -64,22 +68,64 @@ public class Elements {
 
 		// BTom
 		map[6][2] = new BTom(new Point(6, 2));
+		
+		return map;
 	}
 	
+	// Observe
 	public void move(Point x, Point y) {
-		Element tmp = map[x.getX()][x.getY()];
-		tmp.setCorr(y);
-		map[x.getX()][x.getY()] = new Empty(new Point(x.getX(),x.getY()));
-		map[y.getX()][y.getY()] = tmp;
 		
+		// Swap & change map
+		if (map.size()==Constants.maxStack) {
+			Stack<Element[][]> tmp = new Stack<>();
+			while (map.size()>1) {
+				tmp.push(map.pop());
+			}
+			
+			map.clear();
+			
+			while (!tmp.isEmpty()) {
+				map.push(tmp.pop());
+			}
+		}
+		
+		Element[][] next = initMap();
+		
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				next[i][j]= map.peek()[i][j];
+			}
+		}
+		
+		Element tmp = next[x.getX()][x.getY()];
+		tmp.setCorr(y);
+		next[x.getX()][x.getY()] = new Empty(new Point(x.getX(),x.getY()));
+		next[y.getX()][y.getY()] = tmp;
+		
+		map.push(next);
 	}
-
+	
+	public void undo() {
+		if (map.size()>1) {
+			redo.push(map.pop());
+			System.out.println(map.size());
+		}
+	}
+	
+	public void redo() {
+		if (!redo.isEmpty()) {
+			map.push(redo.pop());
+		}
+	}
+	
 	public void updateMap(Point x, Element e) {
-		map[x.getX()][x.getY()] = e;
+		Element[][] curr = map.peek();
+		curr[x.getX()][x.getY()] = e;
+		map.push(curr);
 	}
 
 	public Element getElement(Point x) {
-		return map[x.getX()][x.getY()];
+		return map.peek()[x.getX()][x.getY()];
 	}
 	
 	public int isGameOver() {
@@ -87,7 +133,7 @@ public class Elements {
 		int tom = 0;
 		int btom = 0;
 		
-		for (Element[] arr:map) {
+		for (Element[] arr:map.peek()) {
 			for (Element e:arr) {
 				if (e instanceof Hum) {
 					hum++;
@@ -113,4 +159,9 @@ public class Elements {
 		
 		return 0;
 	}
+	
+	public Elements getElement() {
+		return this;
+	}
+	
 }

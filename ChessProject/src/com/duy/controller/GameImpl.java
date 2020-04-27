@@ -6,7 +6,7 @@ public class GameImpl implements Game {
 	GameController controller;
 	
 	public GameImpl(Stage window){
-		controller = new GameController(window);
+		controller = new GameController(window,this);
 	}
 	
 	@Override
