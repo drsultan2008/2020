@@ -187,15 +187,15 @@ public class AI {
                }
                else if(board[i][j].equals("Tot"))
                {
-                   a=500;
+                   a=20;
                }
                else if(board[i][j].equals("TTom"))
                {
-                   a=1000;
+                   a=80;
                }
                else if(board[i][j].equals("Hum"))
                {
-                   a=2000;
+                   a=100;
                }
                ans+=a;
            }

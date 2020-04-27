@@ -108,7 +108,6 @@ public class Elements {
 	public void undo() {
 		if (map.size()>1) {
 			redo.push(map.pop());
-			System.out.println(map.size());
 		}
 	}
 	

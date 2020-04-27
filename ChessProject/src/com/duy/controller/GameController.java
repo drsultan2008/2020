@@ -1,7 +1,6 @@
 package com.duy.controller;
 
 import java.util.List;
-import java.util.Stack;
 
 import com.duy.entity.BTom;
 import com.duy.entity.Element;
@@ -11,6 +10,7 @@ import com.duy.entity.Hum;
 import com.duy.entity.Point;
 import com.duy.entity.Stop;
 import com.duy.entity.Tom;
+import com.duy.model.AI;
 import com.duy.model.ElementsManager;
 import com.duy.view.Menu;
 import com.duy.view.Menu2;
@@ -36,6 +36,8 @@ public class GameController {
 	private Point moveOne;
 	private boolean activeFirst;
 	private Game gameModel;
+	
+	private AI ai;
 	
 	
 	public GameController(Stage window, Game gameModel){
@@ -84,6 +86,12 @@ public class GameController {
 				}
 			}
 			activeFirst = false;
+			
+			if (!isTwoPlayer) {
+				ai.findBestMove(isHum);
+				isHum = !isHum;
+				play.updateBoard(elementsManager.getElements());
+			}
 			
 		}
 		else {
@@ -154,9 +162,10 @@ public class GameController {
 	
 	public void showMenu() {
 		elementsManager = ElementsManager.getInstance();
+		ai = new AI(elementsManager);
 		activeFirst = false;
 		
-
+		
 		menu = new Menu(this);
 		window.setScene(new Scene(menu));
 	}
