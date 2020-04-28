@@ -11,6 +11,7 @@ import com.duy.entity.Point;
 import com.duy.entity.Stop;
 import com.duy.entity.Tom;
 import com.duy.model.AI;
+import com.duy.model.AIVer2;
 import com.duy.model.ElementsManager;
 import com.duy.view.Menu;
 import com.duy.view.Menu2;
@@ -37,8 +38,8 @@ public class GameController {
 	private boolean activeFirst;
 	private Game gameModel;
 	
-	private AI ai;
-	
+//	private AI ai;
+	private AIVer2 ai; 
 	
 	public GameController(Stage window, Game gameModel){
 		this.window = window;
@@ -88,7 +89,7 @@ public class GameController {
 			activeFirst = false;
 			
 			if (!isTwoPlayer) {
-				ai.findBestMove(isHum);
+				ai.AIMove(elementsManager,isHum);
 				isHum = !isHum;
 				play.updateBoard(elementsManager.getElements());
 			}
@@ -162,7 +163,7 @@ public class GameController {
 	
 	public void showMenu() {
 		elementsManager = ElementsManager.getInstance();
-		ai = new AI(elementsManager);
+		ai = new AIVer2(elementsManager);
 		activeFirst = false;
 		
 		

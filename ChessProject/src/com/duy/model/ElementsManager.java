@@ -1,15 +1,8 @@
 package com.duy.model;
 
-import java.util.Stack;
-
-import com.duy.entity.BTom;
 import com.duy.entity.Element;
 import com.duy.entity.Elements;
-import com.duy.entity.Empty;
-import com.duy.entity.Hum;
 import com.duy.entity.Point;
-import com.duy.entity.Stop;
-import com.duy.entity.Tom;
 
 public class ElementsManager {
 	private static ElementsManager uniqueInstance= null;
@@ -66,4 +59,5 @@ public class ElementsManager {
 	public void setMap(Element[][] map) {
 		elements.setMap(map);
 	}
+	
 }

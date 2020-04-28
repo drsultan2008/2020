@@ -18,7 +18,7 @@ public class Elements {
 	}
 
 	public void setMap(Element[][] m) {
-		map.pop();
+//		map.pop();
 		map.push(m);
 	}
 
