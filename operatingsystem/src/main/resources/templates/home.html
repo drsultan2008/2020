@@ -1,0 +1,30 @@
+<!DOCTYPEhtml>
+<html xmls:th="http://www.thymeleaf.org">
+<head>
+<title>Operating System Algorithm</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container p-3 my-3 w-50">
+		<h1 class="text-center">Scheduling Algorithm:</h1>
+
+		<div class="d-flex flex-column">
+			<a th:href="@{/fcfs}" class="btn btn-info flex-fill my-2">FCFS</a> <a
+				th:href="@{/sjn}" class="btn btn-info flex-fill my-2">SJN</a> <a
+				th:href="@{/sjf}" class="btn btn-info flex-fill my-2">SJF</a> <a
+				th:href="@{/rrobin}" class="btn btn-info flex-fill my-2">Round
+				Robin</a>
+		</div>
+		<h1 class="text-center">Page Replacement:</h1>
+
+		<div class="d-flex flex-column">
+			<a th:href="@{/fifo}" class="btn btn-info flex-fill my-2">FIFO</a> <a
+				th:href="@{/nru}" class="btn btn-info flex-fill my-2">NRU</a> <a
+				th:href="@{/lru}" class="btn btn-info flex-fill my-2">LRU</a>
+		</div>
+	</div>
+</body>
+</html>

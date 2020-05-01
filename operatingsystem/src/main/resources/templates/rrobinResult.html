@@ -1,0 +1,45 @@
+<!DOCTYPEhtml>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Round Robin</title>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h2 class="text-center">Mô tả quá trình: </h2>
+
+		<div class="border border-primary">
+			<div class="container">
+				<tr th:each="iter:${gain}">
+					<td th:utext="${iter}" />
+					<br />
+				</tr>
+
+				<tr th:each="iter:${wait}">
+					<td th:utext="${iter}" />
+					<br />
+				</tr>
+
+				<tr th:each="iter:${around}">
+					<td th:utext="${iter}" />
+					<br />
+				</tr>
+			</div>
+		</div>
+		
+		<div class="d-flex mt-2">
+			<a th:href="@{/fcfs}" class="btn btn-info flex-fill mx-2">FCFS</a>
+			<a th:href="@{/sjn}" class="btn btn-info flex-fill mx-2">SJN</a>
+			<a th:href="@{/sjf}" class="btn btn-info flex-fill mx-2">SJF</a>
+			<a th:href="@{/rrobin}" class="btn btn-info flex-fill mx-2">RRobin</a>
+			<a th:href="@{/fifo}" class="btn btn-info flex-fill mx-2">FIFO</a>
+			<a th:href="@{/nru}" class="btn btn-info flex-fill mx-2">NRU</a>
+			<a th:href="@{/lru}" class="btn btn-info flex-fill mx-2">LRU</a>
+		</div>
+	</div>
+</body>
+</html>

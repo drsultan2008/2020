@@ -1,0 +1,22 @@
+<!DOCTYPEhtml>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<title>FIFO</title>
+		<meta charset="UTF-8">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="text-center">FIFO Page Replacement</h2>
+			<form class="form-group" action="#" th:action="@{/fifoSubmit}" th:object="${input}" method="POST">
+				<p>Nhập vào chuỗi truy cập bộ nhớ: </p>
+				<textarea type="text" th:field="*{page}" class="form-control mb-4 col-auto" placeholder="Input Process" />
+				<p>Nhập vào số khung trang được cấp phát: </p>
+				<textarea type="text" th:field="*{frame}" class="form-control mb-4 col-auto" placeholder="Input burst time" />
+				<button type="submit" class="btn btn-info col-2">Kết quả</button>
+				<a th:href="@{/}" class="btn btn-info col-2">Trang chủ</a>
+			</form>
+		</div>
+	</body>
+	
+</html>

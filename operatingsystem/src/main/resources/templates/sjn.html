@@ -1,0 +1,22 @@
+<!DOCTYPEhtml>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<title>SJN</title>
+		<meta charset="UTF-8">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="text-center">SJN Scheduling</h2>
+			<form class="form-group" action="#" th:action="@{/sjnSubmit}" th:object="${input}" method="POST">
+				<p>Nhập vào thời gian xuất hiện từng tiến trình: </p>
+				<textarea type="text" th:field="*{arrivalTime}" class="form-control mb-4 col-auto" placeholder="Input Process" />
+				<p>Nhập vào thời gian chạy từng tiến trình: </p>
+				<textarea type="text" th:field="*{burst}" class="form-control mb-4 col-auto" placeholder="Input burst time" />
+				<button type="submit" class="btn btn-info col-2">Kết quả</button>
+				<a th:href="@{/}" class="btn btn-info col-2">Trang chủ</a>
+			</form>
+		</div>
+	</body>
+	
+</html>
