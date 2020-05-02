@@ -16,6 +16,7 @@ import com.duy.view.EndGame;
 import com.duy.view.Menu;
 import com.duy.view.Menu2;
 import com.duy.view.Play;
+import com.duy.view.RoleGame;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -29,6 +30,7 @@ public class GameController {
 	private Menu menu;
 	private Menu2 menu2;
 	private EndGame endGame;
+	private RoleGame roleGame;
 	
 	private Stage window;
 	
@@ -192,6 +194,11 @@ public class GameController {
 	public void showEndGame() {
 		endGame = new EndGame(this);
 		window.setScene(new Scene(endGame));
+	}
+	
+	public void showRoleGame() {
+		roleGame = new RoleGame(this);
+		window.setScene(new Scene(roleGame));
 	}
 	
 	public void showPrev() {
