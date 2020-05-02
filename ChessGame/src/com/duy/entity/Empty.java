@@ -11,7 +11,7 @@ public class Empty implements Element {
 
 	private Point x;
 	private URL url = getClass().getResource("/com/duy/images/");
-	private Image image = new Image(url+"trongSuot.png",Constants.squareSize,Constants.squareSize,true,true);
+	private Image image = new Image(url+"TrongSuot.png",Constants.squareSize,Constants.squareSize,true,true);
 	
 	public Empty(Point x) {
 		this.x = x;

@@ -23,8 +23,8 @@ public class Menu2 extends GridPane{
 	
 	public Menu2 (GameController controller){
 		url = getClass().getResource("/com/duy/images/");
-		one = new Image(url+"1nguoiChoi.png",301,85,true,true);
-		two = new Image(url+"2nguoiChoi.png",301,85,true,true);
+		one = new Image(url+"NguoiChoi1.png",301,85,true,true);
+		two = new Image(url+"NguoiChoi2.png",301,85,true,true);
 		background = new Image(url+"menuBackground.png");
 		
 		onePlayer = new Button("",new ImageView(one));
