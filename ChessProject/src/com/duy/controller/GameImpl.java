@@ -14,10 +14,5 @@ public class GameImpl implements Game {
 		controller.showMenu();
 	}
 
-	@Override
-	public void over() {
-		// TODO Auto-generated method stub
-
-	}
 
 }

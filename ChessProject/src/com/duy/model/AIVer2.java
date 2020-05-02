@@ -58,6 +58,14 @@ public class AIVer2 {
 				if (res[i][j].equals("BTom")) {
 					newMap[i][j] = new BTom(new Point(i,j));
 				}
+				
+				if (res[i][j].equals("###")) {
+					newMap[i][j] = new Empty(new Point(i,j));
+				}
+				
+				if (res[i][j].equals("XXX")) {
+					newMap[i][j] = new Stop(new Point(i,j));
+				}
 			}
 		}
 		

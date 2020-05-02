@@ -10,9 +10,9 @@ import com.duy.entity.Hum;
 import com.duy.entity.Point;
 import com.duy.entity.Stop;
 import com.duy.entity.Tom;
-import com.duy.model.AI;
 import com.duy.model.AIVer2;
 import com.duy.model.ElementsManager;
+import com.duy.view.EndGame;
 import com.duy.view.Menu;
 import com.duy.view.Menu2;
 import com.duy.view.Play;
@@ -28,6 +28,7 @@ public class GameController {
 	private Play play;
 	private Menu menu;
 	private Menu2 menu2;
+	private EndGame endGame;
 	
 	private Stage window;
 	
@@ -91,6 +92,12 @@ public class GameController {
 			if (!isTwoPlayer) {
 				ai.AIMove(elementsManager,isHum);
 				isHum = !isHum;
+				if (isHum) {
+					play.setTurnHum();
+				}
+				else {
+					play.setTurnTom();
+				}
 				play.updateBoard(elementsManager.getElements());
 			}
 			
@@ -113,11 +120,16 @@ public class GameController {
 	
 	public void checkGame() {
 		if (elementsManager.isGameOver() == 1) {
-			System.out.println("Hum thang");
+			System.out.println("Tom thang");
+			showEndGame();
+			endGame.setWinner(false);
 		}
 		else if (elementsManager.isGameOver() == -1){
-			System.out.println("Tom thang");
+			System.out.println("Hum thang");
+			showEndGame();
+			endGame.setWinner(true);
 		}
+		
 	}
 	
 	public void showGameBi() {
@@ -125,6 +137,7 @@ public class GameController {
 	}
 	
 	public void showWay(Point x) {
+		checkGame();
 		if (elementsManager.getElement(x) instanceof Empty || elementsManager.getElement(x) instanceof Stop) {
 			activeFirst = false;
 			return;
@@ -174,6 +187,11 @@ public class GameController {
 	public void showMenu2() {
 		menu2 = new Menu2(this);
 		window.setScene(new Scene(menu2));
+	}
+	
+	public void showEndGame() {
+		endGame = new EndGame(this);
+		window.setScene(new Scene(endGame));
 	}
 	
 	public void showPrev() {
