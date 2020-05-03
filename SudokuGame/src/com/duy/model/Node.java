@@ -10,6 +10,10 @@ public class Node {
 	private char val;
 	private boolean fixed;
 	
+	public Node() {
+		this.val = '.';
+	}
+	
 	public Node(int row, int col, char val, boolean fixed) {
 		super();
 		this.row = row;
@@ -50,31 +54,55 @@ public class Node {
 		this.fixed = fixed;
 	}
 	
-	public boolean validSudoku(boolean row, boolean col, boolean block, Game game) {
+	public boolean validSudoku(boolean row, boolean col, boolean block, Node[][] game) {
 		HashSet<Character> setRow = new HashSet<>();
 		HashSet<Character> setCol = new HashSet<>();
 		HashSet<Character> setBlock = new HashSet<>();
 		
 		for (int i=0; i<Constants.SIZE; i++) {
 			for (int j=0; j<Constants.SIZE; j++) {
-				if (game.getNode(i, j).getVal() == '.' || !setRow.add(game.getNode(i, j).getVal())) {
+				if (game[i][j].getVal() == '.' || !setRow.add(game[i][j].getVal())) {
 					row = false;
 				}
 				
-				if (game.getNode(j, i).getVal() == '.' || !setRow.add(game.getNode(j, i).getVal())) {
+				if (game[i][j].getVal() == '.' || !setRow.add(game[i][j].getVal())) {
 					col = false;
 				}
 				
 				int rowBlock = i/3*3 + j/3;
 				int colBlock = j%3*3 + j%3;
 				
-				if (game.getNode(rowBlock, colBlock).getVal() == '.' || !setRow.add(game.getNode(rowBlock, colBlock).getVal())) {
+				if (game[rowBlock][colBlock].getVal() == '.' || !setRow.add(game[rowBlock][colBlock].getVal())) {
 					block = false;
 				}
 				
 				if (!row || !col || !block) {
 					return false;
 				}
+			}
+		}
+		
+		return true;
+	}
+	
+	public boolean validRow(Node[][] game) {
+		HashSet<Character> setRow = new HashSet<>();
+		
+		for (int i=0; i<Constants.SIZE; i++) {
+			if (!setRow.add(game[this.getRow()][i].getVal()) || game[this.getRow()][i].getVal() == '.') {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	public boolean validCol(Node[][] game) {
+		HashSet<Character> setCol = new HashSet<>();
+		
+		for (int i=0; i<Constants.SIZE; i++) {
+			if (!setCol.add(game[i][this.getCol()].getVal()) || game[i][this.getCol()].getVal() == '.') {
+				return false;
 			}
 		}
 		

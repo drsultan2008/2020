@@ -6,35 +6,30 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Observable;
 
 import com.duy.utils.Constants;
 
-public class Game {
+public class BoardGame extends Observable {
 	private Node[][] map;
 	
-	public Game(Node[][] map) {
+	public BoardGame(Node[][] map) {
 		super();
 		this.map = map;
 	}
 
-	public Game() {
+	public BoardGame() {
 		map = new Node[Constants.SIZE][Constants.SIZE];
-	}
-	
-	public Node[][] getMap() {
-		return map;
-	}
-	
-	public void setMap(Node[][] map) {
-		this.map = map;
-	}
-	
-	public Node getNode(int i, int j) {
-		return map[i][j];
+		
+		for (int i=0; i<Constants.SIZE; i++) {
+			for (int j=0; j<Constants.SIZE; j++) {
+				map[i][j] = new Node(i,j,'.',false);
+			}
+		}
 	}
 	
 	public void read(String fileName) {
-		try (BufferedReader br = new BufferedReader(new FileReader(Constants.path+fileName))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 			String line = br.readLine();
 			char[] arr = line.toCharArray();
 			int iter = 0;
@@ -54,7 +49,8 @@ public class Game {
 				}
 			}
 			
-			
+			setChanged();
+			notifyObservers();
 		}
 		catch(FileNotFoundException e) {
 			System.out.println("File not found"+e);
@@ -66,25 +62,39 @@ public class Game {
 	}
 	
 	public void save(String fileName) {
-		try(BufferedWriter bw = new BufferedWriter(new FileWriter(Constants.path+fileName))){
-			
-		}
-		catch()
-	}
-	
-	public static void main(String args[]) {
-		Game game = new Game();
-		game.read("case01.txt");
-		
-		Node[][] map = game.getMap();
-		
-		for (Node[] arr:map) {
-			for (Node i:arr) {
-				System.out.print(i.getVal());
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
+			String data = "";
+			for (Node[] arr:map) {
+				for (Node i:arr) {
+					data+=Character.toString(i.getVal());
+				}
 			}
-			System.out.println();
+			bw.write(data);
+		}
+		catch(IOException e) {
+			System.out.println(e);
 		}
 		
 	}
 	
+
+	public void setMap(Node[][] map) {
+		this.map = map;
+		setChanged();
+		notifyObservers();
+	}
+
+	public void setMap(int i, int j, Node node) {
+		map[i][j] = node;
+		setChanged();
+		notifyObservers();
+	}
+
+	public Node get(int i, int j) {
+		return map[i][j];
+	}
+
+	public Node[][] getMap() {
+		return map;
+	}
 }
