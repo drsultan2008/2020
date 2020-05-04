@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -41,7 +42,8 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 	private JMenuItem open;
 	private JMenuItem save;
 	private JMenuItem infoGame;
-	private JButton button;
+	private JButton startGame;
+	private JLabel msg;
 	
 	private Color[][] color;
 	
@@ -109,12 +111,11 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 		
 		for (int i=0; i<Constants.SIZE; i++) {
 			for (int j=0; j<Constants.SIZE; j++) {
-				board[i][j] = new JTextField(".");
+				board[i][j] = new JTextField("");
 				board[i][j].setHorizontalAlignment(JTextField.CENTER);
 				body.add(board[i][j]);
 				
 				board[i][j].addActionListener(this);
-				
 			}
 		}
 		
@@ -129,7 +130,6 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 			for (int j=n,k1=0; k1<3; j++,k1++) {
 				board[i][j].setBackground(c);
 				color[i][j] = c;
-				System.out.println(i+","+j);
 			}
 		}
 	}
@@ -183,8 +183,15 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 	}
 	
 	private void setFoot() {
-		JLabel msg = new JLabel("Status bar");
-		foot.add(msg);
+		startGame = new JButton("Start");
+		msg = new JLabel("Xin chào");
+		foot.setLayout(new BorderLayout());
+		JPanel center = new JPanel();
+		foot.add(center,BorderLayout.CENTER);
+		foot.add(startGame,BorderLayout.NORTH);
+		center.add(msg);
+		
+		startGame.addActionListener(this);
 	}
 	
 	private void showDialog() {
@@ -221,17 +228,26 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 		boolean row = true,col = true, block = true;
 		Node node = gameController.getNode(i, j);
 		
+		if (node.validSudoku(gameController.getMap())) {
+			showEndGame();
+			System.out.println("?");
+		}
+		
 		
 		if (!node.validRow(gameController.getMap())) {
 			for (int c=0; c<Constants.SIZE; c++) {
-				board[i][c].setBackground(Color.white);
+				board[i][c].setBackground(Color.red);
 			}
+			
+			msg.setText("Lỗi Hàng/Cột rồi !");
 		}
 		
 		if (!node.validCol(gameController.getMap())) {
 			for (int r=0; r<Constants.SIZE; r++) {
-				board[r][j].setBackground(Color.white);
+				board[r][j].setBackground(Color.red);
 			}
+			
+			msg.setText("Lỗi Hàng/Cột rồi !");
 		}
 		
 		if (!block) {
@@ -250,30 +266,60 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 			showSaveDialog();
 		}
 		
-		if (event.getSource() == button) {
-			gameController.readData("case01.txt");
+		if (event.getSource() == startGame) {
+			Random random = new Random();
+			int num = random.nextInt(7);
+			gameController.readData(Constants.path+"case0"+Integer.toString(num)+".txt");
 		}
 		
 		for (int i=0; i<Constants.SIZE; i++) {
 			for (int j=0; j<Constants.SIZE; j++) {
 				if (event.getSource() == board[i][j]) {
-					setNode(i,j);
+					try{
+						setNode(i,j);
+					}
+					catch(Exception e) {
+						msg.setText("Có vẻ bạn chưa nhập gì cả !");
+					}
 				}
 			}
+		}
+	}
+	
+	private void showEndGame() {
+		int input = JOptionPane.showConfirmDialog(null, "Bạn thì ghê rồi ! Chơi lại ?","Winner",JOptionPane.YES_NO_OPTION);
+		// Yes - 0 | No -1
+		
+		if (input == 0) {
+			Random random = new Random();
+			int num = random.nextInt(7);
+			gameController.readData(Constants.path+"case0"+Integer.toString(num)+".txt");
+		}
+		else {
+			System.exit(0);
 		}
 	}
 	
 	private void updateBoard(Node[][] map) {
 		for (int i=0; i<Constants.SIZE; i++) {
 			for (int j=0; j<Constants.SIZE; j++) {
+				board[i][j].setEnabled(true);
 				board[i][j].setText(Character.toString(map[i][j].getVal()));
+				if (board[i][j].getText().equals(".")) {
+					board[i][j].setText("");
+				}
+				board[i][j].setForeground(Color.DARK_GRAY);
+
+				
+				if (map[i][j].isFixed()) {
+					board[i][j].setEnabled(false);
+				}
 			}
 		}
 	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		System.out.println("?");
 		updateBoard(((BoardGame) arg0).getMap());
 	}
 	

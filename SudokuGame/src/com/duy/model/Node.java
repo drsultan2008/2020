@@ -54,31 +54,31 @@ public class Node {
 		this.fixed = fixed;
 	}
 	
-	public boolean validSudoku(boolean row, boolean col, boolean block, Node[][] game) {
-		HashSet<Character> setRow = new HashSet<>();
-		HashSet<Character> setCol = new HashSet<>();
-		HashSet<Character> setBlock = new HashSet<>();
+	public boolean validSudoku(Node[][] game) {
 		
 		for (int i=0; i<Constants.SIZE; i++) {
+			HashSet<Character> setRow = new HashSet<>();
+			HashSet<Character> setCol = new HashSet<>();
+			HashSet<Character> setBlock = new HashSet<>();
+			
 			for (int j=0; j<Constants.SIZE; j++) {
 				if (game[i][j].getVal() == '.' || !setRow.add(game[i][j].getVal())) {
-					row = false;
+					System.out.println(i+","+j);
+					return false;
 				}
 				
-				if (game[i][j].getVal() == '.' || !setRow.add(game[i][j].getVal())) {
-					col = false;
+				if (game[j][i].getVal() == '.' || !setCol.add(game[j][i].getVal())) {
+					System.out.println("?");
+					return false;
 				}
 				
 				int rowBlock = i/3*3 + j/3;
-				int colBlock = j%3*3 + j%3;
+				int colBlock = i%3*3 + j%3;
 				
-				if (game[rowBlock][colBlock].getVal() == '.' || !setRow.add(game[rowBlock][colBlock].getVal())) {
-					block = false;
-				}
-				
-				if (!row || !col || !block) {
+				if (game[rowBlock][colBlock].getVal() == '.' || !setBlock.add(game[rowBlock][colBlock].getVal())) {
 					return false;
 				}
+				
 			}
 		}
 		
