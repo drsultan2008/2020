@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Learning html</title>
+        <title>Best News Ever</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="This page is a webpage to learn html">
+        <meta name="keywords" content="html5,etc..">
+        <meta name="author" content="Duy">
+        <link rel="stylesheet" href="./Css/style.css">
     </head>
     <body>
-        <h1>Hello</h1>
-        <h2>Hello Duy</h2>
-        <h3></h3>
+        <header>
+            <h1>Best News Ever</h1>
+            <h3>Do ut qui velit ad enim duis veniam non amet ipsum sunt quis commodo labore.</h3>
+        </header>
+        <main>
+            <section>
+                <h2>About me</h2>
+                <p>Occaecat adipisicing aliquip pariatur ea mollit id tempor nisi aliqua veniam elit.</p>
+            </section>
+
+            <section>
+                <article>
+                    <h3><a href="#">Kidnaps clown</a></h3>
+                    <p>Tempor ex velit fugiat et magna adipisicing consectetur.</p>
+                </article>
+
+                <article>
+                    <h3><a href="#">Kidnaps clown</a></h3>
+                    <p>Tempor ex velit fugiat et magna adipisicing consectetur.</p>
+                </article>
+
+                <article>
+                    <h3><a href="#">Kidnaps clown</a></h3>
+                    <p>Tempor ex velit fugiat et magna adipisicing consectetur.</p>
+                </article>
+
+                <acticle>
+                    <img src="./Images/way.jpeg" alt="The way">
+                    <a href="#">Save the day</a>
+                </acticle>
+
+            </section>
+
+            <section id="contact-form">
+                <h2>Place Order</h2>
+                <form method="POST" action="place-index.php">
+                    <input type="text" name="address1" placeholder="Type address" class="lg-input"/> <br/>
+                    <input type="text" name="address2" placeholder="Type address" class="lg-input"/> <br/>
+                    <input type="text" name="city" placeholder="Type city" class="sm-input" /> <br/>
+                    <input type="checkbox" name="onion" />
+                    <input type="text" naem="name" placeholder="Type full name" class="sm-input" /> <br/>
+                    <input type="submit">
+                </form>
+            </section>
+
+            <footer>
+                <p>&copy;2020</p>
+            </footer>
+        </main>
     </body>
 </html>
