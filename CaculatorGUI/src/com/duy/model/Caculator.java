@@ -81,7 +81,7 @@ public class Caculator extends Observable {
 		while (!stack.isEmpty()) {
 			result.add(stack.pop());
 		}
-		
+		System.out.println(result);
 		return result;
 	}
 	
@@ -106,7 +106,7 @@ public class Caculator extends Observable {
 					stack.push(one*two);
 				}
 				else if (i.equals("/")){
-					stack.push(one/two);
+					stack.push(two/one);
 				}
 			}
 		}
