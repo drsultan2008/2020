@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -15,7 +17,13 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
-public class CaculatorGUI extends JFrame {
+import com.duy.controller.CaculatorController;
+import com.duy.model.Caculator;
+import com.duy.utils.Observable;
+import com.duy.utils.Observer;
+
+public class CaculatorGUI extends JFrame implements Observer,ActionListener{
+	private CaculatorController controller;
 	private JPanel mainPanel;
 	private JPanel display;
 	private JPanel behavior;
@@ -24,7 +32,9 @@ public class CaculatorGUI extends JFrame {
 	private JLabel typing;
 	private JLabel result;
 
-	public CaculatorGUI() {
+	public CaculatorGUI(CaculatorController controller) {
+		this.controller = controller;
+		
 		new JFrame("Caculator");
 		setSize(300, 400);
 		setLocation(100, 200);
@@ -41,7 +51,7 @@ public class CaculatorGUI extends JFrame {
 		behavior = new JPanel();
 
 		buttons = new JButton[5][4];
-		typing = new JLabel("4+2=");
+		typing = new JLabel("");
 		result = new JLabel("6");
 
 		setContentPane(mainPanel);
@@ -88,6 +98,7 @@ public class CaculatorGUI extends JFrame {
 				buttons[i][j].setBackground(Color.white);
 				buttons[i][j].setForeground(Color.GRAY);
 				buttons[i][j].setBorder(BorderFactory.createLineBorder(Color.gray));
+				buttons[i][j].addActionListener(this);
 			}
 		}
 
@@ -112,10 +123,90 @@ public class CaculatorGUI extends JFrame {
 		buttons[4][2].setText(".");
 		buttons[4][3].setText("=");
 	}
-
-	public static void main(String args[]) {
-		CaculatorGUI caculatorGUI = new CaculatorGUI();
-		caculatorGUI.setVisible(true);
+	
+	public void setTyping(String text) {
+		typing.setText(text);
+	}
+	
+	public void setResult(String text) {
+		result.setText(text);
+	}
+	
+	public String getTyping() {
+		return typing.getText();
+	}
+	
+	public String getResult() {
+		return result.getText();
+	}
+	
+	public void updateDisplay(Caculator o) {
+//		String oddText = typing.getText();
+//		setTyping(Double.toString(o.getA()));
+		setResult(Double.toString(o.getRes()));
 	}
 
+	@Override
+	public void update(Observable o) {
+		updateDisplay((Caculator)o);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		if (buttons[1][0] == event.getSource()) {
+			setTyping(typing.getText()+7);
+			
+		}
+		if (buttons[1][1] == event.getSource()) {
+			setTyping(typing.getText()+8);
+		}
+		if (buttons[1][2] == event.getSource()) {
+			setTyping(typing.getText()+9);
+		}
+		if (buttons[2][0] == event.getSource()) {
+			setTyping(typing.getText()+4);
+		}
+		if (buttons[2][1] == event.getSource()) {
+			setTyping(typing.getText()+5);
+		}
+		if (buttons[2][2] == event.getSource()) {
+			setTyping(typing.getText()+6);
+		}
+		if (buttons[3][0] == event.getSource()) {
+			setTyping(typing.getText()+1);
+		}
+		if (buttons[3][1] == event.getSource()) {
+			setTyping(typing.getText()+2);
+		}
+		if (buttons[3][2] == event.getSource()) {
+			setTyping(typing.getText()+3);
+		}
+		if (buttons[4][1] == event.getSource()) {
+			setTyping(typing.getText()+0);
+		}
+		
+		if (buttons[3][3] == event.getSource()) {
+			setTyping(typing.getText()+"+");
+		}
+		
+		if (buttons[2][3] == event.getSource()) {
+			setTyping(typing.getText()+"-");
+		}
+		
+		if (buttons[1][3] == event.getSource()) {
+			setTyping(typing.getText()+"x");
+		}
+		
+		if (buttons[0][3] == event.getSource()) {
+			setTyping(typing.getText()+"/");
+		}
+		
+		if (buttons[4][3] == event.getSource()) {
+			controller.excecute(typing.getText());
+		}
+		
+		if (buttons[4][2] == event.getSource()) {
+			setTyping(typing.getText()+".");
+		}
+	}
 }
