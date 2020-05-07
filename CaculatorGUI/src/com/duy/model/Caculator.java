@@ -9,6 +9,7 @@ import com.duy.utils.Observable;
 public class Caculator extends Observable {
 	private String line;
 	private double res;
+	private double resOdd;
 
 	public Caculator() {
 		line = "";
@@ -20,6 +21,14 @@ public class Caculator extends Observable {
 
 	public String getLine() {
 		return line;
+	}
+
+	public double getResOdd() {
+		return resOdd;
+	}
+
+	public void setResOdd(double resOdd) {
+		this.resOdd = resOdd;
 	}
 
 	public void execute(String line) {
@@ -43,8 +52,7 @@ public class Caculator extends Observable {
 //		}
 
 		List post = toPostfix(list);
-		double x = evalutionPostfix(post);
-		System.out.println(x);
+		this.res = evalutionPostfix(post);
 		notifier();
 	}
 

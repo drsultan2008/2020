@@ -7,6 +7,9 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.regex.Pattern;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -22,7 +25,7 @@ import com.duy.model.Caculator;
 import com.duy.utils.Observable;
 import com.duy.utils.Observer;
 
-public class CaculatorGUI extends JFrame implements Observer,ActionListener{
+public class CaculatorGUI extends JFrame implements Observer,ActionListener,KeyListener{
 	private CaculatorController controller;
 	private JPanel mainPanel;
 	private JPanel display;
@@ -64,6 +67,7 @@ public class CaculatorGUI extends JFrame implements Observer,ActionListener{
 
 		setDisplay();
 		setBehavior();
+	
 	}
 
 	private void setDisplay() {
@@ -99,6 +103,7 @@ public class CaculatorGUI extends JFrame implements Observer,ActionListener{
 				buttons[i][j].setForeground(Color.GRAY);
 				buttons[i][j].setBorder(BorderFactory.createLineBorder(Color.gray));
 				buttons[i][j].addActionListener(this);
+				buttons[i][j].addKeyListener(this);
 			}
 		}
 
@@ -208,5 +213,45 @@ public class CaculatorGUI extends JFrame implements Observer,ActionListener{
 		if (buttons[4][2] == event.getSource()) {
 			setTyping(typing.getText()+".");
 		}
+		
+		if (buttons[4][0] == event.getSource()) {
+			setTyping(Double.toString(controller.getResOdd()));
+		}
+		
+		if (buttons[0][2] == event.getSource()) {
+			setTyping(typing.getText().substring(0,typing.getText().length()-1));
+		}
+		
+		if (buttons[0][1] == event.getSource()) {
+			setTyping("");
+			controller.setResodd(Double.parseDouble(result.getText()));
+			setResult("");
+		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent event) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyReleased(KeyEvent event) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void keyTyped(KeyEvent event) {
+		String regex = "^[0-9.]";
+		Pattern pattern = Pattern.compile(regex);
+		
+		if (pattern.matcher(Character.toString(event.getKeyChar())).matches() == true) {
+			setTyping(typing.getText()+Character.toString(event.getKeyChar()));
+		}
+		
+		if (event.getKeyCode() == KeyEvent.VK_ENTER) {
+			System.out.println("true");
+		}
+		
 	}
 }

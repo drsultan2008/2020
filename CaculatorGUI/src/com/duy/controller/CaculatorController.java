@@ -15,6 +15,14 @@ public class CaculatorController {
 		caculator.execute(line);
 	}
 	
+	public void setResodd(double x) {
+		caculator.setResOdd(x);
+	}
+	
+	public double getResOdd() {
+		return caculator.getResOdd();
+	}
+	
 	public static void main(String args[]) {
 		Caculator caculator = new Caculator();
 		CaculatorController controller = new CaculatorController(caculator);
