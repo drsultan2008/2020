@@ -12,3 +12,4 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	// ~ from Employee order by lastNane asc
 	public List<Employee> findAllByOrderByLastNameAsc();
 }
+	
