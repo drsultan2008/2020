@@ -111,22 +111,30 @@ public class CaculatorGUI extends JFrame implements Observer,ActionListener,KeyL
 		buttons[0][1].setText("C");
 		buttons[0][2].setText("<<");
 		buttons[0][3].setText("÷");
+		buttons[0][0].setBackground(new Color(6,0,3,32));
+		buttons[0][1].setBackground(new Color(6,0,3,32));
+		buttons[0][2].setBackground(new Color(6,0,3,32));
+		buttons[0][3].setBackground(new Color(6,0,3,32));
 		buttons[1][0].setText("7");
 		buttons[1][1].setText("8");
 		buttons[1][2].setText("9");
 		buttons[1][3].setText("x");
+		buttons[1][3].setBackground(new Color(6,0,3,32));
 		buttons[2][0].setText("4");
 		buttons[2][1].setText("5");
 		buttons[2][2].setText("6");
 		buttons[2][3].setText("-");
+		buttons[2][3].setBackground(new Color(6,0,3,32));
 		buttons[3][0].setText("1");
 		buttons[3][1].setText("2");
 		buttons[3][2].setText("3");
 		buttons[3][3].setText("+");
+		buttons[3][3].setBackground(new Color(6,0,3,32));
 		buttons[4][0].setText("Ans");
 		buttons[4][1].setText("0");
 		buttons[4][2].setText(".");
 		buttons[4][3].setText("=");
+		buttons[4][3].setBackground(Color.CYAN);
 	}
 	
 	public void setTyping(String text) {
