@@ -293,6 +293,7 @@ public class CaculatorGUI extends JFrame implements Observer,ActionListener,KeyL
 	@Override
 	public void keyTyped(KeyEvent event) {
 		String regex = "^[0-9.]";
+		
 		Pattern pattern = Pattern.compile(regex);
 		
 		if (pattern.matcher(Character.toString(event.getKeyChar())).matches() == true) {
