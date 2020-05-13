@@ -2,6 +2,8 @@ package com.duy.DAO;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -100,7 +102,7 @@ public class SchoolDAOImpl implements SchoolDAO {
 //		schoolDAO.addClass(classRoom);
 //		schoolDAO.addStudent(studentTwo, "JavaCore");;
 //		System.out.println(schoolDAO.getClassRoom().toString());
-		schoolDAO.getClassRoom();
+//		schoolDAO.getClassRoom();
 //		schoolDAO.getClassRoom("Java Core");
 //		schoolDAO.addStudent(3, "JavaEz");
 //		schoolDAO.addStudent(1, "JavaEz");
@@ -108,7 +110,8 @@ public class SchoolDAOImpl implements SchoolDAO {
 		for (Student i:schoolDAO.getStudents()) {
 			System.out.println("===>"+i);
 		};
-
+		
+		schoolDAO.bestStudent();
 //		schoolDAO.deleteStudent(9);
 //		schoolDAO.deleteClass(5);
 
@@ -116,13 +119,13 @@ public class SchoolDAOImpl implements SchoolDAO {
 
 //		schoolDAO.addStudent(new Student("Jack London",8,9,9), "Java Core");
 //		System.out.println(schoolDAO.getStudent(9));
-		schoolDAO.getStudent(1);
-		schoolDAO.getStudent(3);
+//		schoolDAO.getStudent(1);
+//		schoolDAO.getStudent(3);
 		
-		schoolDAO.deleteClass(6);
+//		schoolDAO.deleteClass(6);
 		
-		schoolDAO.getStudent(1);
-		schoolDAO.getStudent(3);
+//		schoolDAO.getStudent(1);
+//		schoolDAO.getStudent(3);
 //		schoolDAO.updateStudent(9, new Student("Le Quang Duy",9,9,9));
 //		schoolDAO.getStudent(9);
 	}
@@ -326,5 +329,27 @@ public class SchoolDAOImpl implements SchoolDAO {
 		}
 
 		System.out.println("===>Deleted!");
+	}
+
+	@Override
+	public Student bestStudent() {
+		session = factory.getCurrentSession();
+		List<Student> listStudent = null;
+		try {
+			session.beginTransaction();
+			String sql = "FROM Student WHEN CASE ";
+			Query<Student> query = session.createQuery(sql);
+			System.out.println(query.getFirstResult());
+//			System.out.println("==>" + listStudent.get(0));
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+//		return listStudent.get(0);
+		return null;
 	}
 }

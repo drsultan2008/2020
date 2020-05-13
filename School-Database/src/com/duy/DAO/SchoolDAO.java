@@ -16,4 +16,5 @@ public interface SchoolDAO {
 	public void updateStudent(int id, Student newStudent);
 	public void deleteStudent(int id);
 	public void deleteClass(int id);
+	public Student bestStudent();
 }
