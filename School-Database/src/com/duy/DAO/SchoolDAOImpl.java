@@ -117,7 +117,8 @@ public class SchoolDAOImpl implements SchoolDAO {
 
 //		schoolDAO.getClassRoom("Java Core");
 
-//		schoolDAO.addStudent(new Student("Jack London",8,9,9), "Java Core");
+//		schoolDAO.addStudent(new Student("LE QUANG DUY",10,10,10), "Java Core");
+		schoolDAO.bestStudent();
 //		System.out.println(schoolDAO.getStudent(9));
 //		schoolDAO.getStudent(1);
 //		schoolDAO.getStudent(3);
@@ -337,11 +338,14 @@ public class SchoolDAOImpl implements SchoolDAO {
 		List<Student> listStudent = null;
 		try {
 			session.beginTransaction();
-			String sql = "FROM Student WHEN CASE ";
-			Query<Student> query = session.createQuery(sql);
-			System.out.println(query.getFirstResult());
-//			System.out.println("==>" + listStudent.get(0));
-
+			String sql = "from Student ORDER BY math DESC, physical DESC, chemistry DESC";
+			Query<Student> query = session.createQuery(sql).setMaxResults(5);
+			listStudent = query.getResultList();
+			
+			System.out.println("===> Top 5 best of best student all class:");
+			for (Student i:listStudent) {
+				System.out.println("===>"+i);
+			}
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -349,7 +353,6 @@ public class SchoolDAOImpl implements SchoolDAO {
 			session.close();
 		}
 
-//		return listStudent.get(0);
-		return null;
+		return listStudent.get(0);
 	}
 }
