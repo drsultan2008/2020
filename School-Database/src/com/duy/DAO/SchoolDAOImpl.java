@@ -102,7 +102,7 @@ public class SchoolDAOImpl implements SchoolDAO {
 //		schoolDAO.addClass(classRoom);
 //		schoolDAO.addStudent(studentTwo, "JavaCore");;
 //		System.out.println(schoolDAO.getClassRoom().toString());
-//		schoolDAO.getClassRoom();
+		schoolDAO.getClassRoom();
 //		schoolDAO.getClassRoom("Java Core");
 //		schoolDAO.addStudent(3, "JavaEz");
 //		schoolDAO.addStudent(1, "JavaEz");
@@ -118,7 +118,7 @@ public class SchoolDAOImpl implements SchoolDAO {
 //		schoolDAO.getClassRoom("Java Core");
 
 //		schoolDAO.addStudent(new Student("LE QUANG DUY",10,10,10), "Java Core");
-		schoolDAO.bestStudent();
+//		schoolDAO.bestStudent();
 //		System.out.println(schoolDAO.getStudent(9));
 //		schoolDAO.getStudent(1);
 //		schoolDAO.getStudent(3);

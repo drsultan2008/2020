@@ -1,0 +1,2 @@
+F={A->C,A->EG,B->D,G->E}
+X=CGD
