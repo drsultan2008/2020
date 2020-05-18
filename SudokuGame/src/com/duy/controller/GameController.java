@@ -38,14 +38,14 @@ public class GameController {
 		return boardGame.getMap();
 	}
 
-	public static void main(String args[]) {
-		BoardGame boardGame = new BoardGame();
-		GameController gameController = new GameController(boardGame);
-		BoardView boardView = new BoardView(gameController);
-		// My key
-		boardGame.addObserver(boardView);
-
-		boardView.setVisible(true);
-	}
+//	public static void main(String args[]) {
+//		BoardGame boardGame = new BoardGame();
+//		GameController gameController = new GameController(boardGame);
+//		BoardView boardView = new BoardView(gameController);
+//		// My key
+//		boardGame.addObserver(boardView);
+//
+//		boardView.setVisible(true);
+//	}
 
 }

@@ -89,6 +89,7 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 		open = new JMenuItem("Open");
 		save = new JMenuItem("Save");
 		infoGame = new JMenuItem("Info");
+		
 			
 		fileMenu.add(open);
 		fileMenu.add(save);
@@ -104,6 +105,7 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 		open.addActionListener(this);
 		save.addActionListener(this);
 		infoGame.addActionListener(this);
+		
 	}
 	
 	private void setBody() {
@@ -264,6 +266,10 @@ public class BoardView extends JFrame implements Observer, ActionListener{
 		
 		if (event.getSource() == save) {
 			showSaveDialog();
+		}
+		
+		if (event.getSource() == infoGame) {
+			
 		}
 		
 		if (event.getSource() == startGame) {
