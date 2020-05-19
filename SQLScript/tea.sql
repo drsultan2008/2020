@@ -4,17 +4,19 @@ use `tea03`;
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS `Employee`;
-CREATE TABLE `Employee` (
+CREATE TABLE `Employee` ( 
 	`id` int(10) NOT NULL AUTO_INCREMENT,
 	`phone` int(10) DEFAULT NULL,
     `name` varchar(30) NOT NULL,
-    `birthday` varchar(10) DEFAULT NULL,
+    `birthday` datetime DEFAULT NULL,
 	`timeWork` int(10) NOT NULL,
     `level` varchar(10) NOT NULL,
     `address` varchar(30) DEFAULT NULL,
     `avatar` varchar(30) DEFAULT NULL,
      PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+-- INSERT INTO Employee (id,phone,name,birthday,timeWork,level) VALUE(1,1,1,1,1,1);
 
 DROP TABLE IF EXISTS `Customer`;
 CREATE TABLE `Customer` (
@@ -28,20 +30,19 @@ CREATE TABLE `Customer` (
 DROP TABLE IF EXISTS `Voucher`;
 CREATE TABLE `Voucher` (
 	`code` int(10) NOT NULL AUTO_INCREMENT,
-	`percent` float(1) DEFAULT NULL,
-    `time` varchar(30) NOT NULL,
+	`percent` float(10) DEFAULT NULL,
+    `time` datetime NOT NULL,
     `phoneNumber`int(10) NOT NULL,
      PRIMARY KEY (`code`),
      
-     KEY `FX_CUSTOMER_idx` (`phoneNumber`),
-	 CONSTRAINT `FX_CUSTOMER` FOREIGN KEY (`phoneNumber`)
+	 CONSTRAINT FOREIGN KEY (`phoneNumber`)
      REFERENCES `Customer` (`phone`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `Bill`;
 CREATE TABLE `Bill`(
 	`id` int(10) NOT NULL AUTO_INCREMENT,
-    `time` varchar(10) NOT NULL,
+    `time` datetime NOT NULL,
     `employeeId` int(10) DEFAULT NULL,
     `customerId` int(10) DEFAULT NULL,
     `codeVoucher` int (100) DEFAULT NULL,
@@ -109,7 +110,7 @@ CREATE TABLE `TeaTopping`(
 DROP TABLE IF EXISTS `Resource`;
 CREATE TABLE `Resource`(
 	`id` int(10) NOT NULL AUTO_INCREMENT,
-    `date` varchar(30) NOT NULL,
+    `date` datetime NOT NULL,
     `amount` int(100) NOT NULL,
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1,DEFAULT CHARSET=latin1;
@@ -129,8 +130,24 @@ CREATE TABLE `TeaResource`(
     
 )ENGINE=InnoDB AUTO_INCREMENT=1, DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `ToppingBill`;
+CREATE TABLE `ToppingBill`(
+	`toppingId` int(10) NOT NULL,
+    `billId` int (10) NOT NULL,
+	`amount` int (10) NOT NULL,
+    PRIMARY KEY (`toppingId`,`billId`),
+    
+	CONSTRAINT FOREIGN KEY (`toppingId`)
+    REFERENCES `Topping`(`id`),
+    
+    CONSTRAINT 	FOREIGN KEY(`billId`)
+    REFERENCES 	`Bill`(`id`)   
+)ENGINE=InnoDB AUTO_INCREMENT=1,DEFAULT CHARSET=latin1;
+
 SET FOREIGN_KEY_CHECKS = 1;
 
+ALTER TABLE Customer
+ADD COLUMN birthday datetime DEFAULT NULL;
 
 
 
