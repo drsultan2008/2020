@@ -263,3 +263,7 @@ use `tea03`;
 -- UPDATE Topping
 -- SET name = 'Vi la ngon'
 -- WHERE id = 16;
+
+-- UPDATE Customer
+-- SET birthday = DATE('2010-05-05')
+-- WHERE phone = 979168754;

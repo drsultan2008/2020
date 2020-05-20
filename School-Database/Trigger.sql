@@ -9,5 +9,5 @@ CREATE TRIGGER CheckOdd BEFORE INSERT ON Employee
             CALL `Insert not allowed`;
         END IF;
     END;
-//
+//Voucher
 delimiter ; 
