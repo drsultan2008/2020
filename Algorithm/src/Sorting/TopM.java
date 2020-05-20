@@ -52,7 +52,7 @@ public class TopM {
      * @param args the command-line arguments
      */
     public static void main(String[] args) throws IOException{
-        System.setIn(new FileInputStream(new File("tinyBatch.txt")));
+        System.setIn(new FileInputStream(new File("/home/duy/2020/Algorithm/src/Sorting/tinyBatch.txt")));
         int m = Integer.parseInt(args[0]); 
         MinPQ<Transaction> pq = new MinPQ<Transaction>(m+1);
 
