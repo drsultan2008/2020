@@ -92,6 +92,7 @@ Mai Duy Yen-25/9/2001-7.0
 Pham Duc Vy-20/11/2008-3.5
 Mai Duy Canh-3/5/1990-3.5
 Ngo Thi Yen-19/8/2003-4.0
+Ngo Thi Yen-19/8/2003-4.0
 Mai Quang Yen-22/9/2006-5.0
 Ngo Duc Loan-22/10/2006-3.0
 Tran Quang Hien-14/1/1992-1.0

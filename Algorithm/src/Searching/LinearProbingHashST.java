@@ -1,4 +1,5 @@
 package Searching;
+import java.io.BufferedReader;
 /******************************************************************************
  *  Compilation:  javac LinearProbingHashST.java
  *  Execution:    java LinearProbingHashST < input.txt
@@ -10,8 +11,10 @@ package Searching;
  ******************************************************************************/
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 
+import Exercies.Student;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
  
@@ -256,17 +259,35 @@ public class LinearProbingHashST<Key, Value> {
      * @param args the command-line arguments
      */
     public static void main(String[] args)throws IOException { 
-        System.setIn(new FileInputStream(new File("tinyST.txt")));
-        LinearProbingHashST<String, Integer> st = new LinearProbingHashST<String, Integer>();
-        for (int i = 0; !StdIn.isEmpty(); i++) {
-            String key = StdIn.readString();
-            st.put(key, i);
-        }
+        System.setIn(new FileInputStream(new File("/home/duy/2020/Algorithm/src/Searching/tinyST.txt")));
+        LinearProbingHashST<String, Student> st = new LinearProbingHashST<String, Student>();
+//        for (int i = 0; !StdIn.isEmpty(); i++) {
+//            String key = StdIn.readString();
+//            st.put(key, i);
+//        }
 
         // print keys
-        for (String s : st.keys()) 
-            StdOut.println(s + " " + st.get(s)); 
+//        for (String s : st.keys()) 
+//            StdOut.println(s + " " + st.get(s)); 
+        
+        try(BufferedReader br = new BufferedReader(new FileReader("/home/duy/2020/Algorithm/src/Exercies/data.txt"))){
+			String line = br.readLine();
+			for (int i=0; i<1000;i++) {
+				String arr[] = line.split("-");
+				Student student = new Student(arr[0],Double.parseDouble(arr[2]),arr[1]);
+				line = br.readLine();
+				st.put(student.getName(),student);
+			}
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+        
+      for (String s : st.keys()) 
+      StdOut.println(s + ": "+ st.get(s)); 
     }
+    
+    
 }
 
 /******************************************************************************
