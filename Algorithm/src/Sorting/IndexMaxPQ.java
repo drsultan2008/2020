@@ -289,7 +289,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
     }
 
     private class HeapIterator implements Iterator<Integer> {
-        // create a new pq
+         // create a new pq
         private IndexMaxPQ<Key> copy;
 
         // add all elements to copy of heap
@@ -326,7 +326,7 @@ public class IndexMaxPQ<Key extends Comparable<Key>> implements Iterable<Integer
         // print each key using the iterator
         for (int i : pq) {
             StdOut.println(i + " " + strings[i]);
-        }
+        }	
 
         StdOut.println();
 
