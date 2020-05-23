@@ -76,7 +76,7 @@ public class BoardView extends JFrame {
 				board[i][j] = new JButton();
 				body.add(board[i][j]);
 				board[i][j].setPreferredSize(new Dimension(Constants.squareSize,Constants.squareSize));
-				board[i][j].setBorder(BorderFactory.createEmptyBorder());
+				board[i][j].setBorder(BorderFactory.createEmptyBorder(0,20,20,20));
 			}
 		}
 		
