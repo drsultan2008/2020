@@ -2,8 +2,8 @@ package com.duy.utils;
 
 public interface Constants {
 	public static int squareSize = 40;
-	public static int maxWidth = 450;
-	public static int maxHeight = 750;
+	public static int maxWidth = 400;
+	public static int maxHeight = 700;
 	public static int maxStack = 3;
 	public static int GAME_TREE_HEIGHT = 3;
 }

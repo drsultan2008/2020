@@ -9,15 +9,15 @@ import javax.swing.JPanel;
 
 import com.duy.utils.Constants;
 
-public class PieceTrongSuot extends JLabel implements Piece{
-	public PieceTrongSuot() {
+public class PieceBlank extends JLabel implements Piece{
+	public PieceBlank() {
 		setPreferredSize( new Dimension(Constants.squareSize,Constants.squareSize));
 	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/TrongSuot.png").getImage(),0,0,getWidth(),getHeight(),null);
+		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/blank.png").getImage(),0,0,getWidth(),getHeight(),null);
 		
 	}
 

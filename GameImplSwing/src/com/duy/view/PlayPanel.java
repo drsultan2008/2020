@@ -1,6 +1,7 @@
 package com.duy.view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 
@@ -15,16 +16,7 @@ public class PlayPanel extends JPanel {
 	private JPanel body;
 	private JPanel foot;
 	private JPanel main;
-	private JMenuBar menuBar;
-	private JMenu about;
-	private JMenu help;
-	private JMenu open;
 	private JButton[][] board;
-	private JButton home;
-	private JButton textTurn;
-	private JButton turn;
-	private JButton undo;
-	private JButton redo;
 	private Piece[][] piece;
 	
 	public PlayPanel() {
@@ -37,55 +29,30 @@ public class PlayPanel extends JPanel {
 		body = new JPanel();
 	}
 
-	private void initHead() {
-		menuBar = new JMenuBar();
-		about = new JMenu("About");
-		help = new JMenu("Help");
-		open = new JMenu("Open");
-
-		menuBar.add(about);
-		menuBar.add(help);
-		menuBar.add(open);
-
-		head.add(menuBar);
-	}
-
 	private void initBody() {
-		GridLayout gridLayout = new GridLayout(7,5);
+		GridLayout gridLayout = new GridLayout(7,5,50,60);
 		setLayout(gridLayout);
 		
-		board = new JButton[5][7];
-		piece = new Piece[5][7];
+		piece = new Piece[7][5];
 
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 7; j++) {
-				piece[i][j] = new PieceTrongSuot();
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (i==0 && j==0 || i==0 && j==1|| i==1 && j==0 || j==3 && i==0 || j==4 && i==0 || j==4 && i==1 ){
+					piece[i][j] = new PieceBlank();
+				}
+				else {
+					piece[i][j] = new PieceTrongSuot();
+				}
 				add(piece[i][j].getLabel());
 			}
 		}
 
 	}
 
-	private void initFoot() {
-		foot.setLayout(new GridLayout(1, 5));
-
-		home = new JButton();
-		textTurn = new JButton();
-		turn = new JButton();
-		undo = new JButton();
-		redo = new JButton();
-
-		foot.add(home);
-		foot.add(textTurn);
-		foot.add(turn);
-		foot.add(undo);
-		foot.add(redo);
-	}
-
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/board03.jpg").getImage(), 0, 0,getWidth(),getHeight(),this);
+		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/board.jpg").getImage(), 0, 0,getWidth(),getHeight(),this);
 		
 	}
 }
