@@ -47,7 +47,31 @@ public class GameController {
 	}
 	
 	public void showHome() {
+		
+		//Singleton Pattern
+		elementsManager.resetInstance();
+		elementsManager = elementsManager.getInstance();
 		boardView.showChoosePlayer();
+		
+		Element[][] map = elementsManager.getMap();
+		
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				if (map[i][j] instanceof Hum) {
+					System.out.print("Hum");
+				}
+				else if (map[i][j] instanceof Tom) {
+					System.out.print("Tom");
+				}
+				else if (map[i][j] instanceof BTom) {
+					System.out.print("BTom");
+				}
+				else{
+					System.out.print("###");
+				}
+			}
+			System.out.println();
+		}
 	}
 	
 	public void showLegal() {
@@ -62,11 +86,13 @@ public class GameController {
 	public void setHum() {
 		isHum = true;
 		boardView.showPlay();
+		boardView.setTurnHum();
 	}
 	
 	public void setTom() {
 		isHum = false;
 		boardView.showPlay();
+		boardView.setTurnTom();
 	}
 	
 	public boolean getIsHum() {
@@ -88,4 +114,13 @@ public class GameController {
 	public void move(Point x, Point y) {
 		elementsManager.move(x, y);
 	}
+	
+	public void setTurnHum() {
+		boardView.setTurnHum();
+	}
+	
+	public void setTurnTom() {
+		boardView.setTurnTom();
+	}
+	
 }

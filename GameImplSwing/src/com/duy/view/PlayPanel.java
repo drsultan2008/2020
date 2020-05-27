@@ -134,7 +134,38 @@ public class PlayPanel extends JPanel implements MouseListener,Observer{
 					else {
 						Point x = new Point(firstClick.corr().getX(), firstClick.corr().getY());
 						Point y = new Point(i,j);
-						controller.move(x, y);
+						
+						if (controller.getIsHum()) {
+							if (controller.getElement(x.getX(), x.getY()) instanceof Hum) {
+								List<Element> list = controller.getElement(x.getX(), x.getY())
+										.movesPossible(controller.getElementManager().getMap());
+								
+								for (Element iter:list) {
+									if (iter.corr().getX() == y.getX() && iter.corr().getY()==y.getY()) {
+										controller.move(x, y);
+										controller.setTom();
+										controller.setTurnTom();
+										break;
+									}
+								}
+							}
+						}
+						else {
+							if (controller.getElement(x.getX(), x.getY()) instanceof Tom || controller.getElement(x.getX(), x.getY()) instanceof BTom ) {
+								List<Element> list = controller.getElement(x.getX(), x.getY())
+										.movesPossible(controller.getElementManager().getMap());
+								
+								for (Element iter:list) {
+									if (iter.corr().getX() == y.getX() && iter.corr().getY()==y.getY()) {
+										controller.move(x, y);
+										controller.setHum();
+										controller.setTurnHum();
+										break;
+									}
+								}
+							}
+						}
+						
 						firstClick = null;
 					}
 				}
