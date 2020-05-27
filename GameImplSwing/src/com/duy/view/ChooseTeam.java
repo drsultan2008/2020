@@ -80,7 +80,7 @@ public class ChooseTeam extends JPanel implements MouseListener {
 		}
 		
 		if (e.getSource() == luatChoi) {
-			
+			controller.showLegal();
 		}
 	}
 

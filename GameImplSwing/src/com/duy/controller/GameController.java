@@ -46,6 +46,14 @@ public class GameController {
 		boardView.showChooseTeam();
 	}
 	
+	public void showHome() {
+		boardView.showChoosePlayer();
+	}
+	
+	public void showLegal() {
+		boardView.showLegal();
+	}
+	
 	public void setTwoPlayer() {
 		onePlayer = false;
 		boardView.showChooseTeam();

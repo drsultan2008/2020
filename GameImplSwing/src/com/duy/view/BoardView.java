@@ -21,6 +21,7 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 	private ChoosePlayer choosePlayer;
 	private ChooseTeam chooseTeam;
 	private GameController controller;
+	private LegalView legalView;
 
 	public BoardView() {
 		new JFrame("Chess");
@@ -36,6 +37,7 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 
 		choosePlayer = new ChoosePlayer(controller);
 		chooseTeam = new ChooseTeam(controller);
+		legalView = new LegalView(controller);
 
 		setSize(Constants.maxWidth, Constants.maxHeight);
 		setLocation(100, 200);
@@ -64,6 +66,19 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 		setLayout(new BorderLayout());
 		add(menuPanel, BorderLayout.NORTH);
 		add(playPanel, BorderLayout.CENTER);
+		add(taskBarPanel, BorderLayout.SOUTH);
+		add(leftPanel, BorderLayout.WEST);
+		add(rightPanel, BorderLayout.EAST);
+
+		// Refresh
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
+	public void showLegal() {
+		getContentPane().removeAll();
+		setLayout(new BorderLayout());
+		add(menuPanel, BorderLayout.NORTH);
+		add(legalView, BorderLayout.CENTER);
 		add(taskBarPanel, BorderLayout.SOUTH);
 		add(leftPanel, BorderLayout.WEST);
 		add(rightPanel, BorderLayout.EAST);

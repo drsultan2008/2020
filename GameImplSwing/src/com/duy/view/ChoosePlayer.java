@@ -80,7 +80,7 @@ public class ChoosePlayer extends JPanel implements MouseListener {
 		}
 		
 		if (e.getSource() == luatChoi) {
-			
+			controller.showLegal();
 		}
 	}
 
