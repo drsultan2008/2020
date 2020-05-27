@@ -1,6 +1,5 @@
 package com.duy.view;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -8,57 +7,57 @@ import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ChoosePlayerPanel extends JPanel implements MouseListener {
+import com.duy.controller.GameController;
 
-	private JLabel chonHum;
-	private JLabel chonTom;
+public class ChoosePlayer extends JPanel implements MouseListener {
+
+	private JLabel onePlayer;
+	private JLabel twoPlayer;
 	private JLabel luatChoi;
 	private Icon iconOdd;
+	private GameController controller;
 
-	public ChoosePlayerPanel() {
-		chonHum = new JLabel();
-		chonTom = new JLabel();
+	public ChoosePlayer(GameController controller) {
+		this.controller = controller;
+		onePlayer = new JLabel();
+		twoPlayer = new JLabel();
 		luatChoi = new JLabel();
 
-//		add(body,"Center");
-//		body.setHorizontalAlignment(JLabel.CENTER);
-//		body.setVerticalAlignment(JLabel.CENTER);
 		GridBagLayout gridBag = new GridBagLayout();
 		setLayout(gridBag);
 
 		GridBagConstraints c = new GridBagConstraints();
 		c.gridx = 80;
 
-		add(chonHum, c);
-		add(chonTom, c);
+		add(onePlayer, c);
+		add(twoPlayer, c);
 		add(luatChoi, c);
 		init();
 	}
 
 	private void init() {
-		Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonHum.png").getImage()
+		Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/1NguoiChoi.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		ImageIcon img = new ImageIcon(image);
-		chonHum.setIcon(img);
+		onePlayer.setIcon(img);
 
-		image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonTom.png").getImage()
+		image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/2NguoiChoi.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		img = new ImageIcon(image);
-		chonTom.setIcon(img);
+		twoPlayer.setIcon(img);
 
 		image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/luatChoi.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		img = new ImageIcon(image);
 		luatChoi.setIcon(img);
 		
-		chonHum.addMouseListener(this);
-		chonTom.addMouseListener(this);
+		onePlayer.addMouseListener(this);
+		twoPlayer.addMouseListener(this);
 		luatChoi.addMouseListener(this);
 	}
 
@@ -72,23 +71,33 @@ public class ChoosePlayerPanel extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
+		if (e.getSource() == onePlayer) {
+			controller.setOnePlayer();
+		}
+		
+		if (e.getSource() == twoPlayer) {
+			controller.setTwoPlayer();
+		}
+		
+		if (e.getSource() == luatChoi) {
+			
+		}
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		if (e.getSource() == chonHum) {
-			iconOdd = chonHum.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonHum.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+		if (e.getSource() == onePlayer) {
+			iconOdd = onePlayer.getIcon();
+			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/1NguoiChoi.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
-			chonHum.setIcon(img);
+			onePlayer.setIcon(img);
 		}
 
-		if (e.getSource() == chonTom) {
-			iconOdd = chonTom.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonTom.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+		if (e.getSource() == twoPlayer) {
+			iconOdd = twoPlayer.getIcon();
+			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/1NguoiChoi.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
-			chonTom.setIcon(img);
+			twoPlayer.setIcon(img);
 		}
 
 		if (e.getSource() == luatChoi) {
@@ -102,12 +111,12 @@ public class ChoosePlayerPanel extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		if (e.getSource() == chonHum) {
-			chonHum.setIcon(iconOdd);
+		if (e.getSource() == onePlayer) {
+			onePlayer.setIcon(iconOdd);
 		}
 
-		if (e.getSource() == chonTom) {
-			chonTom.setIcon(iconOdd);
+		if (e.getSource() == twoPlayer) {
+			twoPlayer.setIcon(iconOdd);
 		}
 
 		if (e.getSource() == luatChoi) {

@@ -2,19 +2,34 @@ package com.duy.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
-public class PlayPanel extends JPanel implements MouseListener{
+import com.duy.controller.GameController;
+import com.duy.entity.BTom;
+import com.duy.entity.Element;
+import com.duy.entity.Empty;
+import com.duy.entity.Hum;
+import com.duy.entity.Point;
+import com.duy.entity.Tom;
+import com.duy.utils.Observable;
+import com.duy.utils.Observer;
+import com.duy.utils.UpdateIcon;
+
+public class PlayPanel extends JPanel implements MouseListener,Observer{
 	private JPanel head;
 	private JPanel body;
 	private JPanel foot;
@@ -22,12 +37,18 @@ public class PlayPanel extends JPanel implements MouseListener{
 	private JButton[][] board;
 	private JLabel[][] piece;
 	private Icon icon;
+	private List<UpdateIcon> updateIcons;
+	private GameController controller;
+	private Element firstClick;
 	
-	public PlayPanel() {
+	public PlayPanel(GameController controller) {
+		this.controller = controller;
+		updateIcons = new ArrayList<>();
+		firstClick = null;
+		
 		setLayout(new BorderLayout());
 		init();
 	}
-	
 
 	private void init() {
 		initBody();
@@ -35,17 +56,17 @@ public class PlayPanel extends JPanel implements MouseListener{
 	}
 
 	private void initBody() {
-		GridLayout gridLayout = new GridLayout(7,5,50,60);
+		GridLayout gridLayout = new GridLayout(7, 5, 50, 60);
 		setLayout(gridLayout);
-		
+
 		piece = new JLabel[7][5];
 
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
-				if (i==0 && j==0 || i==0 && j==1|| i==1 && j==0 || j==3 && i==0 || j==4 && i==0 || j==4 && i==1 ){
+				if (i == 0 && j == 0 || i == 0 && j == 1 || i == 1 && j == 0 || j == 3 && i == 0 || j == 4 && i == 0
+						|| j == 4 && i == 1) {
 					piece[i][j] = new PieceBlank();
-				}
-				else {
+				} else {
 					piece[i][j] = new PieceTrongSuot();
 				}
 				add(piece[i][j]);
@@ -53,75 +74,198 @@ public class PlayPanel extends JPanel implements MouseListener{
 			}
 		}
 		
-		Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Hum02.png").getImage().getScaledInstance(40,40, Image.SCALE_SMOOTH);
-		ImageIcon img = new ImageIcon(image);
-		piece[2][3].setIcon(img);
+		SwingUtilities.updateComponentTreeUI(this);
+		update();
 		this.updateUI();
 	}
-	
-	public void update(String[][] map) {
-		for (int i=0; i<7; i++) {
-			for (int j=0; j<5; j++) {
+
+	public void update() {
+		Element[][] elements = controller.getMap();
+		removeAll();
+		GridLayout gridLayout = new GridLayout(7, 5, 50, 60);
+		setLayout(gridLayout);
+		
+
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (i == 0 && j == 0 || i == 0 && j == 1 || i == 1 && j == 0 || j == 3 && i == 0 || j == 4 && i == 0
+						|| j == 4 && i == 1) {
+					piece[i][j] = new PieceBlank();
+				}
+				else if (elements[i][j] instanceof Hum) {
+					piece[i][j] = new PieceHum();
+				}
+				else if (elements[i][j] instanceof Tom) {
+					piece[i][j] = new PieceTom();
+				}
+				else if (elements[i][j] instanceof BTom) {
+					piece[i][j] = new PieceBTom();
+				}
 				
+				else if (elements[i][j] instanceof Empty) {
+					piece[i][j] = new PieceTrongSuot();
+				}
+				
+				add(piece[i][j]);
+				piece[i][j].addMouseListener(this);
 			}
 		}
+		SwingUtilities.updateComponentTreeUI(this);
+
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/board.jpg").getImage(), 0, 0,getWidth(),getHeight(),this);
-		
-	}
+		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/board.jpg").getImage(), 0, 0,
+				getWidth(), getHeight(), this);
 
+	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+//		update();
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (e.getSource() == piece[i][j]) {
+					if (firstClick == null) {
+						firstClick = controller.getElement(i, j);
+					}
+					else {
+						Point x = new Point(firstClick.corr().getX(), firstClick.corr().getY());
+						Point y = new Point(i,j);
+						controller.move(x, y);
+						firstClick = null;
+					}
+				}
+			}
+		}
 
+	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println(e.getX());
-		for (int i=0; i<7; i++) {
-			for (int j=0; j<5; j++) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
 				if (e.getSource() == piece[i][j]) {
 					icon = piece[i][j].getIcon();
-					Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Hum02.png").getImage().getScaledInstance(40,40, Image.SCALE_SMOOTH);
-					ImageIcon img = new ImageIcon(image);
-					piece[i][j].setIcon(img);
+					updateIcons = new ArrayList<>();
+					updateIcons.add(new UpdateIcon(icon,new Point(i,j)));
+					if (controller.getIsHum()) {
+						if (piece[i][j] instanceof PieceHum) {
+							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+									.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
+							ImageIcon img = new ImageIcon(image);
+							piece[i][j].setIcon(img);
+						}
+						else {
+							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Hum02.png")
+									.getImage().getScaledInstance(35,35, Image.SCALE_SMOOTH);
+							ImageIcon img = new ImageIcon(image);
+							piece[i][j].setIcon(img);
+						}
+						
+					}else {
+						if (piece[i][j] instanceof PieceTom) {
+							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+									.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
+							ImageIcon img = new ImageIcon(image);
+							piece[i][j].setIcon(img);
+						}
+						else {
+							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Tot01.png")
+									.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
+							ImageIcon img = new ImageIcon(image);
+							piece[i][j].setIcon(img);
+						}
+						
+					}
+					
+					if (controller.getIsHum()) {
+						if (controller.getElement(i, j) instanceof Hum) {
+							List<Element> list = controller.getElement(i, j)
+									.movesPossible(controller.getElementManager().getMap());
+
+							if (list == null) {
+
+							} else {
+								for (Element iter : list) {
+									if (iter instanceof Hum || iter instanceof Tom || iter instanceof BTom) {
+										System.out.println("?");
+										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+												.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
+										ImageIcon img = new ImageIcon(image);
+										piece[iter.corr().getX()][iter.corr().getY()].setIcon(img);
+									}
+									else {
+										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/click.png")
+												.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+										ImageIcon img = new ImageIcon(image);
+										updateIcons.add(new UpdateIcon(piece[iter.corr().getX()][iter.corr().getY()].getIcon(),new Point(iter.corr().getX(),iter.corr().getY())));
+										piece[iter.corr().getX()][iter.corr().getY()].setIcon(img);
+									}
+								}
+							}
+							
+						}
+					}
+					else {
+						if (controller.getElement(i, j) instanceof Tom || controller.getElement(i, j) instanceof BTom) {
+							List<Element> list = controller.getElement(i, j)
+									.movesPossible(controller.getElementManager().getMap());
+
+							if (list == null) {
+
+							} else {
+								for (Element iter : list) {
+									if (iter instanceof Hum || iter instanceof Tom || iter instanceof BTom) {
+										System.out.println("?");
+										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+												.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
+										ImageIcon img = new ImageIcon(image);
+										piece[iter.corr().getX()][iter.corr().getY()].setIcon(img);
+									}
+									else {
+										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/click.png")
+												.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+										ImageIcon img = new ImageIcon(image);
+										updateIcons.add(new UpdateIcon(piece[iter.corr().getX()][iter.corr().getY()].getIcon(),new Point(iter.corr().getX(),iter.corr().getY())));
+										piece[iter.corr().getX()][iter.corr().getY()].setIcon(img);
+										
+									}
+								}
+							}
+						}
+					}
+
 				}
 			}
 		}
 	}
-
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		for (int i=0; i<7; i++) {
-			for (int j=0; j<5; j++) {
-				if (e.getSource() == piece[i][j]) {
-					piece[i][j].setIcon(icon);
-				}
-			}
+//		update();
+		for (UpdateIcon i:updateIcons) {
+			piece[(int)i.getPoint().getX()][(int)i.getPoint().getY()].setIcon(i.getIcon());
 		}
 	}
-
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-//		System.out.println(e.getX());
 	}
-
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public void update(Observable o) {
+		update();
 	}
 
 }
