@@ -1,31 +1,24 @@
 package com.duy.view;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.Panel;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JPanel;
 
 import com.duy.utils.Constants;
 
-public class BoardView extends JFrame {
+public class BoardView extends JFrame implements MouseListener{
 	private PlayPanel playPanel;
 	private MenuPanel menuPanel;
 	private TaskBarPanel taskBarPanel;
 	private LeftPanel leftPanel;
 	private RightPanel rightPanel;
+	private ChoosePlayerPanel choosePlayerPanel;
 	
 	public BoardView() {
 		new JFrame("Chess");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		playPanel = new PlayPanel();
 		menuPanel = new MenuPanel();
 		taskBarPanel = new TaskBarPanel();
@@ -41,6 +34,17 @@ public class BoardView extends JFrame {
 		add(taskBarPanel,BorderLayout.SOUTH);
 		add(leftPanel,BorderLayout.WEST);
 		add(rightPanel,BorderLayout.EAST);
+		
+		getContentPane().removeAll();
+		
+		choosePlayerPanel = new ChoosePlayerPanel();
+		setLayout(new BorderLayout());
+		add(menuPanel,BorderLayout.NORTH);
+		add(choosePlayerPanel,BorderLayout.CENTER);
+		add(taskBarPanel,BorderLayout.SOUTH);
+		add(leftPanel,BorderLayout.WEST);
+		add(rightPanel,BorderLayout.EAST);
+		
 	}
 	
 	
@@ -48,5 +52,45 @@ public class BoardView extends JFrame {
 	public static void main(String args[]) {
 		BoardView boardView = new BoardView();
 		boardView.setVisible(true);
+	}
+
+
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
