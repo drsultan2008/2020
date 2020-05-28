@@ -89,25 +89,101 @@ public class Elements {
 			}
 		}
 		
-		Element[][] next = initMap();
+		Element[][] next = new Element[7][5];
 		
 		for (int i=0; i<7; i++) {
 			for (int j=0; j<5; j++) {
-				next[i][j]= map.peek()[i][j];
+				Element tmp = map.peek()[i][j];
+				next[i][j]= tmp;
 			}
 		}
 		
-		Element tmp = next[x.getX()][x.getY()];
+		Element[][] boardData = map.peek();
+		
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				if (boardData[i][j] instanceof Hum) {
+					System.out.print(boardData[i][j].corr().getX()+"H"+boardData[i][j].corr().getY());
+				}
+				else if (boardData[i][j] instanceof BTom) {
+					System.out.print(boardData[i][j].corr().getX()+"B"+boardData[i][j].corr().getY());
+
+				}
+				else if (boardData[i][j] instanceof Tom) {
+					System.out.print(boardData[i][j].corr().getX()+"T"+boardData[i][j].corr().getY());
+				}
+				else {
+					System.out.print("###");
+				}
+			}
+			System.out.println();
+		}
+		
+//		Element tmp = next[x.getX()][x.getY()];
+		Element tmp = null;
+		if (next[x.getX()][x.getY()] instanceof Hum) {
+			tmp = new Hum(new Point(x.getX(),x.getY()));
+		}
+		if (next[x.getX()][x.getY()] instanceof Tom) {
+			tmp = new Tom(new Point(x.getX(),x.getY()));
+		}
+		if (next[x.getX()][x.getY()] instanceof BTom) {
+			tmp = new BTom(new Point(x.getX(),x.getY()));
+		}
+		
 		tmp.setCorr(y);
 		next[x.getX()][x.getY()] = new Empty(new Point(x.getX(),x.getY()));
 		next[y.getX()][y.getY()] = tmp;
 		
 		map.push(next);
+		
+		boardData = map.peek();
+		
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				if (boardData[i][j] instanceof Hum) {
+					System.out.print(boardData[i][j].corr().getX()+"H"+boardData[i][j].corr().getY());
+				}
+				else if (boardData[i][j] instanceof BTom) {
+					System.out.print(boardData[i][j].corr().getX()+"B"+boardData[i][j].corr().getY());
+
+				}
+				else if (boardData[i][j] instanceof Tom) {
+					System.out.print(boardData[i][j].corr().getX()+"T"+boardData[i][j].corr().getY());
+				}
+				else {
+					System.out.print("###");
+				}
+			}
+			System.out.println();
+		}
 	}
 	
 	public void undo() {
 		if (map.size()>1) {
 			redo.push(map.pop());
+		}
+		
+		
+		Element[][] boardData = map.peek();
+		
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				if (boardData[i][j] instanceof Hum) {
+					System.out.print(boardData[i][j].corr().getX()+"H"+boardData[i][j].corr().getY());
+				}
+				else if (boardData[i][j] instanceof BTom) {
+					System.out.print(boardData[i][j].corr().getX()+"B"+boardData[i][j].corr().getY());
+
+				}
+				else if (boardData[i][j] instanceof Tom) {
+					System.out.print(boardData[i][j].corr().getX()+"T"+boardData[i][j].corr().getY());
+				}
+				else {
+					System.out.print("###");
+				}
+			}
+			System.out.println();
 		}
 	}
 	

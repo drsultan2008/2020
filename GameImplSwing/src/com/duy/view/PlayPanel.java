@@ -1,11 +1,11 @@
 package com.duy.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import com.duy.utils.Observable;
 import com.duy.utils.Observer;
 import com.duy.utils.UpdateIcon;
 
-public class PlayPanel extends JPanel implements MouseListener,Observer{
+public class PlayPanel extends JPanel implements MouseListener,Observer,ActionListener{
 	private JPanel head;
 	private JPanel body;
 	private JPanel foot;
@@ -84,7 +84,7 @@ public class PlayPanel extends JPanel implements MouseListener,Observer{
 		removeAll();
 		GridLayout gridLayout = new GridLayout(7, 5, 50, 60);
 		setLayout(gridLayout);
-		
+		System.out.println("Update");
 
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
@@ -217,7 +217,26 @@ public class PlayPanel extends JPanel implements MouseListener,Observer{
 						if (controller.getElement(i, j) instanceof Hum) {
 							List<Element> list = controller.getElement(i, j)
 									.movesPossible(controller.getElementManager().getMap());
-
+							
+//							Element[][] m = controller.getElementManager().getMap();
+//							for (int ii=0; ii<7; ii++) {
+//								for (int jj=0; jj<5; jj++) {
+//									if (m[ii][jj] instanceof Hum) {
+//										System.out.print("Hum");
+//									}
+//									else if (m[ii][jj] instanceof BTom) {
+//										System.out.print("BTom");
+//									}
+//									else if (m[ii][jj] instanceof Tom) {
+//										System.out.print("Tom");
+//									}
+//									else {
+//										System.out.print("XXX");
+//									}
+//								}
+//								System.out.println();
+//							}
+//							
 							if (list == null) {
 
 							} else {
@@ -242,6 +261,27 @@ public class PlayPanel extends JPanel implements MouseListener,Observer{
 						}
 					}
 					else {
+						
+//						Element[][] m = controller.getElementManager().getMap();
+//						for (int ii=0; ii<7; ii++) {
+//							for (int jj=0; jj<5; jj++) {
+//								if (m[ii][jj] instanceof Hum) {
+//									System.out.print("Hum");
+//								}
+//								else if (m[ii][jj] instanceof BTom) {
+//									System.out.print("BTom");
+//								}
+//								else if (m[ii][jj] instanceof Tom) {
+//									System.out.print("Tom");
+//								}
+//								else {
+//									System.out.print("XXX");
+//								}
+//							}
+//							System.out.println();
+//						}
+						
+						
 						if (controller.getElement(i, j) instanceof Tom || controller.getElement(i, j) instanceof BTom) {
 							List<Element> list = controller.getElement(i, j)
 									.movesPossible(controller.getElementManager().getMap());
@@ -297,6 +337,11 @@ public class PlayPanel extends JPanel implements MouseListener,Observer{
 	@Override
 	public void update(Observable o) {
 		update();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		System.out.println("Action");
 	}
 
 }

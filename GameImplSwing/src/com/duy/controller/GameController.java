@@ -54,24 +54,25 @@ public class GameController {
 		boardView.showChoosePlayer();
 		
 		Element[][] map = elementsManager.getMap();
+		elementsManager.add(boardView);
 		
-		for (int i=0; i<7; i++) {
-			for (int j=0; j<5; j++) {
-				if (map[i][j] instanceof Hum) {
-					System.out.print("Hum");
-				}
-				else if (map[i][j] instanceof Tom) {
-					System.out.print("Tom");
-				}
-				else if (map[i][j] instanceof BTom) {
-					System.out.print("BTom");
-				}
-				else{
-					System.out.print("###");
-				}
-			}
-			System.out.println();
-		}
+//		for (int i=0; i<7; i++) {
+//			for (int j=0; j<5; j++) {
+//				if (map[i][j] instanceof Hum) {
+//					System.out.print("Hum");
+//				}
+//				else if (map[i][j] instanceof Tom) {
+//					System.out.print("Tom");
+//				}
+//				else if (map[i][j] instanceof BTom) {
+//					System.out.print("BTom");
+//				}
+//				else{
+//					System.out.print("###");
+//				}
+//			}
+//			System.out.println();
+//		}
 	}
 	
 	public void showLegal() {
@@ -125,9 +126,11 @@ public class GameController {
 	
 	public void undo() {
 		elementsManager.undo();
+		isHum=!isHum;
 	}
 	
 	public void redo() {
 		elementsManager.redo();
+		isHum=!isHum;
 	}
 }

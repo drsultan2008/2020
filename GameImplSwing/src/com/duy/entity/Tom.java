@@ -17,6 +17,25 @@ public class Tom implements Element {
 	
 	@Override
 	public List<Element> movesPossible(Element[][] boardData) {
+//		for (int i=0; i<7; i++) {
+//			for (int j=0; j<5; j++) {
+//				if (boardData[i][j] instanceof Hum) {
+//					System.out.print(boardData[i][j].corr().getX()+"H"+boardData[i][j].corr().getY());
+//				}
+//				else if (boardData[i][j] instanceof BTom) {
+//					System.out.print(boardData[i][j].corr().getX()+"B"+boardData[i][j].corr().getY());
+//
+//				}
+//				else if (boardData[i][j] instanceof Tom) {
+//					System.out.print(boardData[i][j].corr().getX()+"T"+boardData[i][j].corr().getY());
+//				}
+//				else {
+//					System.out.print("###");
+//				}
+//			}
+//			System.out.println();
+//		}
+		
 		List<Element> moves = new ArrayList<>();
 		int i = x.getX();
 		int j = x.getY();
