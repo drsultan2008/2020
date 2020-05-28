@@ -89,7 +89,13 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 	}
 
 	public void showChoosePlayer() {
-		playPanel.update();
+		playPanel = new PlayPanel(controller);
+		taskBarPanel = new TaskBarPanel(controller);
+
+		choosePlayer = new ChoosePlayer(controller);
+		chooseTeam = new ChooseTeam(controller);
+		legalView = new LegalView(controller);
+
 		getContentPane().removeAll();
 
 		setLayout(new BorderLayout());

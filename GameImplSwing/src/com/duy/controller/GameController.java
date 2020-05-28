@@ -123,4 +123,11 @@ public class GameController {
 		boardView.setTurnTom();
 	}
 	
+	public void undo() {
+		elementsManager.undo();
+	}
+	
+	public void redo() {
+		elementsManager.redo();
+	}
 }
