@@ -27,7 +27,9 @@ public class EndGame extends JPanel implements MouseListener {
 		humThang = new JLabel();
 		tomThang = new JLabel();
 		choiLai = new JLabel();
-
+		
+		setHumThang();
+		
 		init();
 	}
 

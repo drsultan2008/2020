@@ -14,5 +14,9 @@ public class Observable {
 			o.update(this);
 		}
 	}
+	
+	public void reset() {
+		observers = new ArrayList<>();
+	}
 }
 

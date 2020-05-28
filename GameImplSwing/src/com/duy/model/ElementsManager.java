@@ -65,6 +65,7 @@ public class ElementsManager extends Observable{
 
 	public void setMap(Element[][] map) {
 		elements.setMap(map);
+		notifier();
 	}
 	
 }

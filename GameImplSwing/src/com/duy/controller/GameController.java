@@ -5,14 +5,17 @@ import com.duy.entity.Element;
 import com.duy.entity.Hum;
 import com.duy.entity.Point;
 import com.duy.entity.Tom;
+import com.duy.model.AIVer2;
 import com.duy.model.ElementsManager;
 import com.duy.view.BoardView;
 
 public class GameController {
 	private boolean onePlayer;
 	private boolean isHum;
+	private int aiTurn; // true - Hum 
 	private BoardView boardView;
 	private ElementsManager elementsManager;
+	private AIVer2 ai;
 	
 	public GameController(BoardView boardView){
 		this.boardView = boardView;
@@ -21,6 +24,8 @@ public class GameController {
 		elementsManager = ElementsManager.getInstance();
 		elementsManager.add(boardView);
 		Element[][] map = elementsManager.getElements().getMap();
+		ai = new AIVer2(elementsManager);
+		aiTurn = 0;
 		
 		for (Element[] arr:map) {
 			for (Element i:arr) {
@@ -55,7 +60,6 @@ public class GameController {
 		
 		Element[][] map = elementsManager.getMap();
 		elementsManager.add(boardView);
-		
 //		for (int i=0; i<7; i++) {
 //			for (int j=0; j<5; j++) {
 //				if (map[i][j] instanceof Hum) {
@@ -86,14 +90,38 @@ public class GameController {
 	
 	public void setHum() {
 		isHum = true;
+		
 		boardView.showPlay();
 		boardView.setTurnHum();
+		if (aiTurn == 0) {
+			aiTurn = -1;
+		}
+		else {
+			if (onePlayer) {
+				if ((aiTurn==1?true:false) == isHum) {
+					ai.AIMove(elementsManager, aiTurn==1?true:false);
+					isHum=!isHum;
+				}
+			}
+		}
 	}
 	
 	public void setTom() {
 		isHum = false;
 		boardView.showPlay();
 		boardView.setTurnTom();
+		
+		if (aiTurn == 0) {
+			aiTurn = 1;
+		}
+		else{
+			if (onePlayer) {
+				if ((aiTurn==-1?true:false) == isHum) {
+					ai.AIMove(elementsManager, aiTurn==1?true:false);
+					isHum=!isHum;
+				}
+			}
+		}
 	}
 	
 	public boolean getIsHum() {
@@ -114,6 +142,20 @@ public class GameController {
 	
 	public void move(Point x, Point y) {
 		elementsManager.move(x, y);
+		
+//		if (isEndGame() != 0) {
+//			if (isEndGame() == 1) {
+////				boardView.showEndGame();
+//				boardView.showEndGame();
+////				endGame.setHumThang();
+//			}
+//			else {
+//				System.out.println("Hum");
+//				boardView.showEndGame();
+////				boardView.showEndGame();
+////				endGame.setTomThang();
+//			}
+//		}
 	}
 	
 	public void setTurnHum() {
@@ -132,5 +174,23 @@ public class GameController {
 	public void redo() {
 		elementsManager.redo();
 		isHum=!isHum;
+	}
+	
+	public int isEndGame() {
+		return elementsManager.isGameOver();
+	}
+	
+	public void resetObserver() {
+		elementsManager.reset();
+	}
+	
+	public void showEndGame() {
+		boardView.showEndGame();
+		if (elementsManager.isGameOver() == 1) {
+			boardView.showWinTom();
+		}
+		else {
+			boardView.showWinHum();
+		}
 	}
 }

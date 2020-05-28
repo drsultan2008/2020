@@ -129,7 +129,10 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 			for (int j = 0; j < 5; j++) {
 				if (e.getSource() == piece[i][j]) {
 					if (firstClick == null) {
-						firstClick = controller.getElement(i, j);
+						if (controller.getElement(i, j) instanceof Hum || controller.getElement(i, j) instanceof Tom || controller.getElement(i, j) instanceof BTom ) {
+							firstClick = controller.getElement(i, j);
+							System.out.println("ClickOne");
+						}
 					}
 					else {
 						Point x = new Point(firstClick.corr().getX(), firstClick.corr().getY());
@@ -164,6 +167,10 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 									}
 								}
 							}
+						}
+						
+						if (controller.isEndGame() !=0) {
+							controller.showEndGame();
 						}
 						
 						firstClick = null;
@@ -336,7 +343,7 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 
 	@Override
 	public void update(Observable o) {
-		update();
+//		update();
 	}
 
 	@Override
