@@ -93,35 +93,12 @@ public class GameController {
 		
 		boardView.showPlay();
 		boardView.setTurnHum();
-		if (aiTurn == 0) {
-			aiTurn = -1;
-		}
-		else {
-			if (onePlayer) {
-				if ((aiTurn==1?true:false) == isHum) {
-					ai.AIMove(elementsManager, aiTurn==1?true:false);
-					isHum=!isHum;
-				}
-			}
-		}
 	}
 	
 	public void setTom() {
 		isHum = false;
 		boardView.showPlay();
 		boardView.setTurnTom();
-		
-		if (aiTurn == 0) {
-			aiTurn = 1;
-		}
-		else{
-			if (onePlayer) {
-				if ((aiTurn==-1?true:false) == isHum) {
-					ai.AIMove(elementsManager, aiTurn==1?true:false);
-					isHum=!isHum;
-				}
-			}
-		}
 	}
 	
 	public boolean getIsHum() {
@@ -192,5 +169,17 @@ public class GameController {
 		else {
 			boardView.showWinHum();
 		}
+	}
+	
+	public void setTurn(int x) {
+		this.aiTurn = x;
+	}
+	
+	public void aiMove(boolean isHum) {
+		ai.AIMove(elementsManager, isHum);
+	}
+	
+	public boolean isOnePlayer() {
+		return onePlayer;
 	}
 }

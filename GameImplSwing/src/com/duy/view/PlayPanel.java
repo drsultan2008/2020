@@ -148,6 +148,13 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 										controller.move(x, y);
 										controller.setTom();
 										controller.setTurnTom();
+										
+										//AI
+										if (controller.isOnePlayer()) {
+											controller.aiMove(false);
+											controller.setHum();
+										}
+										
 										break;
 									}
 								}
@@ -163,6 +170,12 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 										controller.move(x, y);
 										controller.setHum();
 										controller.setTurnHum();
+										
+										//AI
+										if (controller.isOnePlayer()) {
+											controller.aiMove(true);
+											controller.setTom();
+										}
 										break;
 									}
 								}

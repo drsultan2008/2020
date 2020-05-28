@@ -73,10 +73,12 @@ public class ChooseTeam extends JPanel implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == chonHum) {
 			controller.setHum();
+			controller.setTurn(-1);
 		}
 		
 		if (e.getSource() == chonTom) {
 			controller.setTom();
+			controller.setTurn(1);
 		}
 		
 		if (e.getSource() == luatChoi) {
