@@ -1,4 +1,4 @@
-package com.luv2code.demo.entity;
+package com.duy.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,23 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="review")
-public class Reviewer {
+@Table(name="board")
+public class Board {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="comment")
-	private String comment;
-	
-	public Reviewer() {
-		
-	}
+	@Column(name="data")
+	private String data;
 
-	public Reviewer(String comment) {
+	public Board() {}
+	
+	public Board(String data) {
 		super();
-		this.comment = comment;
+		this.data = data;
 	}
 
 	public int getId() {
@@ -35,18 +33,17 @@ public class Reviewer {
 		this.id = id;
 	}
 
-	public String getComment() {
-		return comment;
+	public String getData() {
+		return data;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setData(String data) {
+		this.data = data;
 	}
-	
 
 	@Override
 	public String toString() {
-		return "Reviewer [id=" + id + ", comment=" + comment + "]";
+		return "Board [id=" + id + ", data=" + data + "]";
 	}
 	
 }

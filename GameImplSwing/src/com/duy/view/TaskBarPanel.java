@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -77,6 +77,12 @@ public class TaskBarPanel extends JPanel implements MouseListener{
 			// Yes - 0 | No -1
 			if (input == 0) {
 				System.out.println("Input = 0");
+				SavePanel savePanel = new SavePanel();
+				JDialog dialog = new JDialog();
+				dialog.setVisible(true);
+				dialog.add(savePanel);
+				dialog.setSize(new Dimension(300,300));
+				dialog.setLocation(200, 200);
 			}
 			else {
 				System.exit(0);
