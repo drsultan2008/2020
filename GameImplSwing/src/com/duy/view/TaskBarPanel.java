@@ -76,18 +76,28 @@ public class TaskBarPanel extends JPanel implements MouseListener{
 			int input = pane.showConfirmDialog(null, "Lưu màn chơi trước khi trở về trang chủ ?","Cảnh báo",JOptionPane.YES_NO_OPTION);
 			// Yes - 0 | No -1
 			if (input == 0) {
-				System.out.println("Input = 0");
-				SavePanel savePanel = new SavePanel();
-				JDialog dialog = new JDialog();
-				dialog.setVisible(true);
-				dialog.add(savePanel);
-				dialog.setSize(new Dimension(300,300));
-				dialog.setLocation(200, 200);
+				SavePanel savePanel = new SavePanel(controller);
+//				JOptionPane Optionpane =new JOptionPane();
+//				
+//				JDialog dialog = pane.createDialog(savePanel, "?");
+//				dialog.setVisible(true);
+				
+				JOptionPane.showOptionDialog(null, savePanel, "Save Chess", JOptionPane.DEFAULT_OPTION, JOptionPane.UNDEFINED_CONDITION, null,new Object[] {}, null);
+//				JOptionPane.showMessageDialog(null, savePanel,"Save Chess",JOptionPane.UNDEFINED_CONDITION);
+//				System.out.println("Input = 0");
+//				SavePanel savePanel = new SavePanel(controller);
+//				JDialog dialog = new JDialog();
+//				dialog.setVisible(true);
+//				dialog.add(savePanel);
+//				dialog.setSize(new Dimension(300,300));
+//				dialog.setLocation(200, 200);
+//				
+//				dialog.setDefaultCloseOperation(dialog.DO_NOTHING_ON_CLOSE);
+				controller.showHome();
 			}
 			else {
-				System.exit(0);
+				controller.showHome();
 			}
-			controller.showHome();
 		}
 	}
 

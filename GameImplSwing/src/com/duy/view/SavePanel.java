@@ -14,14 +14,22 @@ import javax.swing.JTextField;
 
 import com.duy.DAO.ChessDAO;
 import com.duy.DAO.ChessDAOImpl;
+import com.duy.controller.GameController;
+import com.duy.entity.BTom;
+import com.duy.entity.Element;
+import com.duy.entity.Empty;
+import com.duy.entity.Hum;
+import com.duy.entity.Tom;
 import com.duy.entity.User;
 
 public class SavePanel extends JPanel implements MouseListener{
 	private JTextField textFieldName;
 	private JLabel labelName;
 	private JButton submit;
-	
-	public SavePanel() {
+	private GameController controller;
+	public SavePanel(GameController controller) {
+		this.controller = controller;
+		
 		textFieldName = new JTextField();
 		labelName = new JLabel("Nhập tên tài khoản: ");
 		submit = new JButton("Lưu");
@@ -50,12 +58,34 @@ public class SavePanel extends JPanel implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == submit) {
-			System.out.println("Click Save username: ");
 			// Save to database
 			System.out.print(textFieldName.getText());
 			ChessDAO chessDAO = new ChessDAOImpl();
 			User user = new User(textFieldName.getText());
 			chessDAO.addUserName(user);
+			
+			Element[][] map = controller.getMap();
+			for (int i=0; i<7; i++) {
+				for (int j=0; j<5; j++) {
+					if (map[i][j] instanceof Hum) {
+						System.out.print("H");
+					}
+					else if (map[i][j] instanceof Tom) {
+						System.out.print("T");
+					}
+					else if (map[i][j] instanceof BTom) {
+						System.out.print("B");
+					}
+					else if (map[i][j] instanceof Empty) {
+						System.out.print("O");
+					}
+					else {
+						System.out.print("X");
+					}
+				}
+				System.out.println();
+			}
+			
 		}
 	}
 

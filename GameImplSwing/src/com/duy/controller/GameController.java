@@ -27,23 +27,23 @@ public class GameController {
 		ai = new AIVer2(elementsManager);
 		aiTurn = 0;
 		
-		for (Element[] arr:map) {
-			for (Element i:arr) {
-				if (i instanceof Hum) {
-					System.out.print("Hum");
-				}
-				if (i instanceof BTom) {
-					System.out.print("BTom");
-				}
-				if (i instanceof Tom) {
-					System.out.print("Tom");
-				}
-				else {
-					System.out.print("XXX");
-				}
-			}
-			System.out.println();
-		}
+//		for (Element[] arr:map) {
+//			for (Element i:arr) {
+//				if (i instanceof Hum) {
+//					System.out.print("Hum");
+//				}
+//				if (i instanceof BTom) {
+//					System.out.print("BTom");
+//				}
+//				if (i instanceof Tom) {
+//					System.out.print("Tom");
+//				}
+//				else {
+//					System.out.print("XXX");
+//				}
+//			}
+//			System.out.println();
+//		}
 	}
 	
 	public void setOnePlayer() {
