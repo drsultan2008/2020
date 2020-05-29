@@ -16,11 +16,24 @@ public class ChessDAOImpl implements ChessDAO {
 	private Session session;
 	
 	@Override
-	public void addBoard(Board board) {
+	public void addBoard(Board board,User user) {
 		session = factory.getCurrentSession();
-		
-		try {
 			
+		try {
+			session.beginTransaction();
+			Query<User> query = session.createQuery("from User where name like :userName",User.class);
+			query.setParameter("userName", user.getName());
+			List<User> userName = query.getResultList();
+			
+			if (userName.isEmpty()) {
+				System.out.println("?");
+			}
+			else {
+				userName.get(0).add(board);
+			}
+			
+			session.getTransaction().commit();
+			System.out.println("===>Saved");
 		}
 		catch(Exception e) {
 			e.printStackTrace();

@@ -182,4 +182,8 @@ public class GameController {
 	public boolean isOnePlayer() {
 		return onePlayer;
 	}
+	
+	public int getAITurn() {
+		return aiTurn;
+	}
 }
