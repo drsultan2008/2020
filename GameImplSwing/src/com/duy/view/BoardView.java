@@ -16,6 +16,7 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 	private PlayPanel playPanel;
 	private MenuPanel menuPanel;
 	private TaskBarPanel taskBarPanel;
+	private TaskBarPanelHide taskBarPanelHide;
 	private LeftPanel leftPanel;
 	private RightPanel rightPanel;
 	private ChoosePlayer choosePlayer;
@@ -32,6 +33,7 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 		playPanel = new PlayPanel(controller);
 		menuPanel = new MenuPanel();
 		taskBarPanel = new TaskBarPanel(controller);
+		taskBarPanelHide = new TaskBarPanelHide(controller);
 		leftPanel = new LeftPanel();
 		rightPanel = new RightPanel();
 		controller.getElementManager().add(playPanel);
@@ -82,10 +84,10 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 		setLayout(new BorderLayout());
 		add(menuPanel, BorderLayout.NORTH);
 		add(legalView, BorderLayout.CENTER);
-		add(taskBarPanel, BorderLayout.SOUTH);
+		add(taskBarPanelHide, BorderLayout.SOUTH);
 		add(leftPanel, BorderLayout.WEST);
 		add(rightPanel, BorderLayout.EAST);
-
+		
 		// Refresh
 		SwingUtilities.updateComponentTreeUI(this);
 	}
@@ -105,8 +107,8 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 		add(choosePlayer, BorderLayout.CENTER);
 		add(leftPanel, BorderLayout.WEST);
 		add(rightPanel, BorderLayout.EAST);
-		add(taskBarPanel, BorderLayout.SOUTH);
-
+		add(taskBarPanelHide, BorderLayout.SOUTH);
+		
 		// Refresh
 		SwingUtilities.updateComponentTreeUI(this);
 	}
@@ -119,7 +121,7 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 		add(chooseTeam, BorderLayout.CENTER);
 		add(leftPanel, BorderLayout.WEST);
 		add(rightPanel, BorderLayout.EAST);
-		add(taskBarPanel, BorderLayout.SOUTH);
+		add(taskBarPanelHide, BorderLayout.SOUTH);
 
 		// Refresh
 		SwingUtilities.updateComponentTreeUI(this);

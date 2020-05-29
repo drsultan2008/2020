@@ -6,6 +6,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.duy.controller.GameController;
@@ -70,6 +72,15 @@ public class TaskBarPanel extends JPanel implements MouseListener{
 		}
 		
 		if (e.getSource() == home) {
+			JOptionPane pane = new JOptionPane();
+			int input = pane.showConfirmDialog(null, "Lưu màn chơi trước khi trở về trang chủ ?","Cảnh báo",JOptionPane.YES_NO_OPTION);
+			// Yes - 0 | No -1
+			if (input == 0) {
+				System.out.println("Input = 0");
+			}
+			else {
+				System.exit(0);
+			}
 			controller.showHome();
 		}
 	}
