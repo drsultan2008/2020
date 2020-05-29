@@ -31,7 +31,7 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 
 		controller = new GameController(this);
 		playPanel = new PlayPanel(controller);
-		menuPanel = new MenuPanel();
+		menuPanel = new MenuPanel(controller);
 		taskBarPanel = new TaskBarPanel(controller);
 		taskBarPanelHide = new TaskBarPanelHide(controller);
 		leftPanel = new LeftPanel();

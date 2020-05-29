@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -25,7 +27,7 @@ import com.duy.entity.Hum;
 import com.duy.entity.Tom;
 import com.duy.entity.User;
 
-public class SavePanel extends JPanel implements MouseListener {
+public class SavePanel extends JPanel implements MouseListener,KeyListener{
 	private JTextField textFieldName;
 	private JLabel labelName;
 	private JButton submit;
@@ -58,6 +60,10 @@ public class SavePanel extends JPanel implements MouseListener {
 		add(submit, c);
 
 		submit.addMouseListener(this);
+		submit.addKeyListener(this);
+		addKeyListener(this);
+		labelName.addKeyListener(this);
+		textFieldName.addKeyListener(this);
 	}
 
 	@Override
@@ -133,7 +139,6 @@ public class SavePanel extends JPanel implements MouseListener {
 			System.out.println("The map" + stringBuiler.toString());
 			chessDAO.addBoard(new Board(stringBuiler.toString()), user);
 
-
 		}
 	}
 
@@ -159,5 +164,94 @@ public class SavePanel extends JPanel implements MouseListener {
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+//		System.out.println(e.getKeyCode());
+		
+		if (e.getKeyCode() == 10) {
+			prog = new JProgressBar();
+			prog.setValue(0);
+			prog.setStringPainted(true);
+
+			add(prog);
+			
+			labelName.setText("Đã lưu");
+			remove(submit);
+			remove(textFieldName);
+			SwingUtilities.updateComponentTreeUI(this);
+			
+			int c = 0;
+			
+			try {
+				while (c <= 100) {
+					prog.setValue(c + 10);
+					Thread.sleep(1000);
+					c+=20;
+				}
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			// Save to database
+			System.out.print(textFieldName.getText());
+			ChessDAO chessDAO = new ChessDAOImpl();
+			User user = new User(textFieldName.getText());
+			chessDAO.addUserName(user);
+
+			Element[][] map = controller.getMap();
+			StringBuilder stringBuiler = new StringBuilder();
+
+			for (int i = 0; i < 7; i++) {
+				for (int j = 0; j < 5; j++) {
+					if (map[i][j] instanceof Hum) {
+//						System.out.print("H");
+						stringBuiler.append('H');
+					} else if (map[i][j] instanceof Tom) {
+//						System.out.print("T");
+						stringBuiler.append('T');
+					} else if (map[i][j] instanceof BTom) {
+//						System.out.print("B");
+						stringBuiler.append('B');
+					} else if (map[i][j] instanceof Empty) {
+//						System.out.print("O");
+						stringBuiler.append('O');
+					} else {
+//						System.out.print("X");
+						stringBuiler.append('X');
+					}
+				}
+//				System.out.println();;
+			}
+
+			if (controller.isOnePlayer()) {
+				stringBuiler.append('A');
+			} else {
+				stringBuiler.append('M');
+			}
+
+			if (controller.getAITurn() == -1) {
+				stringBuiler.append('H');
+			} else {
+				stringBuiler.append('T');
+			}
+
+			System.out.println("The map" + stringBuiler.toString());
+			chessDAO.addBoard(new Board(stringBuiler.toString()), user);
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

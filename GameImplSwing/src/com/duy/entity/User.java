@@ -62,7 +62,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", board=" + boards + "]";
+		return "User [id=" + id + ", name=" + name + "]";
 	}
 	
 	public void add(Board tmpBoard) {

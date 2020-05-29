@@ -1,10 +1,14 @@
 package com.duy.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +22,11 @@ public class Board {
 	@Column(name="data")
 	private String data;
 
+//	@ManyToOne(fetch = FetchType.LAZY,cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+//	@JoinColumn(name="id_user")
+//	private User user;
+	@Column(name="id_user")
+	private int idUser;
 	public Board() {}
 	
 	public Board(String data) {
@@ -44,6 +53,14 @@ public class Board {
 	@Override
 	public String toString() {
 		return "Board [id=" + id + ", data=" + data + "]";
+	}
+
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 	
 }
