@@ -22,11 +22,12 @@ public class Board {
 	@Column(name="data")
 	private String data;
 
-//	@ManyToOne(fetch = FetchType.LAZY,cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-//	@JoinColumn(name="id_user")
-//	private User user;
-	@Column(name="id_user")
-	private int idUser;
+	@ManyToOne(fetch = FetchType.LAZY,cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinColumn(name="id_user")
+	private User user;
+//	@Column(name="id_user")
+//	private int idUser;
+	
 	public Board() {}
 	
 	public Board(String data) {
@@ -54,13 +55,21 @@ public class Board {
 	public String toString() {
 		return "Board [id=" + id + ", data=" + data + "]";
 	}
+//
+//	public int getIdUser() {
+//		return idUser;
+//	}
+//
+//	public void setIdUser(int idUser) {
+//		this.idUser = idUser;
+//	}
 
-	public int getIdUser() {
-		return idUser;
+	public User getUser() {
+		return user;
 	}
 
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }

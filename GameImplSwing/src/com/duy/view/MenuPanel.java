@@ -108,16 +108,33 @@ public class MenuPanel extends JPanel implements ActionListener,MouseListener{
 		}
 		
 		if (e.getSource() == open) {
-			System.out.println("Open");
-			ChessDAO chessDAO = new ChessDAOImpl();
-			User theUser = chessDAO.getUser("helloduy");
-			System.out.println(theUser);
+			String userName = JOptionPane.showInputDialog("Nhập vào username của bạn");
 			
-			List<Board> boards = chessDAO.getBoards(theUser);
-			
-			for (Board i:boards) {
-				System.out.println(i.getData());
+			if (userName.equals("")) {
+				System.out.println("Username is null");
 			}
+			else {
+				System.out.println("Open");
+				ChessDAO chessDAO = new ChessDAOImpl();
+				User theUser = chessDAO.getUser(userName);
+				System.out.println(theUser);
+				
+				if (theUser!=null) {
+					List<Board> boards = chessDAO.getBoards(theUser);
+					
+					for (Board i:boards) {
+						System.out.println(i.getData());
+					}
+					
+					OpenPanel openPanel = new OpenPanel(controller,boards);
+					JOptionPane.showOptionDialog(null, openPanel, "Save Chess", JOptionPane.DEFAULT_OPTION, JOptionPane.UNDEFINED_CONDITION, null,new Object[] {}, null);
+				}
+				
+				
+
+			}
+			
+
 		}
 	}
 
