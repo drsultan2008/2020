@@ -186,4 +186,12 @@ public class GameController {
 	public int getAITurn() {
 		return aiTurn;
 	}
+	
+	public void setMap(Element[][] map) {
+		elementsManager.setMap(map);
+	}
+	
+	public void showPlay() {
+		boardView.showPlay();
+	}
 }

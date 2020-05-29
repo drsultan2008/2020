@@ -1,11 +1,13 @@
 package com.duy.view;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
 
+import javax.swing.JDialog;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -18,7 +20,7 @@ import com.duy.controller.GameController;
 import com.duy.entity.Board;
 import com.duy.entity.User;
 
-public class MenuPanel extends JPanel implements ActionListener,MouseListener{
+public class MenuPanel extends JPanel implements ActionListener, MouseListener {
 	private JMenuBar menuBar;
 	private JMenu about;
 	private JMenu help;
@@ -26,12 +28,12 @@ public class MenuPanel extends JPanel implements ActionListener,MouseListener{
 	private JMenuItem info;
 	private JMenuItem version;
 	private GameController controller;
-	
-	MenuPanel(GameController controller){
+
+	MenuPanel(GameController controller) {
 		this.controller = controller;
 		initHead();
 	}
-	
+
 	private void initHead() {
 		menuBar = new JMenuBar();
 		about = new JMenu("About");
@@ -42,19 +44,19 @@ public class MenuPanel extends JPanel implements ActionListener,MouseListener{
 
 		about.add(info);
 		about.add(version);
-		
+
 		menuBar.add(about);
 		menuBar.add(help);
 		menuBar.add(open);
 
 		add(menuBar);
-		
+
 		about.addActionListener(this);
 		help.addActionListener(this);
 		open.addActionListener(this);
 		info.addActionListener(this);
 		version.addActionListener(this);
-		
+
 		menuBar.addMouseListener(this);
 		about.addMouseListener(this);
 		help.addMouseListener(this);
@@ -68,21 +70,22 @@ public class MenuPanel extends JPanel implements ActionListener,MouseListener{
 		if (e.getSource() == about) {
 //			System.out.println("About");
 		}
-		
+
 		if (e.getSource() == info) {
 //			System.out.println("Info");
-			JOptionPane.showMessageDialog(null, "Cờ Hùm Dân Gian, view code via my Github!", "@iamthankyou", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cờ Hùm Dân Gian, view code via my Github!", "@iamthankyou",
+					JOptionPane.INFORMATION_MESSAGE);
 		}
-		
+
 		if (e.getSource() == help) {
 //			System.out.println("Help");
 		}
-		
+
 		if (e.getSource() == version) {
 //			System.out.println("Version");
 			JOptionPane.showMessageDialog(null, "Ver 1.0.1", "Version", JOptionPane.INFORMATION_MESSAGE);
 		}
-		
+
 		if (e.getSource() == open) {
 //			System.out.println("Open");
 		}
@@ -127,7 +130,17 @@ public class MenuPanel extends JPanel implements ActionListener,MouseListener{
 					}
 					
 					OpenPanel openPanel = new OpenPanel(controller,boards);
-					JOptionPane.showOptionDialog(null, openPanel, "Save Chess", JOptionPane.DEFAULT_OPTION, JOptionPane.UNDEFINED_CONDITION, null,new Object[] {}, null);
+//					JDialog dialog = new JDialog();
+//					
+//					dialog.add(openPanel);
+//					dialog.setVisible(true);
+//					dialog.setSize(new Dimension(300,300));
+//					dialog.setLocation(200, 200);
+//					
+					JOptionPane.showOptionDialog(null, openPanel, "Open Chess", JOptionPane.DEFAULT_OPTION, JOptionPane.UNDEFINED_CONDITION, null,new Object[] {}, null);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Có vẻ bạn chưa lưu gì cả");
 				}
 				
 				
@@ -141,24 +154,24 @@ public class MenuPanel extends JPanel implements ActionListener,MouseListener{
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
