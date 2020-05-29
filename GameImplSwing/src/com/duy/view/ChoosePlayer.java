@@ -95,7 +95,7 @@ public class ChoosePlayer extends JPanel implements MouseListener {
 
 		if (e.getSource() == twoPlayer) {
 			iconOdd = twoPlayer.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/1NguoiChoi.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/2NguoiChoi.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
 			twoPlayer.setIcon(img);
 		}
