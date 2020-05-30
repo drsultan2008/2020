@@ -40,8 +40,11 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 	private List<UpdateIcon> updateIcons;
 	private GameController controller;
 	private Element firstClick;
+	private boolean flag;
 	
 	public PlayPanel(GameController controller) {
+		flag = false;
+		
 		this.controller = controller;
 		updateIcons = new ArrayList<>();
 		firstClick = null;
@@ -131,56 +134,114 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 					if (firstClick == null) {
 						if (controller.getElement(i, j) instanceof Hum || controller.getElement(i, j) instanceof Tom || controller.getElement(i, j) instanceof BTom ) {
 							firstClick = controller.getElement(i, j);
-							System.out.println("ClickOne");
+							System.out.println("ClickOne ?");
+							
+							Element[][] map = controller.getMap();
+							
+							if (firstClick instanceof BTom) {
+								flag = true;
+							}
+							
+//							for (int x=0; x<7; x++) {
+//								for (int y=0; y<5; y++) {
+//									map[x][y] = controller.getElement(i, j);
+//								}
+//							}
+//							
+//							if (controller.getElement(i, j) instanceof Tom || controller.getElement(i, j) instanceof BTom) {
+//								map[i][j] = new BTom(new Point(i,j));
+//							}
+							
+//							if (controller.getElement(i, j) instanceof BTom) {
+//								Element x = controller.getElement(i, j);
+//							}
+//								
+//							
+//							
+//							controller.setMap(map);
+//							
+//							if (map[i][j] instanceof BTom) {
+//								System.out.println("BTom");
+//							}
+							
 						}
 					}
 					else {
 						Point x = new Point(firstClick.corr().getX(), firstClick.corr().getY());
 						Point y = new Point(i,j);
 						
-						if (controller.getIsHum()) {
-							if (controller.getElement(x.getX(), x.getY()) instanceof Hum) {
-								List<Element> list = controller.getElement(x.getX(), x.getY())
-										.movesPossible(controller.getElementManager().getMap());
-								
-								for (Element iter:list) {
-									if (iter.corr().getX() == y.getX() && iter.corr().getY()==y.getY()) {
-										controller.move(x, y);
-										controller.setTom();
-										controller.setTurnTom();
-										
-										//AI
-										if (controller.isOnePlayer()) {
-											controller.aiMove(false);
-											controller.setHum();
-										}
-										
-										break;
-									}
-								}
+						if (flag == true) {
+							System.out.println(x);
+							controller.move(x, y);
+							Element[][] map = controller.getMap();
+							
+							map[x.getX()][x.getY()] = new Tom(new Point(i,j));
+							
+							controller.setMap(map);
+							
+							System.out.println(y);
+							System.out.println("BTomm");
+							
+							if (controller.getIsHum()) {
+								controller.setTom();
+								controller.setTurnTom();
 							}
+							else {
+								controller.setHum();
+								controller.setTurnHum();
+							}
+							System.out.println("TRUE");
+							flag = false;
 						}
 						else {
-							if (controller.getElement(x.getX(), x.getY()) instanceof Tom || controller.getElement(x.getX(), x.getY()) instanceof BTom ) {
-								List<Element> list = controller.getElement(x.getX(), x.getY())
-										.movesPossible(controller.getElementManager().getMap());
-								
-								for (Element iter:list) {
-									if (iter.corr().getX() == y.getX() && iter.corr().getY()==y.getY()) {
-										controller.move(x, y);
-										controller.setHum();
-										controller.setTurnHum();
-										
-										//AI
-										if (controller.isOnePlayer()) {
-											controller.aiMove(true);
+							flag =false;
+							
+							if (controller.getIsHum()) {
+								if (controller.getElement(x.getX(), x.getY()) instanceof Hum) {
+									List<Element> list = controller.getElement(x.getX(), x.getY())
+											.movesPossible(controller.getElementManager().getMap());
+									
+									for (Element iter:list) {
+										if (iter.corr().getX() == y.getX() && iter.corr().getY()==y.getY()) {
+											controller.move(x, y);
 											controller.setTom();
+											controller.setTurnTom();
+											
+											//AI
+											if (controller.isOnePlayer()) {
+												controller.aiMove(false);
+												controller.setHum();
+											}
+											
+											break;
 										}
-										break;
+									}
+								}
+							}
+							else {
+								if (controller.getElement(x.getX(), x.getY()) instanceof Tom || controller.getElement(x.getX(), x.getY()) instanceof BTom ) {
+									List<Element> list = controller.getElement(x.getX(), x.getY())
+											.movesPossible(controller.getElementManager().getMap());
+									
+									for (Element iter:list) {
+										if (iter.corr().getX() == y.getX() && iter.corr().getY()==y.getY()) {
+											controller.move(x, y);
+											controller.setHum();
+											controller.setTurnHum();
+											
+											//AI
+											if (controller.isOnePlayer()) {
+												controller.aiMove(true);
+												controller.setTom();
+											}
+											break;
+										}
 									}
 								}
 							}
 						}
+						
+						
 						
 						if (controller.isEndGame() !=0) {
 							controller.showEndGame();
