@@ -1,0 +1,1910 @@
+[33mcommit b3bbd5d5499173cdf1632656304e6c8783b64168[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Mon Jun 1 22:44:05 2020 +0700
+
+    Invert Binary Tree with DFS
+
+[33mcommit 1b8b6e8ce964a27e674fc430f4f4f3352cfe4eb9[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Mon Jun 1 00:43:15 2020 +0700
+
+    Hello TypeScript
+
+[33mcommit 7e66f3eecba0a1e4ab703fd2f434490fb86bc117[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 17:09:58 2020 +0700
+
+    Test
+
+[33mcommit 8fcb6757f705747fd1655db970aef741039c88c6[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 04:08:32 2020 +0700
+
+    Create map
+
+[33mcommit 0b7abd285d0956907507ba66a2ed5fe8d9920d03[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 04:08:03 2020 +0700
+
+    Create map
+
+[33mcommit 6b52fd09735b11e80959768d6245ab3be9295751[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 01:28:41 2020 +0700
+
+    Fix image in layout choosePlayer.java
+
+[33mcommit df1fc616f5167c9ff6a2de7758be785086d66799[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 01:25:36 2020 +0700
+
+    Ver 1.0.1
+
+[33mcommit 307eaf905824374d1994aeda7ac5171f57e6b235[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 00:57:12 2020 +0700
+
+    Create dialog open
+
+[33mcommit 28d43075b28be01bcd001c21f9cefe7875686b12[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 30 00:12:31 2020 +0700
+
+    Add getBoard and getName from chess database
+
+[33mcommit 569d2b7eccfeacc5deb79e16860703eb946f810b[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 29 22:49:36 2020 +0700
+
+    Complete
+    Save database in chess game
+
+[33mcommit e6c196271cba2ac9c2141b2214a08a6d1c7304c5[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 29 21:35:18 2020 +0700
+
+    Create userName to Database
+
+[33mcommit 68ae224d5b6fabe02de6528710964f1cc52a07c0[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 29 11:29:41 2020 +0700
+
+    Process database
+
+[33mcommit a750e5a4616c77e6c9002b86d8576ff319201e20[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 29 09:28:05 2020 +0700
+
+    Before convert to maven
+
+[33mcommit b5ac6d64095b6442a4a6e9e098d3ff76f7bffe42[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 28 14:49:57 2020 +0700
+
+    Fix AI chess
+
+[33mcommit 79902118eb10f0e602d00763be9de149e1dcad4f[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 28 14:10:34 2020 +0700
+
+    Add AI
+
+[33mcommit 1a101acd54f0af948ffa0c05fae1f3ba2913aa8c[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 28 10:40:57 2020 +0700
+
+    Fix refrence undo redo
+
+[33mcommit fff1925eeba7b1a63741958fb102781b20091800[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 28 07:40:26 2020 +0700
+
+    Yesterday
+
+[33mcommit c123e4e0c6c4a101e302355d64976c66918f7966[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 27 16:58:44 2020 +0700
+
+    Implementing onePlayer
+
+[33mcommit c8e3da9ce6d66aebaa2ca6283ca955c9bf27e558[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 27 15:31:08 2020 +0700
+
+    Add legalView ez
+
+[33mcommit 8ef3c95e2a107bf13a8719bd4cb7e89e602ee430[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 27 15:04:09 2020 +0700
+
+    Implementing board play
+
+[33mcommit 24f4573bb24815ba29dd1f814bbb8e06e9e862a5[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 27 09:25:03 2020 +0700
+
+    Create menu choose
+
+[33mcommit 19d254001dd4cf9a790fb7c29c883fa7ded4b540[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 27 08:20:46 2020 +0700
+
+    Yesterday
+
+[33mcommit 0d9e040af35f55158bbb70eace13b1e608fa23e0[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 26 15:38:41 2020 +0700
+
+    Create board main
+
+[33mcommit aaa0325ec67fa49f18a61a4a58b66c7c68d4fc3a[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 26 09:14:33 2020 +0700
+
+    Yesterday
+
+[33mcommit dc222c4ec7bd8703bbf945116d8fff6a44a44e79[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 23 22:17:05 2020 +0700
+
+    Nothing
+
+[33mcommit c0513319a56ab7024060617feafefd25b438347e[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 22 15:33:59 2020 +0700
+
+    Init project chess convert from Javafx to Swing
+
+[33mcommit 4f730d2ed78c86d4e099d12a1c85a206821be56f[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 21 16:17:35 2020 +0700
+
+    Test Algorithm basic
+
+[33mcommit daf6038d1c8d6182b87fe326f76b0dc4b4792bf0[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 21 15:50:33 2020 +0700
+
+    Excercies Algorithm
+
+[33mcommit f541ce3b633f5d86486f4e0e231211006876b74f[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 20 15:29:29 2020 +0700
+
+    Nothing
+
+[33mcommit 50910b6502322416f9ba719f3c0b398d5903552b[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 20 10:56:14 2020 +0700
+
+    Delete comment
+
+[33mcommit d865d4cd446f46079bbfe72f26a49757997b1504[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 20 10:11:16 2020 +0700
+
+    Nothing
+
+[33mcommit ab72b18bc871fd1bff76cec944a68dfbe67c7d32[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 19 23:47:55 2020 +0700
+
+    15 query database BTL and add dependencie database
+
+[33mcommit ced9f83868f0eba204457a6bae9951cf3510db5d[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 19 00:21:29 2020 +0700
+
+    Again! Init Algorithm
+
+[33mcommit 0f71d9a03fdf6b317a895d2e90367bd0b41d19db[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sun May 17 23:47:34 2020 +0700
+
+    Init Algorithm and add SQLScript CRUD
+
+[33mcommit c1a79c6fdf084c5023cd5839fa2c48643e1c223d[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 15 03:32:11 2020 +0700
+
+    Homework database teacher
+
+[33mcommit fe57a31465779f1a9b83808d851ddd4eabe17a4c[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 14 01:07:15 2020 +0700
+
+    Fix security alert form github
+
+[33mcommit 8deb6635cc66e560ec3db68626ac71326594c6e6[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 14 01:05:21 2020 +0700
+
+    Add method get top student
+
+[33mcommit 718d238e79417c14768f4fb276e07a9c728df9ae[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 13 23:31:46 2020 +0700
+
+    Learn Graph and add option SQL school with errors
+
+[33mcommit 1452a999152d71c837750418447bc4c6bdf29785[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 12 02:04:07 2020 +0700
+
+    Adding file database
+
+[33mcommit 577e304857c520f9ce4c77aa92e9591acc1d3ba7[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 12 02:02:48 2020 +0700
+
+    Complete CRUD for Database School
+
+[33mcommit 7e4dfdd510c303529deee2c374618abdce9a8b4c[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Mon May 11 15:03:48 2020 +0700
+
+    Change host database
+
+[33mcommit 9ea9475a60a3cd66a20c229312520fd755ac9ead[m
+Merge: 5e589be 3bf9182
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon May 11 13:31:44 2020 +0700
+
+    Merge branch 'master' of https://github.com/Iamthankyou/2020
+
+[33mcommit 5e589be7f052779bc6ef1b2b004694fce8b52693[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon May 11 13:31:00 2020 +0700
+
+    File sql script
+
+[33mcommit 3bf9182e6a3e2a9913c8092e3005e57fc9090924[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sun May 10 14:57:09 2020 +0700
+
+    Nothing
+
+[33mcommit 168bcd1d6e7446916fc6111ca9290f1d44c64338[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 9 17:03:05 2020 +0700
+
+    To to follow customer
+
+[33mcommit c5cfe0ca5bc815f787bf3e9b221c1726f22de198[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 9 16:16:11 2020 +0700
+
+    Change color button navigation Caculator
+
+[33mcommit e981c2ac8b737ee7e6c7efd0434d699bd7f13dd9[m
+Merge: f716896 3db21a2
+Author: duy <quangduynb00@gmail.com>
+Date:   Sat May 9 12:23:56 2020 +0700
+
+    Merge branch 'master' of https://github.com/iamthankyou/2020
+
+[33mcommit 3db21a224d551882c6e1011e280363023daa5a39[m
+Merge: 71a65f0 aa54273
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sat May 9 12:23:32 2020 +0700
+
+    Merge branch 'master' of https://github.com/Iamthankyou/2020
+
+[33mcommit 71a65f0eb4dd53e18d135191774bd4e827c8d5e1[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sat May 9 12:22:47 2020 +0700
+
+    Fail deploy heroku with mysql
+
+[33mcommit f716896c55d5a341574b74a6b69555679f961dca[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 8 22:59:00 2020 +0700
+
+    Init Project tity
+
+[33mcommit aa5427335e77cd0ea0b923ccc51b1e9f9722a103[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 8 02:08:05 2020 +0700
+
+    Complete 90% CaculatorGUI
+
+[33mcommit 23a38a721fc5d318f8165459bc512543ad34e957[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 8 01:24:37 2020 +0700
+
+    Fix stack evalutionPostfix
+
+[33mcommit 7e3de48277d1549302fe7a4a640f77bef8bd9cea[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Fri May 8 01:19:32 2020 +0700
+
+    Infix to postfix and evalutionPostfix
+
+[33mcommit d1a429c11a4696522bf454477e60e219a4b970b3[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Thu May 7 15:41:18 2020 +0700
+
+    Init project CaculatorGUI and complete GUI
+
+[33mcommit 39e4d3d569aa59e6575753554424ed8467ec81b5[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 6 23:16:11 2020 +0700
+
+    Test wget command
+
+[33mcommit 4e3008f19fc45d8b939ad8b7e75dfca06b2517c3[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Wed May 6 10:51:11 2020 +0700
+
+    Stuff yesterday
+
+[33mcommit 4ea79159adc0fd4f55f70952474cac6a2a7471f7[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 5 21:47:36 2020 +0700
+
+    Sync
+
+[33mcommit cac5e2b289bc69a511da9254409d189ea0821783[m
+Author: duy <quangduynb00@gmail.com>
+Date:   Tue May 5 21:45:34 2020 +0700
+
+    Init learning frontend
+
+[33mcommit 509861e874c768aaa93828b7dfaebf03abcb43b6[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon May 4 10:14:45 2020 +0700
+
+    Completed Sudoku Game
+
+[33mcommit f2b75070158a621aba172416435e00dce4d84fd0[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon May 4 01:32:09 2020 +0700
+
+    MVC Pattern & Observer Pattern for Sudoku
+
+[33mcommit aed0c2a02f3e453ded2b1a6127d067ec165532cd[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun May 3 19:26:49 2020 +0700
+
+    Init project Sudoku Game GUI
+
+[33mcommit d21bc311bb8ba1e2cbedfd0c018e9c24cb069c0d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun May 3 00:05:39 2020 +0700
+
+    Fix bug from java project to jar
+
+[33mcommit 4c94662eeeb0da7f7cc4298158fa8114d4735ef0[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat May 2 23:25:44 2020 +0700
+
+    Clone Chess Project
+
+[33mcommit cd4558f6bc68175aab3c2e94b694074eb5fc2a83[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat May 2 22:18:46 2020 +0700
+
+    Add view RoleGame
+
+[33mcommit 27869cf58da30212afc406bccea7dedcf96f0f9c[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat May 2 22:03:29 2020 +0700
+
+    Add view EndGame
+
+[33mcommit bb8185df24780d93b0435d4026ab38cb1aa93c46[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Fri May 1 19:27:58 2020 +0700
+
+    Web app scheduling & page replacment
+
+[33mcommit 131b1297570d24263fdf06d3d80310d467be2bb6[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 28 19:38:46 2020 +0700
+
+    AI Chess more smart 'tiny'
+
+[33mcommit a0188bdf2050c5de65558b81faa5108e584ce7cc[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 28 00:27:05 2020 +0700
+
+    AI stupid and very slow
+
+[33mcommit 39841a7f99b0850697e61c7b02c9d35b3443d27e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 27 20:47:48 2020 +0700
+
+    Swing caculator demo not working
+
+[33mcommit e79660adb4dbb6d1c6ac532a97d43af76a6995ad[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 27 17:14:03 2020 +0700
+
+    Example ez for Swing
+
+[33mcommit c82fd6223894dab2449737672d0bdda91cfdac24[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 27 14:30:01 2020 +0700
+
+    Add function undo/redo for chess fix bug for references mapping
+
+[33mcommit 0d371c55ab1de4454ea6106f4a08bc1887e5ee43[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 25 13:47:08 2020 +0700
+
+    Project Chess: Add graphic footer, tag home, prev, next not working
+
+[33mcommit d84c401979e1ccb65e7e90fd9358d1188aecb9ea[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 25 00:30:23 2020 +0700
+
+    TwoPlayer rule
+
+[33mcommit f3f83d4fe62287fbbdfb39358d1534cd71451a78[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 24 23:44:24 2020 +0700
+
+    Fix bug today: not update corr when move elemnent
+
+[33mcommit 3d235bd8e157868a3ac7879192a0b85243842deb[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Fri Apr 24 17:28:47 2020 +0700
+
+    Change script database
+
+[33mcommit 7c5e09aa440d01ccd46d6bed580ffd58e56dad29[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Fri Apr 24 17:22:13 2020 +0700
+
+    Exercies
+
+[33mcommit c57c6f602c000006507a77564fcd3daec0b04c39[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Fri Apr 24 13:45:04 2020 +0700
+
+    Add image diagram  for file Database
+
+[33mcommit cf679376ba04d7922f3e064c2d5a6816dfc6c76d[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Fri Apr 24 13:36:35 2020 +0700
+
+    File database create for team
+
+[33mcommit 5458507b9f840fe74ead353eb288e862874e8940[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 23 22:19:13 2020 +0700
+
+    Day 3
+
+[33mcommit 8a845b6db747ee95bb718c4e57569b2dbd7a42de[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 23 08:49:14 2020 +0700
+
+    Day 2
+
+[33mcommit 33bacd0c0aef87132cd7136db219821edc5637e3[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Tue Apr 21 16:37:53 2020 +0700
+
+    Sync 2 pc
+
+[33mcommit ccb5c4f51f8c06d6db562714d8c74720051b8cdb[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Tue Apr 21 00:51:56 2020 +0700
+
+    Real project with springboot & thymeleaf
+
+[33mcommit 6f995073189f35d35e59c76b68efd51704c619a4[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 21:44:44 2020 +0700
+
+    Employee Directory with Bootstrap ez
+
+[33mcommit 965b43d462d3e574eda22f0d6486d1a6dd454c63[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 21:15:46 2020 +0700
+
+    Hello thymeleaf with css & html
+
+[33mcommit 37496809c06e661cd3b604415b651f0d0efe2917[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 17:31:08 2020 +0700
+
+    Learning javacore with class
+
+[33mcommit 0448394b72219f9ce3a9ca9858d4df58ae277a21[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 10:58:51 2020 +0700
+
+    Spring data REST configuation,pagination and sorting (sorting in path browser)
+
+[33mcommit d9a7ff6ef8a468250dfacb6f018c8b3c1032020a[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 10:48:35 2020 +0700
+
+    Spring Data Rest MAGIC
+
+[33mcommit d28c47236674244f7bf2d5b3a31181fd8b16f376[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 10:10:30 2020 +0700
+
+    Spring Data JPA (Keep simple ezzz)
+
+[33mcommit 341cdd10710ba3378af490bc10633d98e0235979[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Mon Apr 20 09:46:28 2020 +0700
+
+    Standard JPA
+
+[33mcommit 4f727b695aea246c35d0a51d25fa6235e6edf787[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun Apr 19 23:35:51 2020 +0700
+
+    Add post, put, delete RESTapi with springboot
+
+[33mcommit c37d553d5c6682e9a37c78bf99cafda7a97392e3[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun Apr 19 22:33:31 2020 +0700
+
+    Fix bug, miss 'r' on employeeService
+
+[33mcommit bd911b451b70d86e4ed4596acd33651722f156b2[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun Apr 19 20:47:55 2020 +0700
+
+    Refactor add @Service
+
+[33mcommit b87a9fbfe057757ea0e02d7a097d1235a3884002[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun Apr 19 14:57:41 2020 +0700
+
+    Fix bug employee to Employee
+
+[33mcommit edd294f8d80fe4b92a51a19c763a01cff56bfcd0[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun Apr 19 14:27:57 2020 +0700
+
+    REST springboot get employees api
+
+[33mcommit ab4908a687bf517c845322e4f4ca6d7ca8faa9bf[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sun Apr 19 13:40:20 2020 +0700
+
+    Config ubunu
+
+[33mcommit 47c19466f55c77b63a934b6507f9418caa0a4daa[m
+Author: Iamthankyou <quangduynb00@gmail.com>
+Date:   Sat Apr 18 22:38:36 2020 +0700
+
+    From ubuntu
+
+[33mcommit d842e8bb5c96b8dcc889702a01aa0f7285304e3d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 18 17:58:38 2020 +0700
+
+    Learning JavaCore & Init CRUDdemo
+
+[33mcommit 4fa399174fdc728c55dab3d2b74f1e2c37f9b1dc[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 22:47:20 2020 +0700
+
+    Add 1000+ config properties ex with context path
+
+[33mcommit 03275e8288169d58fc96da1ca4542cec47ff418b[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 22:28:08 2020 +0700
+
+    Add inject @Value with properties custom
+
+[33mcommit 16e7aa9f7a1d1014589d73ddbe6b95a8f20550c0[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 20:29:27 2020 +0700
+
+    Add springsecurity devtools for Actuator Starter
+
+[33mcommit d369717d435a843ce06f10a08471d9390d4e0e33[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 20:17:06 2020 +0700
+
+    Add devtools Actuator Starter
+
+[33mcommit 7b6c1f2fcf9fda3d484f1b0f4a62cf1b73b692c6[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 11:47:16 2020 +0700
+
+    Add springboot-devtools for auto update server
+
+[33mcommit dc84d2f4188b3774567d0dacb0613b55b65dbb3e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 10:06:09 2020 +0700
+
+    Fix server already Springboot
+
+[33mcommit e8f47b0bd8d8da0e1ede1bb606012b16c952c7c1[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 09:29:10 2020 +0700
+
+    Init Springboot
+
+[33mcommit 98f57a0dcaa88963f2b93c937507d5b8cf373122[m
+Author: Lê Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 17 08:32:18 2020 +0700
+
+    Update pom.xml
+
+[33mcommit 2db8eeb9d42dc7d6398631c0d329c3a9d5ec5c00[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 16 20:25:50 2020 +0700
+
+    Add (POST), update (PUT), delete CRM REST
+
+[33mcommit 9417f560e67bbce5012decf5e8c25683d6e9d5cc[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 16 10:29:03 2020 +0700
+
+    CRM REST Exception Handler
+
+[33mcommit 26cd41b6c7624e43aed5dc2d0faaebcaa3bda75c[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 16 09:51:16 2020 +0700
+
+    Overview database real-time project with RESTapi
+
+[33mcommit ab358be2dc12d16d91320daaf96162b25deee26e[m
+Merge: 23069a2 d4f6753
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 16 09:10:12 2020 +0700
+
+    Again evironment REST database
+
+[33mcommit 23069a26364001ebd8a8858d7d0d26350b457013[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 16 08:14:06 2020 +0700
+
+    Init background for Spring Rest get Database
+
+[33mcommit d4f6753184e116887d370c88e0989f935bd7c56b[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 16 08:14:06 2020 +0700
+
+    Init background for Spring Rest get Database
+
+[33mcommit 67cd2bb19a01bd3a545f7fd11dc5eee17304e284[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 15 23:10:55 2020 +0700
+
+    Practice expect exception handling with @ControllerAdvice
+
+[33mcommit f59b5b8fa879e46c32dff5f6eca1601486a71719[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 15 22:59:44 2020 +0700
+
+    Exception handling generic
+
+[33mcommit b8bd8e2eca7ae6631f55ce21c4ce6340dd1425d5[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 15 22:18:50 2020 +0700
+
+    Exception handling spring REST
+
+[33mcommit c820c180895bb804426a148759a67083574cc5db[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 15 08:57:29 2020 +0700
+
+    Database population_years for learning
+
+[33mcommit 5aeff4925b93b79cb9952277df9d01e95cb12edd[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 14 14:03:37 2020 +0700
+
+    update ver for JackSon Project (security)
+
+[33mcommit 4cdc7f3cec1e03d8d2582a5092c6fba1855b7002[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 14 10:15:21 2020 +0700
+
+    using @PathVariable for REST endpoints
+
+[33mcommit 2eff68347ff9f28196437e905d6a02a29ff983b4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 14 09:54:18 2020 +0700
+
+    students api simple
+
+[33mcommit b3e2b5fecc5d44df3781c02c83f2df1f79731532[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 13 23:59:22 2020 +0700
+
+    hello spring rest
+
+[33mcommit 1f20694d5ea595c242b07116674b6cf4921b4519[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 13 09:43:42 2020 +0700
+
+    JSON ignore properties (ignoreUnknown=true)
+
+[33mcommit 7cd84651de84c46c4f5bb1c978e21f48acb7f413[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 13 09:35:03 2020 +0700
+
+    nested json
+
+[33mcommit 05163dc0b21d5e6bd148301fafce61463c10997a[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 13 09:15:08 2020 +0700
+
+    add jackson databind dependency
+
+[33mcommit e1e7ab5bd20ce1633d7e93bbd2b830ea40da1f71[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 13 09:10:08 2020 +0700
+
+    init REST data
+
+[33mcommit b002a2f0b9d03e6448ac30ecf423d50822aa1582[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 13 00:12:35 2020 +0700
+
+    bcrypt database security
+
+[33mcommit 197f75c28513b110bcd1bc198d5081577cf15c88[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 12 23:41:01 2020 +0700
+
+    jdbc connector
+
+[33mcommit 321651d556f46a9d8e7d37243b1f2d9fab02c091[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 12 13:55:23 2020 +0700
+
+    hidden link with role user
+
+[33mcommit bf08410a618b70e773dd7a9907607326d7902b41[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 12 13:38:43 2020 +0700
+
+    add custom access denied but ERROR ??
+
+[33mcommit 022910eb86f404619dabc34f333e5c497b2bef46[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 12 11:08:28 2020 +0700
+
+    restrict for admin, employee by method antMatch(").hasRole()
+
+[33mcommit d32cf1eaa3edcb67df0e10949a466e030418f8e9[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 12 10:56:12 2020 +0700
+
+    add view and controller for admin
+
+[33mcommit 0e6b89db443ba040a14bd3c87db9248aab142a40[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 12 00:12:00 2020 +0700
+
+    CSRF enable in form:form else manually on form token
+
+[33mcommit cb29c3f9e1291a58ac5d68043140e6c260ecca28[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 11 23:48:08 2020 +0700
+
+    add logout button
+
+[33mcommit 03b1dddd0966d95c0b4a613f17a789e7777e48a9[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 11 18:40:24 2020 +0700
+
+    Chat phi phan ham so
+
+[33mcommit 3bc990c50aa31f2f86efb37343a4a87fecabd8ea[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 11 12:10:36 2020 +0700
+
+    bootstrap form login
+
+[33mcommit a14d51d5d5e3cfcf446578ef57c45c46f8c0efb0[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 11 11:51:17 2020 +0700
+
+    custom form spring @security
+
+[33mcommit b0d199fda41c9e1f75d2f9375f1d7d696859ed36[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 20:57:25 2020 +0700
+
+    add user & pass springsecurity basic
+
+[33mcommit 674e9dff95147fee5d3ce591314850b609e75caf[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 20:21:11 2020 +0700
+
+    version latest spring
+
+[33mcommit 7169d962b364ba02c6b53b5bb70c4ff803639db7[m
+Merge: 01a7231 a2d88a3
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 14:24:36 2020 +0700
+
+    ?
+
+[33mcommit 01a723159ce1975262aa4c8791a3de2120820748[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 14:23:56 2020 +0700
+
+    ?
+
+[33mcommit a2d88a37e5457718c235f459db0c8f34892f92c0[m
+Merge: 1f46f92 25607a6
+Author: Lê Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 14:16:34 2020 +0700
+
+    Merge pull request #1 from Iamthankyou/dependabot/maven/spring-security-demo-01-base-app/org.springframework-spring-webmvc-5.1.0.RELEASE
+    
+    Bump spring-webmvc from 5.0.2.RELEASE to 5.1.0.RELEASE in /spring-security-demo-01-base-app
+
+[33mcommit 25607a660b0998715dc52bbed4c0b45d32582251[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Apr 10 05:13:06 2020 +0000
+
+    Bump spring-webmvc in /spring-security-demo-01-base-app
+    
+    Bumps [spring-webmvc](https://github.com/spring-projects/spring-framework) from 5.0.2.RELEASE to 5.1.0.RELEASE.
+    - [Release notes](https://github.com/spring-projects/spring-framework/releases)
+    - [Commits](https://github.com/spring-projects/spring-framework/compare/v5.0.2.RELEASE...v5.1.0.RELEASE)
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+[33mcommit 1f46f92926c00e10c1df30c08a0d768c103f5b1d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 12:11:27 2020 +0700
+
+    fix connect folder with new project
+
+[33mcommit 4edc0c7d45c841e9c7a6f99e95c5a325f01afa3e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 11:08:00 2020 +0700
+
+    create spring dispatcher servlet initalizer
+
+[33mcommit 646d7d7368780e188e52a8ae3a7862c70a8b8f32[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 11:01:48 2020 +0700
+
+    create spring config class
+
+[33mcommit f28ac492197861d69bb60eefe390d86850409359[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 10 10:39:15 2020 +0700
+
+    update Maven war plugin which issue with Eclipse
+
+[33mcommit 5bfdfaaf3cbd90b6419a0cdc883992cbb08a8d24[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 9 17:58:23 2020 +0700
+
+    add hibernate core in DOM file
+
+[33mcommit 1718361d826f1aa7298ae6f520c992da86a13037[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 9 15:03:52 2020 +0700
+
+    valid sudoku short
+
+[33mcommit 97fd3e992ac44fe070594d0b4d8559eb8908a433[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 9 00:08:35 2020 +0700
+
+    Hello world web app of Maven
+
+[33mcommit 3b369f5ab41dedb53084da1938696479ee1b9a08[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 8 23:49:43 2020 +0700
+
+    hello word of maven
+
+[33mcommit 63d80e4f00470b3a4b926a345a5c9b0d1a083a5c[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 8 01:39:58 2020 +0700
+
+    Add @AfterReturning aspect for MVC app g9
+
+[33mcommit 4c52578a8b02bf731233a71bd80cfb2388d94e99[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 8 01:31:50 2020 +0700
+
+    Aspect + MVC @after test
+
+[33mcommit 3729aec67ba713b5da89ee5536f0082256556a01[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 23:45:04 2020 +0700
+
+    rethrow exception
+
+[33mcommit 6575a50fbcc1fac6680576b9db8aa4c8dc3ec7cf[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 23:39:49 2020 +0700
+
+    exeption handling @Around
+
+[33mcommit b19fdb4534de519756ce8633f4220b33301bfc07[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 23:15:21 2020 +0700
+
+    ??
+
+[33mcommit 21e650457c295ac901067f679140bbcfa3bc1083[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 23:03:24 2020 +0700
+
+    logger resolve order issue magic
+
+[33mcommit 7a4e69767193ca8b4ec2e1482a80ec1bc6cdd0c6[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 22:46:58 2020 +0700
+
+    @Around test duration method block
+
+[33mcommit fbf6f4305c31de547dd6ec808216074f3cc1035d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 22:45:38 2020 +0700
+
+    ?
+
+[33mcommit 2e0c302ea7b6a5da3550c36e2c8ba48060dbc542[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Apr 7 12:49:39 2020 +0700
+
+    @After (finally) method
+
+[33mcommit 3097e426398f40547a252791682810597c34dd45[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 22:15:56 2020 +0700
+
+    before throwing exception
+
+[33mcommit 63dad5272693d8c25a728effed475587dfcbb92c[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 21:19:28 2020 +0700
+
+    post-process modify data with @AfterReturning aspcet
+
+[33mcommit 6e09a89835879d89fbd3a6c16d99e59891d7f985[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 21:03:42 2020 +0700
+
+    after returning List name res method
+
+[33mcommit 8db063e793d96c713e843775200f61a23ab093ed[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 17:54:15 2020 +0700
+
+    ?
+
+[33mcommit 5cd6c1ef952ad9cae66f208abe6021e1655e3ceb[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 17:02:07 2020 +0700
+
+    implement cycle extend vector
+
+[33mcommit 0753033a8f76f1a6cc91cd531e73fb3daae416c5[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 16:30:41 2020 +0700
+
+    vector
+
+[33mcommit c42494eaf2dd7ca9f9767f44ea2c527616007a3d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 16:17:34 2020 +0700
+
+    question a
+
+[33mcommit 24cacadc587db9670d3a92a69218ae889d35af9d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 10:41:08 2020 +0700
+
+    joinpoint class argument
+
+[33mcommit f04884a65752cf7cb30c607f8a7057a591413801[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Apr 6 10:24:22 2020 +0700
+
+    show method signature
+
+[33mcommit f850614ab7a64f04c76f7cdc6ccccb8e2e4f2ef4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 22:03:16 2020 +0700
+
+    order aspect
+
+[33mcommit 81c5d1dd921f625a3280a21e9daec7ec433420c7[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 21:13:44 2020 +0700
+
+    get method in package no getter setter with combine
+
+[33mcommit 3439bbcec2542b8a85956a67f882354d8dc30d89[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 20:27:23 2020 +0700
+
+    pointcut-declaration
+
+[33mcommit 08ba0ba97058e1054bfea2b9d49fcd651207e81e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 11:05:44 2020 +0700
+
+    match anymethod in package
+
+[33mcommit 35cb6da930c84cf3abef5216247266465487b739[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 10:52:23 2020 +0700
+
+    add method param include Account and any argu
+
+[33mcommit 8f962b0a9694325c118262e4c75e2465487eae2b[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 10:47:32 2020 +0700
+
+    match any method with parameter Account
+
+[33mcommit bf9697f1d26871e1774ce121190ee0fd4482160f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 02:00:15 2020 +0700
+
+    add any type of method
+
+[33mcommit dd424cc68b24da88f4b85d3952775e309f942952[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 01:54:41 2020 +0700
+
+    add any method begin 'add..'
+
+[33mcommit 35d9fd4c4ca0078b55938af6b7f071b50e75d974[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 01:50:26 2020 +0700
+
+    add only method addAccount on AccountDAO
+
+[33mcommit 437af1469e7a0f489b5a697110dd2a3ba6ad00da[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 01:43:45 2020 +0700
+
+    match any addAccount method
+
+[33mcommit ed3e7768678573023c0fcdced5f48ed98b3c16bd[m
+Author: Lê Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 00:26:09 2020 +0700
+
+    Update ComitGit.txt
+
+[33mcommit 7804552b15a9b04e383be6d206ff5f7f64d344c7[m
+Author: Lê Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 00:25:14 2020 +0700
+
+    Update ComitGit.txt
+
+[33mcommit 25894e4148ecd0e3a64b7b5cab00bd08023abba4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Apr 5 00:03:06 2020 +0700
+
+    demo loggin aspect
+
+[33mcommit 38e63797eebd4419509b5c8f43324b061eb0e7ba[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 23:36:03 2020 +0700
+
+    demo bean before
+
+[33mcommit 5ebb922a928e3c7ed18a33624e4363ad310f0364[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 23:09:20 2020 +0700
+
+    add aspectj
+
+[33mcommit c6b83b3b805e1bbea48208fe148ee978f9feb1a7[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 22:54:57 2020 +0700
+
+    init spring jar file
+
+[33mcommit 1a239441c7617e5f571093d5e123b54345085f74[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 22:41:15 2020 +0700
+
+    repo from ...
+
+[33mcommit 96c471bfd3696342bb68112c6d4d0469967968a7[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 12:15:42 2020 +0700
+
+    Delete customer
+
+[33mcommit a29fd7a5458dc9d85a103da66cc7f901a8bb44e8[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 09:02:45 2020 +0700
+
+    Commit 5
+
+[33mcommit 8e84882a34786af21684b565f9e328234d3fffad[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 08:41:26 2020 +0700
+
+    Commit 4
+
+[33mcommit 9f241cb312b99939268f041628dc0cfe9584ffae[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 08:22:56 2020 +0700
+
+    Commit 3
+
+[33mcommit dc4db80fc33131c9d504991e073f66120c9cd7c7[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 08:10:40 2020 +0700
+
+    Test commit with console 2
+
+[33mcommit 51d9872c414a1dc5c5043e3e976a286b90bce5fb[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 08:04:49 2020 +0700
+
+    Test pull github
+
+[33mcommit 499e141ea95f2f9759701305c081566d9b788c41[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 07:34:02 2020 +0700
+
+    Fix server tomcat
+
+[33mcommit b275fcdc7056ebdf03dcafa52526bb82e33e8025[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 00:27:15 2020 +0700
+
+    Update button delete
+
+[33mcommit b4599f4574eed0c119c13db10a739b0eff89825d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Apr 4 00:11:54 2020 +0700
+
+    Save or Update
+    
+    [!] <form:hidden path="id"> (mykey)
+
+[33mcommit 17e898efc69c6097783d5363e4deb61672d8d09d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 23:48:19 2020 +0700
+
+    Update
+
+[33mcommit 5c293f13fcde7d31a997b511526808cf102a2a72[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 22:12:04 2020 +0700
+
+    sort list with HQL
+    
+    order by lastName
+
+[33mcommit 60d84643572199be2fe5340909d95276c8a202a1[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 22:06:17 2020 +0700
+
+    process adding
+
+[33mcommit b0abda53b47d9d5b99625c29577dcfe8392b1ca4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 20:36:51 2020 +0700
+
+    add Customer addtribute
+
+[33mcommit 271fc36319e87abffe2f6f9220e61e86e8eab186[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 20:30:37 2020 +0700
+
+    add submit customer in form
+
+[33mcommit 95289d2ca3513e544fc70f2d0029dd6874405f76[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 20:05:57 2020 +0700
+
+    Facade @Service
+    
+    CustomerService not @Transactional
+
+[33mcommit 53a20e6ee4f7742bfff0e047a5f64f59133a58ea[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 19:53:05 2020 +0700
+
+    SQLite program
+
+[33mcommit cc52ae4c8834d290f3336dc00cd7c5b9ac93c867[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Apr 3 12:00:32 2020 +0700
+
+    RequestMapping -> Getmapping
+    
+    GetCustomer in Controller class is GET
+
+[33mcommit bfa3759edc42d00b180fb9d62302eef47b3e0f30[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 2 23:30:56 2020 +0700
+
+    redirect customer/list
+    
+    index config
+
+[33mcommit 655bf7de25d796f7dbc669d7b0081c83b30a319a[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 2 23:12:28 2020 +0700
+
+    add Style
+    
+    config XML mvc Resources
+
+[33mcommit 89805acaa7594b1dc6fa788828940971a1a8787e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 2 22:28:02 2020 +0700
+
+    Show page with Database
+    
+    Interface CustomerDAO
+    ...
+
+[33mcommit e091caacf3f007d11a3d1fccd76f1c2759d49ac0[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 2 21:15:17 2020 +0700
+
+    Create Customer class
+
+[33mcommit 3f709d0cd7fd59dd9701012d4beb5718f1fe9050[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Apr 2 13:57:37 2020 +0700
+
+    15 hour fix BUG :((
+    
+    Test connect hibernate & spring MVC
+
+[33mcommit cd7bc9924c0a50d69460f183ec13d10d09aa3cdc[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Apr 1 17:28:06 2020 +0700
+
+    test connect java MVC Hibernate
+
+[33mcommit 5df9e6c68152f5bd7030297979be937689c49792[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 21:50:12 2020 +0700
+
+    Delete course
+
+[33mcommit 8b7e01954207f55a0ce22b645e6f5d40f2899132[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 21:30:56 2020 +0700
+
+    Get course of student name = hien (id=2)
+
+[33mcommit b28044fe009d8ee0b4cb508132cf0b4c82ab2af3[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 21:24:42 2020 +0700
+
+    add more course to student Duy
+
+[33mcommit 3004639c933c7b5972128bc613116ad8d2c51d49[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 20:54:13 2020 +0700
+
+    create student demo
+    
+    course : Java
+    student: Le Quang Duy, Pham Thi Thu Hien
+
+[33mcommit 04e0dbbbf4531fa8819088ed515656df88a093a9[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 20:22:23 2020 +0700
+
+    new class course, new student
+    
+    inverseJoinColums = other table
+    joinColums = we are here
+
+[33mcommit 50760de1d1f1261328bee9a3a53bd6f2a3408ef1[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 10:49:08 2020 +0700
+
+    Get reviewer of course
+
+[33mcommit 7d1f69ca74aa45c377dd7709e2913a51daaa5909[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 10:44:29 2020 +0700
+
+    create reviewer
+
+[33mcommit a2c6284bf09985f9ac26637b2ad856bc56fd0c01[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 09:12:38 2020 +0700
+
+    option 2: use HQL
+
+[33mcommit 3488fc396ed4d7964bd713c7820f8ba356366242[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 31 09:01:12 2020 +0700
+
+    get Course white session closed
+    
+    Option 1: Init get course before session closed
+
+[33mcommit 58f3cba2bcd9cc15234fe85b3db6162540c00c6a[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 23:22:54 2020 +0700
+
+    Lazy Loading
+
+[33mcommit e1a405d4b3f0eab83ded727a9727f993ad14696f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 23:11:50 2020 +0700
+
+    Eager
+
+[33mcommit ed3f29f38128c76ecada6e17b039e384c196f66f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 22:24:28 2020 +0700
+
+    Delete course
+    
+    Because course is high level, not "break associate" as exercise previous
+
+[33mcommit 61342ec8b27b5fdfeabcfa4bb3555c0333b11d27[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 22:07:30 2020 +0700
+
+    create course link
+
+[33mcommit 62d7ad5cf15ec51d37c9f37229de0a285e3094d4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 21:37:37 2020 +0700
+
+    create Instructor and InstructorDetail
+
+[33mcommit d04f47e5e115450e2246334c67d0841f3b537f36[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 15:36:23 2020 +0700
+
+    BTVN
+
+[33mcommit 7d2dd277215dfa08844c0ccc5088c7ef122dc6f4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 14:38:53 2020 +0700
+
+    delete only InstructorDetail
+    
+    Note ! break bi-directional
+
+[33mcommit 9e05ac333a8834be84b7d47dbce0c344c55e84a0[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 14:22:55 2020 +0700
+
+    Deleting
+
+[33mcommit 4d89b9bcc653a1ced2b89440edf1bed415df1256[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 14:14:31 2020 +0700
+
+    fix leak with try catch
+
+[33mcommit 58530dcb2f2829cb8991255fd160dd4b49f35335[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 14:06:25 2020 +0700
+
+    bi-direction
+
+[33mcommit 035b0b8d697bf0506168c71ef4701edc3d1982d3[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 11:52:48 2020 +0700
+
+    Deleting OnetoOne
+
+[33mcommit 5ead6f9f3ecb3f86b5d0bdd9ecd53fa8e5d65835[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 11:41:18 2020 +0700
+
+    Create Demo
+
+[33mcommit 8015deca8229eb2c69a9ef579c68d65697cb47fa[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 30 09:47:07 2020 +0700
+
+    Instructor and InstructorDetail
+
+[33mcommit f57cdf842eca49ac4c9982d8ecfe5249648ad131[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 22:22:26 2020 +0700
+
+    Delete in Hibernate
+    
+    1. Delete with Object
+    1. Delete alternate
+
+[33mcommit e4d57cdfcdc4493bf3c44a21c6913e28940a766a[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 21:58:09 2020 +0700
+
+    Update
+    
+    update Student.method
+    update all row with query
+
+[33mcommit 8262675fb8d310b825b3053175182cfe607c031d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 21:35:06 2020 +0700
+
+    OR, AND, LIKE
+
+[33mcommit 1a9ef566d7a24c65e4969a00d039245487345d98[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 20:52:46 2020 +0700
+
+    Query where, from
+    
+    from: from Student(name class)
+    where: from Student s where s.lastName=''
+
+[33mcommit 441529e6e90e6052a3f16a053e4c5c00ec5af394[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 16:52:20 2020 +0700
+
+    CRUD ((read Database with ID)
+    
+    session.get(NameClass.class,ID)
+
+[33mcommit 386ff64f1308ddd5df8ce8bddac95aa0369a1807[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 10:29:28 2020 +0700
+
+    Generation.INDENTIFY
+
+[33mcommit 999a47b9a648dd8e3ce2b2f770fc3b27c18f3135[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 09:40:40 2020 +0700
+
+    Add object Student to SQL by Hibernate on background JDBC
+    
+    SQL connect Java ver 8.0 not ver 5.1
+    Create Folder Hibernate-tut ver2
+
+[33mcommit 215bd94ad2012f18ae1428ed2228089515afe097[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 08:30:17 2020 +0700
+
+    Config XML hibernate and add Anotation Java Class
+
+[33mcommit eeaf72c7632431f83cd81a80850d251762870f3d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 29 01:00:12 2020 +0700
+
+    Init hibernate
+    
+    Create student_tracker, student connect localhost, init hibernate, test connect
+
+[33mcommit 3e3027f6f5d47b1cff4a09e3209d98e6344a9a90[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Mar 28 01:32:04 2020 +0700
+
+    Create Anotation in Spring MVC
+    
+    Bug: Null field ?
+
+[33mcommit 739aa4584d003fd341ec1828fdd36c34e617fe9d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 27 23:32:33 2020 +0700
+
+    Overriding Error
+
+[33mcommit 59f6339bc989492553f048885942f80a00a9154f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 27 19:21:43 2020 +0700
+
+    Int to Integer`
+
+[33mcommit fbcbe46badcbf1572a4c842de9eba32ef3486de5[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 27 15:19:52 2020 +0700
+
+    Form regex
+
+[33mcommit 60fcad20e92e2f01f3d1ea1f60a85efda334772f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 27 10:20:23 2020 +0700
+
+    Validate min max SPRING MVC
+
+[33mcommit f5920721aa8a2777e4faaaf7044f7ad8cd5632b8[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 27 00:02:51 2020 +0700
+
+    Validation Spring MVC
+
+[33mcommit 5b3a67ab9112fa93c4600ff141ac963900ebcf21[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 26 19:28:44 2020 +0700
+
+    list, checkbox, radiobutton
+
+[33mcommit c8c6b043b094526be945ed7dc1824951362977ef[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 25 23:39:52 2020 +0700
+
+    @ModelAttribure not @ReqestParam as ex previous
+
+[33mcommit 34547b102c31ed6050194c3e921da0c3272f12df[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 25 21:01:20 2020 +0700
+
+    Sping MVC
+
+[33mcommit e8ca266bc0bea0b349f031d4c801cdcca0c73052[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 25 10:32:56 2020 +0700
+
+    Spring MVC
+
+[33mcommit c1e881971ea702be9f83c2b68548f574a88703c9[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 25 01:58:48 2020 +0700
+
+    Spring MVC
+
+[33mcommit 050ff46c748953508eef1d3bd871b6b354293652[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 24 02:07:39 2020 +0700
+
+    BTVN
+
+[33mcommit f488277457aee5ffb6310451b3715ee1b2dcfd85[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 23 14:03:58 2020 +0700
+
+    File
+
+[33mcommit 6fd99a88747b40a93ae3855cfe9bfc5b75ee89b3[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 23 08:54:29 2020 +0700
+
+    No annotation & No xml
+
+[33mcommit b3e879cfb431c90c782a25f2740b5b1d7662d827[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 23 08:25:17 2020 +0700
+
+    AnnotationConfigNoXML
+
+[33mcommit c96b0201fb25596956ba358872d05cb55dbe2a86[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 23 08:09:02 2020 +0700
+
+    LifeCycle Anotation Beans
+
+[33mcommit a7df3577276041e19502782b17cb0ea999de5305[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 23 07:58:15 2020 +0700
+
+    Anotation Scope
+
+[33mcommit 0fddae9f3a709082ad4e0c8834f0d70a9ac2c443[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 22 16:04:57 2020 +0700
+
+    Autowired
+
+[33mcommit f8d341d570162bd0a961b317f06373efc395e1a0[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 22 12:33:08 2020 +0700
+
+    Spring Anotations Setter
+
+[33mcommit 8720d32a128623e65fa5d77252c262c4ac7fa379[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Mar 21 08:46:43 2020 +0700
+
+    NCKH
+
+[33mcommit 37bbf8e866aaf01abb3fcc10dea301c0f01f0cd4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Mar 21 08:30:43 2020 +0700
+
+    NCKH player
+
+[33mcommit 201824561c65beed1e9d3dd5ce51cc6e3741caae[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 20 21:45:36 2020 +0700
+
+    Spring
+
+[33mcommit c3ad53b44d4875d1f5df140fb58d56072ad7550c[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 20 21:00:38 2020 +0700
+
+    QuickSelect
+
+[33mcommit 5390f77d07a502287f9927aa0d9014568f02f090[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 20 10:15:08 2020 +0700
+
+    LeetCode addTwoNumber easy LinkedList
+
+[33mcommit 5db8ef987bdccc5c3a7ee9179284b65c0fa35e61[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 20 00:06:28 2020 +0700
+
+    beanLifeCycle
+
+[33mcommit 5ee01aa737f3ce4f8614de5f72ab961c9269411e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 23:46:12 2020 +0700
+
+    Bean Scope
+
+[33mcommit 69017a11acd55d3ce8f09106fd302c2558688f44[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 17:54:44 2020 +0700
+
+    leetcode
+
+[33mcommit 66adae15ee2827c5f7ed63bb5769f07b97998a77[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 15:42:09 2020 +0700
+
+    NCKH
+
+[33mcommit 9f49704e2f900ec2cd29ae2eb9532475770e3a67[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 14:04:26 2020 +0700
+
+    Spring
+
+[33mcommit 6bb219b2e8f003d3705f88ca4d23b49ae2576739[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 12:50:09 2020 +0700
+
+    Spring setter getter
+
+[33mcommit 17b1e443408f8f70066187cd98594fbd6b173a2e[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 12:34:32 2020 +0700
+
+    Spring
+
+[33mcommit 9691ec661523fb823883cab5fb3636ca767c2ad3[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 19 10:23:49 2020 +0700
+
+    Spring
+
+[33mcommit 7f54a7d73b0fe854e994a5245f0c6961ac1de94b[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 18 15:06:50 2020 +0700
+
+    NCKH
+
+[33mcommit 0181574017b56b8e0301834b1598c6573bdce93c[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 18 14:58:00 2020 +0700
+
+    NCKH
+
+[33mcommit 7dbc98c36b621e3b3b221934883349490abf9107[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 17 23:44:18 2020 +0700
+
+    IOC config
+
+[33mcommit 941fdf7573e2f8bd5c252bb71a8cbeef379fa3c7[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 17 23:09:24 2020 +0700
+
+    IoC
+
+[33mcommit 32c9504d7eea12709fa60a0f866da1e979850126[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 17 22:31:14 2020 +0700
+
+    Spring Learning INIT
+
+[33mcommit b08ca248a68e30217ec2977cbda873216bd7c4c8[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 16 22:33:21 2020 +0700
+
+    NCKH
+
+[33mcommit a599b58f43bfba8e9861ccdcd2f01a5ee6b6c0ae[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 16 20:56:02 2020 +0700
+
+    NCKH
+
+[33mcommit 9b9d040a3f3fcd262c1de571f814f49b738efa61[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 16 08:04:39 2020 +0700
+
+    NCKH
+
+[33mcommit f0d5753fc66b7aeddb4b2ed18d40dc86c3c07783[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 16 02:22:11 2020 +0700
+
+    NCKH
+
+[33mcommit 5943ff05f8ea9868ee58b1fe7a175728044fe907[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 16 02:07:03 2020 +0700
+
+    NCKH
+
+[33mcommit 6281987d66d80fa78019bd5a9cf266fd64d054b4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 15 22:44:04 2020 +0700
+
+    NCKH
+
+[33mcommit fd4d039eab1968520f503aed16a8a62bfeab9062[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 15 21:16:36 2020 +0700
+
+    NCKH
+
+[33mcommit e8db81c95702aff0f107ea51ab9a3d8d799b1395[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Mar 14 21:03:55 2020 +0700
+
+    NCKH
+
+[33mcommit c95e2c11f21142dbbc9ed508f7aa22698d938ef1[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 13 21:40:43 2020 +0700
+
+    NCKH
+
+[33mcommit 7528866d40710e2a17a1d0873ecca8d6c6b0581f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 13 07:23:27 2020 +0700
+
+    Hackerrank
+
+[33mcommit 0c4a5ae01670500a3b5d92e6e08d4d3bd118c23d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 12 19:32:26 2020 +0700
+
+    Hackerrank & NCKH
+
+[33mcommit b70266195f2be3c1a7e326b87da41d41aa365960[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Thu Mar 12 00:08:23 2020 +0700
+
+    Hackerrank
+
+[33mcommit 3c941f91719dccc054c19e82d9b55e05a853f71b[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 11 22:33:41 2020 +0700
+
+    NCKH
+
+[33mcommit f24ece7d9584fd361a2560506f41bda2ca93b277[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Wed Mar 11 19:42:12 2020 +0700
+
+    NCKH
+
+[33mcommit 679df5c1c355acea66269ce668ba796e82406906[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Tue Mar 10 21:27:23 2020 +0700
+
+    NCKH
+
+[33mcommit 57be406fe5c92f7093ece6775febfeaf3bcc8d48[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 9 21:02:55 2020 +0700
+
+    NCKH
+
+[33mcommit 93de4b0c619dea10e67a0ebd8b0d35c8942d024d[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 9 15:07:34 2020 +0700
+
+    NCKH03
+
+[33mcommit 7a34c05d0506e4f076ec21a37a9baddb641b16d2[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 8 23:33:43 2020 +0700
+
+    NCKH
+
+[33mcommit 6250fabca7d84998e50abd1574e43a5bc635d44f[m
+Merge: ddec59f 27a6000
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 8 22:07:51 2020 +0700
+
+    Merge branch 'master' of https://github.com/Iamthankyou/2020
+
+[33mcommit ddec59fbad4a7d9f65cd76f2fb7a1c27e0be0192[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sun Mar 8 22:07:45 2020 +0700
+
+    Hackerrank
+
+[33mcommit 27a60002dfc6da2016f9925c06652a7339650d6e[m
+Author: Lê Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Sat Mar 7 23:52:20 2020 +0700
+
+    Create SockMerchant.java
+
+[33mcommit 257071518137b6f2d21e79ef77e89bfef5f53fa6[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 6 22:41:30 2020 +0700
+
+    nckh
+
+[33mcommit 5d156ac32dc391a7b153ef9d381091bc8949bba8[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 6 21:17:51 2020 +0700
+
+    NCKH
+
+[33mcommit b7f08967166fd0b93d36e5a1b4d329978d3b64e9[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Fri Mar 6 20:47:14 2020 +0700
+
+    NCHK
+
+[33mcommit 44adec8383e7ad371f52ccf5ca05494638f16678[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:34:30 2020 +0700
+
+    submit
+
+[33mcommit 0ebd5970d1a1a35337d8cc68b2bfd12dccf27872[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:31:04 2020 +0700
+
+    j
+
+[33mcommit 919322b019fc0525441a90498bedde980bc57c1f[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:24:48 2020 +0700
+
+    hackerrank
+
+[33mcommit 92c5f70e87923115c1632accf80dc9829b3a9f29[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:14:07 2020 +0700
+
+    nckh
+
+[33mcommit c89e755503db8a5f330fd74e1ae616bd66045f54[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:12:39 2020 +0700
+
+    nckh
+
+[33mcommit e542b99740878d6e8e823382bc0e03bc36d2e705[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:07:30 2020 +0700
+
+    f
+
+[33mcommit b2b76c7248a936d6590ea6b0751e17c9f6865bf4[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 14:03:03 2020 +0700
+
+    f
+
+[33mcommit c97c41d95a3c3ae62594762646d57c8003af9368[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 13:58:56 2020 +0700
+
+    f
+
+[33mcommit de2ce61a69b990f0457dc837c200bc48a3e17af6[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 13:56:10 2020 +0700
+
+    Create .project
+
+[33mcommit 4dfd83ab3a6634b156f3561143f98e2946a78ad5[m
+Author: Le Quang Duy <43492067+Iamthankyou@users.noreply.github.com>
+Date:   Mon Mar 2 13:44:26 2020 +0700
+
+    My first commit
