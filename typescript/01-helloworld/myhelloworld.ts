@@ -1,2 +1,2 @@
 console.log('Hello World from TypeScript');
-console.log('Coding Gurus!'+ 'Time for some fun'); 
+console.log('Coding Gurus!'+ 'Time for some fun');  
