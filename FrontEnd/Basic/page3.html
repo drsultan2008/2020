@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <style>
+            .main{
+                height: 100px;
+                width: 400px;
+                position: relative;
+            }
+
+            h3{ 
+                background-color: blue;
+                text-align: center;
+            }
+
+            #submit1,#submit2,#submit3{
+                float:right;
+            }
+            
+            #imagine{
+                margin-left: 52px;
+            }
+            #code{
+                margin-left: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <h3>Quản lý sản phẩm</h3>
+            <form action="#"> 
+                Mã sản phẩm: <input type="text" name="code" id="code"></input>
+                <input id="submit1" type="submit" name="submit" value="Thêm"> <br> <br>
+               
+                Tên sản phẩm: 
+                <input type="text" name="code" id="name"></input>
+                <input id="submit1" type="submit" name="submit" value="Xóa"> <br> <br>
+                
+                Mô tả: 
+                <input type="text" name="code" id="imagine"></input>
+                <input id="submit1" type="submit" name="submit" value="Sửa"> <br> <br>
+            </form>
+
+            <table border="2px" width="100%">
+                <tr>
+                  <th>Mã sản phẩm</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Mô tả</th>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+        </div>
+        
+    </body>
+</html>
