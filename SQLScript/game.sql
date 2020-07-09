@@ -1,0 +1,22 @@
+use `heroku_17d35cd59aca06e`;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`(
+	`id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(45),
+    PRIMARY KEY(`id`)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `board`;
+CREATE TABLE `board` (
+  `id` int NOT NULL AUTO_INCREMENT,	
+  `data` varchar(200),
+  `id_user` int,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_USER` FOREIGN KEY (`id_user`) 
+  REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+SET FOREIGN_KEY_CHECKS = 1;
