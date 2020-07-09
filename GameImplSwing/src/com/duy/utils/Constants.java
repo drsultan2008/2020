@@ -6,4 +6,5 @@ public interface Constants {
 	public static int maxHeight = 700;
 	public static int maxStack = 3;
 	public static int GAME_TREE_HEIGHT = 3;
+	public static String url = "/home/duy/2020/GameImplSwing";
 }

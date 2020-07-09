@@ -17,7 +17,7 @@ public class PieceHum extends JLabel implements Piece{
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Hum02.png").getImage(),0,0,getWidth(),getHeight(),null);
+		g.drawImage(new ImageIcon(Constants.url+"/src/com/duy/images/Hum02.png").getImage(),0,0,getWidth(),getHeight(),null);
 		
 	}
 

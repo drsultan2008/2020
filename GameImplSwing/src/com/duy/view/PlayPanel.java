@@ -25,6 +25,7 @@ import com.duy.entity.Empty;
 import com.duy.entity.Hum;
 import com.duy.entity.Point;
 import com.duy.entity.Tom;
+import com.duy.utils.Constants;
 import com.duy.utils.Observable;
 import com.duy.utils.Observer;
 import com.duy.utils.UpdateIcon;
@@ -120,7 +121,7 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/board.jpg").getImage(), 0, 0,
+		g.drawImage(new ImageIcon(Constants.url+"/src/com/duy/images/board.jpg").getImage(), 0, 0,
 				getWidth(), getHeight(), this);
 
 	}
@@ -266,13 +267,13 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 					updateIcons.add(new UpdateIcon(icon,new Point(i,j)));
 					if (controller.getIsHum()) {
 						if (piece[i][j] instanceof PieceHum) {
-							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+							Image image = new ImageIcon(Constants.url+"/src/com/duy/images/hover.jpg")
 									.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
 							ImageIcon img = new ImageIcon(image);
 							piece[i][j].setIcon(img);
 						}
 						else {
-							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Hum02.png")
+							Image image = new ImageIcon(Constants.url+"/src/com/duy/images/Hum02.png")
 									.getImage().getScaledInstance(35,35, Image.SCALE_SMOOTH);
 							ImageIcon img = new ImageIcon(image);
 							piece[i][j].setIcon(img);
@@ -280,13 +281,13 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 						
 					}else {
 						if (piece[i][j] instanceof PieceTom) {
-							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+							Image image = new ImageIcon(Constants.url+"/src/com/duy/images/hover.jpg")
 									.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
 							ImageIcon img = new ImageIcon(image);
 							piece[i][j].setIcon(img);
 						}
 						else {
-							Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/Tot01.png")
+							Image image = new ImageIcon(Constants.url+"/src/com/duy/images/Tot01.png")
 									.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
 							ImageIcon img = new ImageIcon(image);
 							piece[i][j].setIcon(img);
@@ -324,13 +325,13 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 								for (Element iter : list) {
 									if (iter instanceof Hum || iter instanceof Tom || iter instanceof BTom) {
 										System.out.println("?");
-										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+										Image image = new ImageIcon(Constants.url+"/src/com/duy/images/hover.jpg")
 												.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
 										ImageIcon img = new ImageIcon(image);
 										piece[iter.corr().getX()][iter.corr().getY()].setIcon(img);
 									}
 									else {
-										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/click.png")
+										Image image = new ImageIcon(Constants.url+"/src/com/duy/images/click.png")
 												.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
 										ImageIcon img = new ImageIcon(image);
 										updateIcons.add(new UpdateIcon(piece[iter.corr().getX()][iter.corr().getY()].getIcon(),new Point(iter.corr().getX(),iter.corr().getY())));
@@ -373,13 +374,13 @@ public class PlayPanel extends JPanel implements MouseListener,Observer,ActionLi
 								for (Element iter : list) {
 									if (iter instanceof Hum || iter instanceof Tom || iter instanceof BTom) {
 										System.out.println("?");
-										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/hover.jpg")
+										Image image = new ImageIcon(Constants.url+"/src/com/duy/images/hover.jpg")
 												.getImage().getScaledInstance(100,100, Image.SCALE_SMOOTH);
 										ImageIcon img = new ImageIcon(image);
 										piece[iter.corr().getX()][iter.corr().getY()].setIcon(img);
 									}
 									else {
-										Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/click.png")
+										Image image = new ImageIcon(Constants.url+"/src/com/duy/images/click.png")
 												.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
 										ImageIcon img = new ImageIcon(image);
 										updateIcons.add(new UpdateIcon(piece[iter.corr().getX()][iter.corr().getY()].getIcon(),new Point(iter.corr().getX(),iter.corr().getY())));

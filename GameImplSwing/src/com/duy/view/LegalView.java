@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.duy.controller.GameController;
+import com.duy.utils.Constants;
 
 public class LegalView extends JPanel implements MouseListener {
 
@@ -36,7 +37,7 @@ public class LegalView extends JPanel implements MouseListener {
 	}
 
 	private void init() {
-		Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/troVe.png").getImage()
+		Image image = new ImageIcon(Constants.url+"/src/com/duy/images/troVe.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		ImageIcon img = new ImageIcon(image);
 		troVe.setIcon(img);
@@ -47,7 +48,7 @@ public class LegalView extends JPanel implements MouseListener {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/luatChoiBackground.jpg").getImage(), 0,
+		g.drawImage(new ImageIcon(Constants.url+"/src/com/duy/images/luatChoiBackground.jpg").getImage(), 0,
 				0, getWidth(), getHeight(), this);
 
 	}
@@ -64,7 +65,7 @@ public class LegalView extends JPanel implements MouseListener {
 	public void mouseEntered(MouseEvent e) {
 		if (e.getSource() == troVe) {
 			iconOdd = troVe.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/troVe.png").getImage().getScaledInstance(301,83, Image.SCALE_SMOOTH);
+			Image image = new ImageIcon(Constants.url+"/src/com/duy/images/troVe.png").getImage().getScaledInstance(301,83, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
 			troVe.setIcon(img);
 		}

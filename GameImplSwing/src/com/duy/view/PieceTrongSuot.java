@@ -13,12 +13,12 @@ public class PieceTrongSuot extends JLabel implements Piece{
 	
 	public PieceTrongSuot() {
 		setPreferredSize( new Dimension(Constants.squareSize,Constants.squareSize));
-		url = "/home/duy/2020/GameImplSwing/src/com/duy/images/TrongSuot.png";
+		url = Constants.url+ "/src/com/duy/images/TrongSuot.png";
 	}
 	
 	@Override
 	public void setBackground() {
-		url = "/home/duy/2020/GameImplSwing/src/com/duy/images/Hum01.png";
+		url = Constants.url+"/src/com/duy/images/Hum01.png";
 	}
 	
 	@Override

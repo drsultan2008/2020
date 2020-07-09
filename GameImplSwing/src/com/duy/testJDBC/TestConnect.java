@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class TestConnect {
 	public static void main(String[] args) {
-		String jdbcUrl = "jdbc:mysql://localhost:3306/chess?useSSL=false";
-		String user = "hbstudent";
-		String pass = "hbstudent";
+		String jdbcUrl = "jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_17d35cd59aca06e?useSSL=false";
+		String user = "bf820aedc1c700";
+		String pass = "f29cb098";
 
 		try {
 			System.out.println("Connecting to Database Chess " + jdbcUrl);

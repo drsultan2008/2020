@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.duy.controller.GameController;
+import com.duy.utils.Constants;
 
 public class ChooseTeam extends JPanel implements MouseListener {
 
@@ -41,17 +42,17 @@ public class ChooseTeam extends JPanel implements MouseListener {
 	}
 
 	private void init() {
-		Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonHum.png").getImage()
+		Image image = new ImageIcon(Constants.url+"/src/com/duy/images/chonHum.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		ImageIcon img = new ImageIcon(image);
 		chonHum.setIcon(img);
 
-		image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonTom.png").getImage()
+		image = new ImageIcon(Constants.url+"/src/com/duy/images/chonTom.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		img = new ImageIcon(image);
 		chonTom.setIcon(img);
 
-		image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/luatChoi.png").getImage()
+		image = new ImageIcon(Constants.url+"/src/com/duy/images/luatChoi.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		img = new ImageIcon(image);
 		luatChoi.setIcon(img);
@@ -64,7 +65,7 @@ public class ChooseTeam extends JPanel implements MouseListener {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/menuBackground.jpg").getImage(), 0,
+		g.drawImage(new ImageIcon(Constants.url+"/src/com/duy/images/menuBackground.jpg").getImage(), 0,
 				0, getWidth(), getHeight(), this);
 
 	}
@@ -90,21 +91,21 @@ public class ChooseTeam extends JPanel implements MouseListener {
 	public void mouseEntered(MouseEvent e) {
 		if (e.getSource() == chonHum) {
 			iconOdd = chonHum.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonHum.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+			Image image = new ImageIcon(Constants.url+"/src/com/duy/images/chonHum.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
 			chonHum.setIcon(img);
 		}
 
 		if (e.getSource() == chonTom) {
 			iconOdd = chonTom.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/chonTom.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+			Image image = new ImageIcon(Constants.url+"/src/com/duy/images/chonTom.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
 			chonTom.setIcon(img);
 		}
 
 		if (e.getSource() == luatChoi) {
 			iconOdd = luatChoi.getIcon();
-			Image image = new ImageIcon("/home/duy/2020/GameImplSwing/src/com/duy/images/luatChoi.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+			Image image = new ImageIcon(Constants.url+"/src/com/duy/images/luatChoi.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
 			ImageIcon img = new ImageIcon(image);
 			luatChoi.setIcon(img);
 		}
