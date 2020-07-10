@@ -66,8 +66,6 @@ public class TaskBarPanel extends JPanel implements MouseListener{
 		if (e.getSource() == undo) {
 			controller.undo();
 			
-			System.out.println("==> "+controller.getIsHum());
-			
 			if (!controller.getIsHum()) {
 				controller.setHum();
 				controller.setTurnHum();;
@@ -80,6 +78,15 @@ public class TaskBarPanel extends JPanel implements MouseListener{
 		
 		if (e.getSource() == redo) {
 			controller.redo();
+			
+			if (!controller.getIsHum()) {
+				controller.setHum();
+				controller.setTurnHum();;
+			}
+			else {
+				controller.setTom();
+				controller.setTurnTom();;
+			}
 		}
 		
 		if (e.getSource() == home) {

@@ -51,6 +51,33 @@ public class ElementsManager extends Observable{
 	}
 	
 	public int isGameOver() {
+		Element[][] map = elements.getMap();
+		boolean free1 = true,free2 = true, free3=true;
+		
+		for (Element[] arr:map) {
+			for (Element e:arr) {
+				if (e instanceof Hum) {
+					System.out.println("==> isHum");
+					if (e.movesPossible(elements.getMap()).size()==0) {
+						System.out.println("==> ok");
+						if (free1==true) {
+							free1 = false;
+						}
+						else if (free2==true) {
+							free2 = false;
+						}
+						else if (free3==true) {
+							free3 = false;
+						}
+					}
+				}
+			}
+		}
+		
+		if (!free1 && !free2 && !free3) {
+			return 1;
+		}
+		
 		return elements.isGameOver();
 	}
 	

@@ -208,17 +208,17 @@ public class Elements {
 		int tom = 0;
 		int btom = 0;
 		
-		for (Element[] arr:map.peek()) {
-			for (Element e:arr) {
-				if (e instanceof Hum) {
+		for (int i=0; i<7; i++) {
+			for (int j=0; j<5; j++) {
+				if (map.peek()[i][j] instanceof Hum) {
 					hum++;
 				}
 				
-				if (e instanceof Tom) {
+				if (map.peek()[i][j] instanceof Tom) {
 					tom++;
 				}
 				
-				if (e instanceof BTom) {
+				if (map.peek()[i][j] instanceof BTom) {
 					btom++;
 				}
 			}
