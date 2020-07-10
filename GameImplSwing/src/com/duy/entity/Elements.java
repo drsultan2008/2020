@@ -282,12 +282,12 @@ public class Elements {
 			Element[][] six = clone.pop();
 			
 			
-//			print(one);
-//			print(two);
-//			print(three);
-//			print(four);
-//			print(five);
-//			print(six);
+			print(one);
+			print(two);
+			print(three);
+			print(four);
+			print(five);
+			print(six);
 			
 			if (isEqual(one,five)){
 				System.out.println("====> LOOP");
