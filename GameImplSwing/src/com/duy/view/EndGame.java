@@ -19,6 +19,7 @@ public class EndGame extends JPanel implements MouseListener {
 	
 	private JLabel humThang;
 	private JLabel tomThang;
+	private JLabel coHoa;
 	private JLabel choiLai;
 	private Icon iconOdd;
 	private GameController controller;
@@ -28,6 +29,7 @@ public class EndGame extends JPanel implements MouseListener {
 		humThang = new JLabel();
 		tomThang = new JLabel();
 		choiLai = new JLabel();
+		coHoa = new JLabel();
 		
 		setHumThang();
 		
@@ -44,6 +46,11 @@ public class EndGame extends JPanel implements MouseListener {
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
 		img = new ImageIcon(image);
 		tomThang.setIcon(img);
+		
+		image = new ImageIcon(Constants.url+"/src/com/duy/images/coHoa.png").getImage()
+				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
+		img = new ImageIcon(image);
+		coHoa.setIcon(img);
 
 		image = new ImageIcon(Constants.url+"/src/com/duy/images/choiLai.png").getImage()
 				.getScaledInstance(301, 85, Image.SCALE_SMOOTH);
@@ -53,6 +60,7 @@ public class EndGame extends JPanel implements MouseListener {
 		humThang.addMouseListener(this);
 		tomThang.addMouseListener(this);
 		choiLai.addMouseListener(this);
+		coHoa.addMouseListener(this);
 	}
 	
 	public void setHumThang() {
@@ -64,6 +72,18 @@ public class EndGame extends JPanel implements MouseListener {
 		c.gridx = 80;
 		
 		add(humThang,c);
+		add(choiLai,c);
+	}
+	
+	public void setCoHoa() {
+		removeAll();
+		GridBagLayout gridBag = new GridBagLayout();
+		setLayout(gridBag);
+
+		GridBagConstraints c = new GridBagConstraints();
+		c.gridx = 80;
+		
+		add(coHoa,c);
 		add(choiLai,c);
 	}
 	
@@ -103,6 +123,13 @@ public class EndGame extends JPanel implements MouseListener {
 			ImageIcon img = new ImageIcon(image);
 			humThang.setIcon(img);
 		}
+		
+		if (e.getSource() == coHoa) {
+			iconOdd = coHoa.getIcon();
+			Image image = new ImageIcon(Constants.url+"/src/com/duy/images/coHoa.png").getImage().getScaledInstance(271,77, Image.SCALE_SMOOTH);
+			ImageIcon img = new ImageIcon(image);
+			coHoa.setIcon(img);
+		}
 
 		if (e.getSource() == tomThang) {
 			iconOdd = tomThang.getIcon();
@@ -132,6 +159,10 @@ public class EndGame extends JPanel implements MouseListener {
 
 		if (e.getSource() == choiLai) {
 			choiLai.setIcon(iconOdd);
+		}
+		
+		if (e.getSource() == coHoa) {
+			coHoa.setIcon(iconOdd);
 		}
 	}
 

@@ -203,10 +203,97 @@ public class Elements {
 		return map.peek()[x.getX()][x.getY()];
 	}
 	
+	private void print(Element[][] map) {
+		System.out.println("========>");
+		
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (map[i][j] instanceof Hum) {
+					System.out.print("H");
+				} else if (map[i][j] instanceof Tom) {
+					System.out.print("T");
+				} else if (map[i][j] instanceof BTom) {
+					System.out.print("B");
+				} else if (map[i][j] instanceof Empty) {
+					System.out.print("O");
+				} else {
+					System.out.print("X");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	private boolean isEqual(Element[][] a, Element[][] b) {
+		StringBuilder map1 = new StringBuilder();
+		StringBuilder map2 = new StringBuilder();
+		
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (a[i][j] instanceof Hum) {
+					map1.append('H');
+				} else if (a[i][j] instanceof Tom) {
+					map1.append('T');
+				} else if (a[i][j] instanceof BTom) {
+					map1.append('B');
+				} else if (a[i][j] instanceof Empty) {
+					map1.append('O');
+				} else {
+					map1.append('X');
+				}
+			}
+		}
+		
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (b[i][j] instanceof Hum) {
+					map2.append('H');
+				} else if (b[i][j] instanceof Tom) {
+					map2.append('T');
+				} else if (b[i][j] instanceof BTom) {
+					map2.append('B');
+				} else if (b[i][j] instanceof Empty) {
+					map2.append('O');
+				} else {
+					map2.append('X');
+				}
+			}
+		}
+		
+		System.out.println(map1);
+		System.out.println(map2);
+		
+		return map1.toString().equals(map2.toString());
+	}
+	
 	public int isGameOver() {
 		int hum = 0;
 		int tom = 0;
 		int btom = 0;
+		
+		Stack<Element[][]> clone = (Stack<Element[][]>) map.clone();
+		
+		if (clone.size()>=6) {
+			Element[][] one = clone.pop();
+			Element[][] two = clone.pop();
+			Element[][] three = clone.pop();
+			Element[][] four = clone.pop();
+			Element[][] five = clone.pop();
+			Element[][] six = clone.pop();
+			
+			
+//			print(one);
+//			print(two);
+//			print(three);
+//			print(four);
+//			print(five);
+//			print(six);
+			
+			if (isEqual(one,five)){
+				System.out.println("====> LOOP");
+				return 2;
+			}
+		}
 		
 		for (int i=0; i<7; i++) {
 			for (int j=0; j<5; j++) {

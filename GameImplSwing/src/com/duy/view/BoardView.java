@@ -157,6 +157,10 @@ public class BoardView extends JFrame implements MouseListener, Observer {
 		endGame.setTomThang();
 	}
 	
+	public void showCoHoa() {
+		endGame.setCoHoa();
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub

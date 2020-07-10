@@ -68,9 +68,9 @@ public class AIVer2 {
 				}
 			}
 		}
-		
+
 		elementsManager.setMap(newMap);
-		
+	
 	}
 	
 	private void init() {
@@ -308,7 +308,6 @@ public class AIVer2 {
 
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
-				
 				if (isHum) {
 					if (board[i][j].equals("Hum")) {
 						Point moves[] = allMove(i, j, board);
@@ -320,11 +319,9 @@ public class AIVer2 {
 
 							boardCpy = copyArr(board);
 							makeMove(boardCpy, move1, moves[k]);
-							//		                        if(board[r][c].charAt(0)=='k')
-//		                        {
-//		                        	return boardCpy;
-//		                        }
+							System.out.println("Start");
 							int a = findBestMove2(boardCpy, -1000000, 1000000, h + 1);
+							System.out.println("End");
 							if (max <= a) {
 								max = a;
 								bestMove = copyArr(boardCpy);
@@ -343,11 +340,9 @@ public class AIVer2 {
 
 							boardCpy = copyArr(board);
 							makeMove(boardCpy, move1, moves[k]);
-							//		                        if(board[r][c].charAt(0)=='k')
-//		                        {
-//		                        	return boardCpy;
-//		                        }
-							int a = findBestMove2(boardCpy, -1000000, 1000000, h + 1);
+							System.out.println("Start");
+							int a = findBestMove2(boardCpy, -1000000, 1000000,h+1);
+							System.out.println("End");
 							if (max <= a) {
 								max = a;
 								bestMove = copyArr(boardCpy);
@@ -357,86 +352,166 @@ public class AIVer2 {
 				}
 			}
 		}
+		
 		return bestMove;
 	}
 
 	String[][] copyArr(String str[][]) {
 		String boardCpy[][] = new String[7][5];
+		
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
 				boardCpy[i][j] = str[i][j];
 			}
 		}
+		
 		return boardCpy;
 	}
 
 	int findBestMove2(String board[][], int alpha, int beta, int h) {
+		
 		int min, max;
 		min = 1000000;
 		max = -1000000;
-		int ans;
+		int ans = 0;
 		String boardCpy[][] = new String[7][5];
+		
 		if (h == Constants.GAME_TREE_HEIGHT) {
 			ans = evaluate(board);
-			return ans;
+			return isHum?ans:ans*(-1);
 		}
+		
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
+				if (h%2!=0) {
+					if (board[i][j].equals("Hum")) {
+						Point moves[] = allMove(i, j, board);
+						Point move1 = new Point(i, j);
 
-				Point moves[] = allMove(i, j, board);
-				Point move1 = new Point(i, j);
-				for (int k = 0; k < 30; k++) {
-					if (beta <= alpha) {
-						if ((h % 2) == 0) {
-							ans = max;
-						} else {
-							ans = min;
-						}
-						return ans;
-					}
-					if (moves[k] == null) {
-						break;
-					}
-					
-
-//                       if(board[r][c].charAt(0)=='k')
-//                       {
-//                           if(ch == data.playerColor)
-//                           {
-//                               return (-1000000);
-//                           }
-//                           else
-//                           {
-//                               return (1000000);
-//                           }
-//                       }
-
-					boardCpy = copyArr(board);
-					makeMove(boardCpy, move1, moves[k]);
-					int a = findBestMove2(boardCpy, alpha, beta, h + 1);
-					if ((h % 2) == 0) {
-						if (max < a) {
-							max = a;
-						}
-						if (alpha < a) {
-							alpha = a;
-						}
-					} else {
-						if (min > a) {
-							min = a;
-						}
-						if (beta > a) {
-							beta = a;
+						for (int k = 0; k < 30; k++) {
+							if (beta <= alpha) {
+								if ((h % 2) == 0) {
+									ans = max;
+								} else {
+									ans = min;
+								}
+								
+								return ans;
+							}
+							
+							if (moves[k] == null) {
+								break;
+							}
+							
+							if (board[moves[k].getX()][moves[k].getY()].equals("BTom")) {
+								if (isHum) {
+									return 1000000;
+								}
+								else {
+									return -1000000;
+								}
+							}
+							
+							boardCpy = copyArr(board);
+							makeMove(boardCpy, move1, moves[k]);
+							
+							int a = findBestMove2(boardCpy, alpha, beta, h + 1);
+							
+							if ((h % 2) == 0) {
+								if (max < a) {
+									max = a;
+								}
+								
+								if (alpha < a) {
+									alpha = a;
+								}
+								
+							} else {
+								if (min > a) {
+									min = a;
+								}
+								
+								if (beta > a) {
+									beta = a;
+								}
+							}
 						}
 					}
 				}
+				else {
+					if (board[i][j].equals("Tom") || board[i][j].equals("BTom")) {
+						Point moves[] = allMove(i, j, board);
+						Point move1 = new Point(i, j);
+
+						for (int k = 0; k < 30; k++) {
+							if (beta <= alpha) {
+								if ((h % 2) == 0) {
+									ans = max;
+								} else {
+									ans = min;
+								}
+								
+								return ans;
+							}
+							
+							if (moves[k] == null) {
+								break;
+							}
+							
+							if (board[moves[k].getX()][moves[k].getY()].equals("BTom")) {
+								if (isHum) {
+									return 1000000;
+								}
+								else {
+									return -1000000;
+								}
+							}
+							
+							boardCpy = copyArr(board);
+							makeMove(boardCpy, move1, moves[k]);
+							
+							int a = findBestMove2(boardCpy, alpha, beta, h + 1);
+							
+							if ((h % 2) == 0) {
+								if (max < a) {
+									max = a;
+								}
+								
+								if (alpha < a) {
+									alpha = a;
+								}
+								
+							} else {
+								if (min > a) {
+									min = a;
+								}
+								
+								if (beta > a) {
+									beta = a;
+								}
+							}
+						}
+					}
+				}
+		
 			}
 		}
+		
 		if ((h % 2) == 0) {
 			ans = max;
 		} else {
 			ans = min;
 		}
+		
+		for (int ii=0; ii<7; ii++) {
+			for (int jj=0; jj<5; jj++) {
+				System.out.print(board[ii][jj]);
+			}
+			System.out.println();
+		}
+		
+		System.out.println("==> Val:"+ans+" Height: "+h);
+		
 		return ans;
 	}
 
@@ -450,18 +525,20 @@ public class AIVer2 {
 
 	int evaluate(String board[][]) {
 		int ans = 0;
+		
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
 				int a = 0;
-				if (board[i][j].equals("###")) {
+				if (board[i][j].equals("###") || board[i][j].equals("XXX")) {
 					a = 0;
 				} else if (board[i][j].equals("Tom")) {
-					a = -20;
+					a = -15;
 				} else if (board[i][j].equals("BTom")) {
-					a = -80;
+					a = -60;
 				} else if (board[i][j].equals("Hum")) {
 					a = 100;
 				}
+				
 				ans += a;
 			}
 		}

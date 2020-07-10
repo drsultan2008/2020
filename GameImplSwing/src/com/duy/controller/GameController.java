@@ -163,8 +163,12 @@ public class GameController {
 	
 	public void showEndGame() {
 		boardView.showEndGame();
+		
 		if (elementsManager.isGameOver() == 1) {
 			boardView.showWinTom();
+		}
+		else if (elementsManager.isGameOver() == 2){
+			boardView.showCoHoa();
 		}
 		else {
 			boardView.showWinHum();
