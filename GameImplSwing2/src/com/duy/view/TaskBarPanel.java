@@ -65,6 +65,15 @@ public class TaskBarPanel extends JPanel implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == undo) {
 			controller.undo();
+			
+			System.out.println("==> "+controller.getIsHum());
+			
+			if (controller.getIsHum()) {
+				controller.setTurnHum();;
+			}
+			else {
+				controller.setTurnTom();;
+			}
 		}
 		
 		if (e.getSource() == redo) {
