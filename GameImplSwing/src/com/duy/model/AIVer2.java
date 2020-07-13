@@ -319,8 +319,17 @@ public class AIVer2 {
 
 							boardCpy = copyArr(board);
 							makeMove(boardCpy, move1, moves[k]);
-							System.out.println("Start");
-							int a = findBestMove2(boardCpy, -1000000, 1000000, h + 1);
+							System.out.println("Start_Hum");
+							for (int ii=0; ii<7; ii++) {
+								for (int jj=0; jj<5; jj++) {
+									System.out.print(boardCpy[ii][jj]);
+								}
+								System.out.println();
+							}
+							
+							System.out.println();
+							
+							int a = minimax(boardCpy, -1000000, 1000000, h + 1);
 							System.out.println("End");
 							if (max <= a) {
 								max = a;
@@ -341,7 +350,7 @@ public class AIVer2 {
 							boardCpy = copyArr(board);
 							makeMove(boardCpy, move1, moves[k]);
 							System.out.println("Start");
-							int a = findBestMove2(boardCpy, -1000000, 1000000,h+1);
+							int a = minimax(boardCpy, -1000000, 1000000,h+1);
 							System.out.println("End");
 							if (max <= a) {
 								max = a;
@@ -368,8 +377,7 @@ public class AIVer2 {
 		return boardCpy;
 	}
 
-	int findBestMove2(String board[][], int alpha, int beta, int h) {
-		
+	int minimax(String board[][], int alpha, int beta, int h) {
 		int min, max;
 		min = 1000000;
 		max = -1000000;
@@ -383,8 +391,9 @@ public class AIVer2 {
 		
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
-				if (h%2!=0) {
+				if (h%2==0) {
 					if (board[i][j].equals("Hum")) {
+						System.out.println("Turn_Hum: "+h);
 						Point moves[] = allMove(i, j, board);
 						Point move1 = new Point(i, j);
 
@@ -415,7 +424,16 @@ public class AIVer2 {
 							boardCpy = copyArr(board);
 							makeMove(boardCpy, move1, moves[k]);
 							
-							int a = findBestMove2(boardCpy, alpha, beta, h + 1);
+							for (int ii=0; ii<7; ii++) {
+								for (int jj=0; jj<5; jj++) {
+									System.out.print(boardCpy[ii][jj]);
+								}
+								System.out.println();
+							}
+							
+							System.out.println("==> Val:"+evaluate(boardCpy)+" Height: "+h);
+							
+							int a = minimax(boardCpy, alpha, beta, h + 1);
 							
 							if ((h % 2) == 0) {
 								if (max < a) {
@@ -440,6 +458,7 @@ public class AIVer2 {
 				}
 				else {
 					if (board[i][j].equals("Tom") || board[i][j].equals("BTom")) {
+						System.out.println("Turn_Tom: "+h);
 						Point moves[] = allMove(i, j, board);
 						Point move1 = new Point(i, j);
 
@@ -469,8 +488,17 @@ public class AIVer2 {
 							
 							boardCpy = copyArr(board);
 							makeMove(boardCpy, move1, moves[k]);
+
+							for (int ii=0; ii<7; ii++) {
+								for (int jj=0; jj<5; jj++) {
+									System.out.print(boardCpy[ii][jj]);
+								}
+								System.out.println();
+							}
 							
-							int a = findBestMove2(boardCpy, alpha, beta, h + 1);
+							System.out.println("==> Val:"+evaluate(boardCpy)+" Height: "+h);
+							
+							int a = minimax(boardCpy, alpha, beta, h + 1);
 							
 							if ((h % 2) == 0) {
 								if (max < a) {

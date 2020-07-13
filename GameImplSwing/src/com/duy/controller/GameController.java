@@ -180,7 +180,9 @@ public class GameController {
 	}
 	
 	public void aiMove(boolean isHum) {
+		System.out.println("START_AI_MOVE");
 		ai.AIMove(elementsManager, isHum);
+		System.out.println("END_AI_MOVE");
 	}
 	
 	public boolean isOnePlayer() {

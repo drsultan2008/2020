@@ -278,21 +278,20 @@ public class Elements {
 			Element[][] two = clone.pop();
 			Element[][] three = clone.pop();
 			Element[][] four = clone.pop();
-			Element[][] five = clone.pop();
 			Element[][] six = clone.pop();
 			
 			
-			print(one);
-			print(two);
-			print(three);
-			print(four);
-			print(five);
-			print(six);
-			
-			if (isEqual(one,five)){
-				System.out.println("====> LOOP");
-				return 2;
-			}
+//			print(one);
+//			print(two);
+//			print(three);
+//			print(four);
+//			print(five);
+//			print(six);
+//			
+//			if (isEqual(one,five)){
+//				System.out.println("====> LOOP");
+//				return 2;
+//			}
 		}
 		
 		for (int i=0; i<7; i++) {

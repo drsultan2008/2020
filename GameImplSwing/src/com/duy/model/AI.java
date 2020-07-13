@@ -90,10 +90,10 @@ public class AI {
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 5; j++) {
 				if (board[i][j] instanceof Tom) {
-					res-=20;
+					res-=15;
 				}
 				if (board[i][j] instanceof BTom) {
-					res-=80;
+					res-=60;
 				}
 				if (board[i][j] instanceof Hum) {
 					res+=100;
