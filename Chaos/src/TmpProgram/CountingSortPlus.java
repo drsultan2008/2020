@@ -37,38 +37,71 @@ public class CountingSortPlus {
 		HashMap<Integer, Pair> part = new HashMap<>();
 		
 		for (int i=0; i<arr.length; i++) {
-			int index = (int) Math.floor((double)(arr[i]-min)/lowerBound);	
-			
+            System.out.println("double: "+ (arr[i]-min)/lowerBound);
+			int index = (int)(Math.round((arr[i]-min)/lowerBound));	
+	
+            System.out.print(index+" ");
+        
 			if (!part.containsKey(index)) {
 				part.put(index, new Pair(arr[i],arr[i]));
 			}
 			else {
-				if (part.get(index).left > arr[i]) {
-					part.get(index).setLeft(arr[i]);
-				}
+                
+                if (part.get(index).getLeft() == arr[i]){
+                    part.get(index).setNumLeft();
+                }
+
+                if (part.get(index).getRight() == arr[i]){
+                    part.get(index).setNumRight();
+                }
+
+				if (part.get(index).left>arr[i]) {
+					System.out.println("left "+part.get(index).getLeft()+" "+arr[i]);
+                    part.get(index).setLeft(arr[i]);
+			        System.out.println("key left "+part.get(index).getLeft());
+                }
 				
 				if (part.get(index).right<arr[i]) {
 					part.get(index).setRight(arr[i]);
+                    System.out.println("right "+part.get(index).getRight()+" "+arr[i]);
 				}
 			}
 		}
 		
+        System.out.println(); 
+
 		int prev = min;
 		
 		for (int i:part.keySet()) {
-			System.out.print(part.get(i).left+" "+ part.get(i).right+" ");
+			System.out.print(part.get(i).getLeft()+" "+ part.get(i).getRight()+" ");
 		}
-		System.out.println(min);
-		
+
+		System.out.println();
+
 		for (int i:part.keySet()) {
-			if (part.get(i).left!=part.get(i).right) {
-				System.out.print(part.get(i).left+" "+ part.get(i).right+" ");
-			}
-			else {
-				System.out.print(part.get(i).left+" ");
-			}
-		}
-		
+            if (part.get(i).getLeft() != part.get(i).getRight()){
+                for (int j=0; j<part.get(i).getNumLeft(); j++){
+                    System.out.print(part.get(i).getLeft()+" ");
+                } 
+
+                for (int j=0; j<part.get(i).getNumRight(); j++){
+                    System.out.print(part.get(i).getRight()+" ");
+                }
+            }
+            else{
+                for (int j=0; j<part.get(i).getNumLeft();j++){
+                    System.out.print(part.get(i).getLeft()+" ");
+                }
+            }
+        }
+
+        System.out.println();
+	
+        for(int i=0; i<arr.length; i++){
+            if (part.containsKey(i)){
+                System.out.print(part.get(i).getLeft()+" "+ part.get(i).getRight()+" ");
+            }
+        }
 	}
 	
 	
@@ -83,11 +116,14 @@ public class CountingSortPlus {
 	public class Pair{
 		private int left;
 		private int right;
-		
+        private int numLeft;
+        private int numRight;
+
 		public Pair(int left,int right) {
 			this.left = left;
 			this.right = right;
-		}
+		    numLeft = numRight = 1;
+        }
 		
 		public int getLeft() {
 			return left;
@@ -104,5 +140,21 @@ public class CountingSortPlus {
 		public void setRight(int right) {
 			this.right = right;
 		}
+
+        public void setNumLeft(){
+            numLeft++;
+        }
+
+        public void setNumRight(){
+            numRight++;
+        }
+
+        public int getNumLeft(){
+            return numLeft;
+        } 
+
+        public int getNumRight(){
+            return numRight;
+        }
 	}
 }
